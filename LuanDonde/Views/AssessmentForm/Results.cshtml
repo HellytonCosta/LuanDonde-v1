@@ -1,0 +1,73 @@
+﻿@using LuanDonde.Models.ViewModels
+@model AssessmentForm
+@{
+    ViewData["Title"] = "Resultados";
+    AssessmentForm obj = new AssessmentForm();
+    obj = Model;
+}
+
+<div class="row mw-100">
+    
+    <div class="col-8 bg-results-image p-0 align-content-center" style="min-height: 850px">
+        <div class="bg-gradient-results align-content-center" style="height:100%;">
+            <div class="row mb-0">
+                <h2 class="text-primary text-center text-uppercase mb-0">Seu nível maturidade é:</h2>
+            </div>
+            <div class="row mt-0">
+                <h1 class="text-primary text-center mt-0" style="font-size:190px;">@obj.MaturidadeDigital.ToString("N0")%</h1>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="col-4 px-0">
+        <div class="row m-4 text-center text-dark">
+            <h4 class="text-primary fw-bold">A transformação já está em ascenção, porém ainda há muito a alcançar.</h4>
+        </div>
+
+        <div class="row px-5 my-3">
+            <div class="col-1"></div>
+            <h2 class="text-primary text-center col-2 mb-0">@obj.CulturaFinal.ToString("N1")%</h2>
+            <p class="col-auto align-content-center px-5 mb-0">CULTURA E PESSOAS</p>
+        </div>
+        <div class="row px-5 my-3">
+            <div class="col-1"></div> 
+            <h2 class="text-primary text-center col-2 mb-0">@obj.ExperienciaFinal.ToString("N1")%</h2>
+            <p class="col-auto align-content-center px-5 mb-0">EXPERIÊNCIA DO CLIENTE</p>
+        </div>
+        <div class="row px-5 my-3">
+            <div class="col-1"></div>
+            <h2 class="text-primary col-2 mb-0">@obj.MercadoFinal.ToString("N1")%</h2>
+            <p class="col-auto align-content-center px-5 mb-0">MERCADO E CONCORRÊNCIA</p>
+        </div>
+        <div class="row px-5 my-3">
+            <div class="col-1"></div>
+            <h2 class="text-primary col-2 mb-0">@obj.InovacaoFinal.ToString("N1")%</h2>
+            <p class="col-auto align-content-center px-5 mb-0">INOVAÇÃO</p>
+        </div>
+        <div class="row px-5 my-3">
+            <div class="col-1"></div>
+            <h2 class="text-primary col-2 mb-0">@obj.ProcessosFinal.ToString("N1")%</h2>
+            <p class="col-auto align-content-center px-5 mb-0">PROCESSOS</p>
+        </div>
+        <div class="row px-5 my-3">
+            <div class="col-1"></div>
+            <h2 class="text-primary col-2 mb-0">@obj.ModelosFinal.ToString("N1")%</h2>
+            <p class="col-auto align-content-center px-5 mb-0">MODELOS DE NEGÓCIO</p>
+        </div>
+        <div class="row px-5 my-3">
+            <div class="col-1"></div>
+            <h2 class="text-primary col-2 mb-0">@obj.DadosFinal.ToString("N1")%</h2>
+            <p class="col-auto align-content-center px-5 mb-0">DADOS</p>
+        </div>
+        <div class="row px-5 my-3">
+            <div class="col-1"></div>
+            <h2 class="text-primary col-2 mb-0">@obj.TecnologiaFinal.ToString("N1")%</h2>
+            <p class="col-auto align-content-center px-5 mb-0">TECNOLOGIAS</p>
+        </div>
+
+
+    </div>
+
+
+</div>

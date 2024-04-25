@@ -1,0 +1,49 @@
+﻿
+/*HELLYTON NOTATION*/
+
+html{
+
+}
+.bg-gradient {
+    --bs-gradient: linear-gradient(90deg, rgba(37,130,159,1) 0%, rgba(44,69,106,1) 50%, rgba(28,30,67,1) 100%);
+    background-image: var(--bs-gradient) !important;
+}
+.bg-logo {
+    background-image: url("../lib/images/main-logo.png");
+}
+
+.bg-opacity-dark {
+
+    background: linear-gradient(90deg, rgba(0,0,0,0.50) 0%, rgba(0,0,0,0.50) 100%);
+}
+.bg-grey {
+    background-color: #D7D7D7;
+}
+.bg-main-image {
+    background-image: url("../lib/images/total-cover-2.jpg");
+    background-repeat: no-repeat;
+}
+.bg-results-image {
+    background-image: url("../lib/images/result_page.png");
+    background-repeat: space;
+    background-size: cover;
+}
+.bg-gradient-results {
+    background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(0,0,0,0) 100%);
+}
+.circle {
+    background-color: transparent;
+    border-radius: 50%;
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+}
+
+    .circle img {
+        position: absolute;
+        bottom: -120px;
+        width: 100%;
+
+    }
