@@ -3,11 +3,15 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="~/lib/images/main-icon.ico" type="image/x-icon">
     <title>@ViewData["Title"] - Trasforme Seu</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-    <link rel="stylesheet" href="~/css/general-styles.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/LuanDonde.styles.css" asp-append-version="true" />
+    <!-- 
+        <link rel="stylesheet" href="~/LuanDonde.styles.css" asp-append-version="true" />
+    -->
+    
+    <link rel="stylesheet" href="~/css/general-styles.css" />
 
 </head>
 <body>
@@ -33,32 +37,27 @@
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-purple border-bottom box-shadow border-0 border-bottom-0">
             <div class="container-fluid">
                 
-@*                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
-                    <figure class="figure">
-                        <img class="" src="~/lib/images/icons/logo-navbar.png" asp-append-version="true"/>
-                    </figure>
-                </a> *@
                 <a class="navbar-nav mx-0 px-0" asp-area="" asp-controller="Home" asp-action="Index">
-                    <img class=" card-img" style="width: 100%; max-width:300px;" src="~/lib/images/main-logo.png" asp-append-version="true" />
+                    <img class="mx-3 card-img" style="width: 100%; max-width:260px; min-width: 200px;" src="~/lib/images/main-logo.png" asp-append-version="true" />
                 </a>
-                <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                <button class="navbar-toggler navbar-dark border-0 " type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon text-bg-light"></span>
+                    <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex btn-outline-light justify-content-between bg-transparent">
 
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item mx-5">
+                        <li class="nav-item mx-4">
                             <a class="nav-link text-center text-light" asp-area="" asp-controller="AssessmentForm" asp-action="Index">Maturidade Digital</a>
+                        </li>                   
+                        <li class="nav-item mx-4">
+                            <a class="nav-link text-center text-light" asp-area="" asp-controller="" asp-action="">Artigos</a>
                         </li>
-                        <li class="nav-item mx-5">
-                            <a class="nav-link text-center text-light" asp-area="" asp-controller="AssessmentForm" asp-action="Index">Artigos</a>
+                        <li class="nav-item mx-4">
+                            <a class="nav-link text-center text-light" href="https://linktr.ee/luandonde" target="_blank">Links</a>
                         </li>
-                        <li class="nav-item mx-5">
-                            <a class="nav-link text-center text-light" asp-area="" asp-controller="" asp-action="">Links</a>
-                        </li>
-                        <li class="nav-item mx-5">
-                            <a class="nav-link text-center text-light" asp-area="" asp-controller="" asp-action="">Contato</a>
+                        <li class="nav-item mx-4">
+                            <a class="nav-link text-center text-light" href="#card-luan">Contato</a>
                         </li>
                     </ul>
                 </div>
@@ -72,17 +71,17 @@
     </div>
 
     <footer class="bg-gradient border-top-0 footer text-white">
-        <div class="container col-12 align-content-center" style="min-height:70px;">
-            <div class="row gap-lg-5">
-                <h5 class="col-8 fw-light align-content-center">
-                    Luan Dondé | Tecnologia, Inovação e Transformação Digital 
-                    @* <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a> *@
-                </h5>
-                <div class="col-auto align-content-center align-items-end" style="margin-right: 0px;">
-                    <img class="" style="width:50px;" src="~/lib/images/logo-td.png" alt="Logo da Fortec" />
-                    <img class="" style="width:50px;" src="~/lib/images/logo-profnit.png" alt="Logo da Fortec" />
-                    <img class="" style="width:50px;" src="~/lib/images/logo-fortec.png" alt="Logo da Fortec" />
-                    <img class="" style="width:50px;" src="~/lib/images/logo-ufsc.png" alt="Logo da Fortec" />
+        <div class="container footer col-12 align-content-center justify-content-evenly" style="min-height:70px;">
+            <div class="row m-0">
+                <div class="col my-2 align-content-center">
+                    <h5 class="my-2 fw-light">
+                        Luan Dondé | Transformação Digital
+                    </h5>
+                </div>
+                <div class="col-auto my-2 align-content-center">
+                    <img class="mx-1" style="width:60px;" src="~/lib/images/logo-profnit.png" alt="Logo da Profinit" />
+                    <img class="mx-1" style="width:50px;" src="~/lib/images/logo-fortec.png" alt="Logo da Fortec" />
+                    <img class="mx-1" style="width:50px; align-self: end;" src="~/lib/images/logo-ufsc.png" alt="Logo da UFSC" />
                 </div>
             </div>
             

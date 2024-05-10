@@ -41,9 +41,48 @@ html{
     position: relative;
 }
 
-    .circle img {
+.circle img {
         position: absolute;
-        bottom: -120px;
+        bottom: -125px;
         width: 100%;
 
+}
+
+
+h1 {
+    font-size: 3.5vw;
+}
+
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 8vw !important;
     }
+    h2 {
+        font-size: 5vw !important;
+        text-align: center !important;
+    }
+    .mobile-display{
+        display: flex;
+        text-align: start;
+        margin-left: 0;
+    }
+    h4 {
+        font-size: 3vw;
+    }
+
+}
+
+
+@media (max-width: 900px) {
+    .card-luan{
+        text-align: center;
+    }
+}
+
+@media (min-width: 920px) {
+    .mobile-display {
+        display: none;
+    }
+
+}

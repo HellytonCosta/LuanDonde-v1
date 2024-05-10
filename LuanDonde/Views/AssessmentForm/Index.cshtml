@@ -58,8 +58,7 @@
 
     <div class="card-body px-4 py-1">
         <form method="post" class="row">
-            @* <div class="border-0 px-3 py-2"> *@
-            @* <div asp-validation-summary="ModelOnly"></div> *@
+
             <div class="form-floating pb-2 col-12">
                 <p class="text-primary fw-bolder fs-4 mb-1">Digite seu nome completo:</p>
                 <input asp-for="Name" class="form-control border-2 shadow py-0 px-4" style="border-radius: 25px" />
@@ -451,11 +450,6 @@
 <br />
 <br />
 
-<script type="text/javascript">
-    $(window).on('load', function () {
-        $('#staticBackdrop').modal('show');
-    });
-</script>
 
 @section Scripts {
     @{
