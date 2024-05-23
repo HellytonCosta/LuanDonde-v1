@@ -11,13 +11,33 @@
 <h2 class="bg-transparent text-uppercase text-primary fw-bolder my-5 text-center m-auto" style="max-width: 80%">
     COMO SUA EMPRESA ESTÁ EM RELAÇÃO A MATURIDADE DIGITAL?
 </h2>
-<p class="m-auto fs-5" style="max-width: 80%; text-align: justify;">
+<p class="m-auto fs-5 mb-4" style="max-width: 80%; text-align: justify;">
     Aqui você está a poucos passos de saber um pouco mais sobre como sua organização está posicionada e
     descobrir alguns insights que podem mudar o futuro do seu negócio.
 </p>
 
-
-<div class="card shadow border-0 my-4 m-auto rounded-5 bg-grey" style="max-width: 80%; border-radius:50px;">
+<!-- ABAS DE CONTATO / INFO / QUESTÕES-->
+<div class="row m-auto" style="max-width: 70%; border-radius:50px; min-height: 50px;">
+    <div class="col-auto row rounded-top-4 text-light align-items-center mx-1 px-2" style="background-color: grey">
+        <div class="col-auto px-1">
+            <img src="~/lib/images/icons/icons8-group-50.png" style="max-width: 2em;" />
+        </div>
+        <p class="col-auto mb-0 d-none d-lg-block">Contato</p>
+    </div>
+    <div class="col-auto row bg-primary rounded-top-4 text-light align-items-center mx-1 px-2">
+        <div class="col-auto px-1">
+            <img src="~/lib/images/icons/icons8-info-50.png" class="" style="max-width: 2em;" />
+        </div>
+        <p class="col-auto mb-0 px-1 d-none d-lg-block">Formulário</p>
+    </div>
+    <div class="col-auto row rounded-top-4 text-light align-items-center mx-1 px-2" style="background-color: grey">
+        <div class="col-auto px-1">
+            <img src="~/lib/images/icons/icons8-innovation-80.png" style="max-width: 2em;" />
+        </div>
+        <p class="col-auto mb-0 d-none d-lg-block">Questões</p>
+    </div>
+</div>
+<div class="card shadow border-0 mb-4 m-auto rounded-5 bg-grey" style="max-width: 80%; border-radius:50px;">
 
     <div class="row">
         <div class="col-12 text-center mt-3">
@@ -33,10 +53,10 @@
 
 
         <!--CULTURA E PESSOAS-->
-        <div class="card-subtitle bg-gradient mb-2 text-center rounded-5 w-75 m-auto mb-4">
+        <div class="card-subtitle bg-gradient mb-2 text-center rounded-5 w-75 m-auto mb-4 d-none">
             <h2 class="text-white py-1 mb-0">Cultura e Pessoas</h2>
         </div>
-        <div class="container m-auto" style="max-width: 80%">
+        <div class="container m-auto d-none" style="max-width: 80%">
 
             <div class="row text-center ">
                 <h5>Promove a colaboração entre as equipes de diferentes departamentos e áreas de especialização.</h5>
@@ -68,7 +88,7 @@
             </div>
             <span asp-validation-for="Cultura1" class="text-danger text-center"></span>
         </div>
-        <div class="container m-auto px-3">
+        <div class="container m-auto px-3 d-none">
             <div class="row text-center">
                 <h5>Para organização de tarefas de equipe utiliza ferramentas de gerenciamento ágil, como quadros Kanban ou similares.</h5>
             </div>
@@ -99,7 +119,7 @@
             </div>
             <span asp-validation-for="Cultura1" class="text-danger text-center"></span>
         </div>
-        <div class="container m-auto px-3">
+        <div class="container m-auto px-3 d-none">
             <div class="row text-center">
                 <h5>Nossa liderança tem um claro entendimento de como as tendências digitais e tecnologias emergentes têm mudado o cenário de atuação do seu setor de atividade.</h5>
             </div>
@@ -130,7 +150,7 @@
             </div>
             <span asp-validation-for="Cultura3" class="text-danger text-center"></span>
         </div>
-        <div class="container m-auto px-3">
+        <div class="container m-auto px-3 d-none">
             <div class="row text-center">
                 <h5>Minha empresa oferece treinamentos frequentes e eficazes em habilidades digitais.</h5>
             </div>
@@ -161,7 +181,7 @@
             </div>
             <span asp-validation-for="Cultura4" class="text-danger text-center"></span>
         </div>
-        <div class="container m-auto px-3">
+        <div class="container m-auto px-3 d-none">
             <div class="row text-center">
                 <h5>Existe um estímulo organizacional para que as pessoas tenham espaço para dar sua opinião ou sugerir novas ideias.</h5>
             </div>
@@ -192,7 +212,7 @@
             </div>
             <span asp-validation-for="Cultura5" class="text-danger text-center"></span>
         </div>
-        <div class="container m-auto px-3">
+        <div class="container m-auto px-3 d-none">
             <div class="row text-center">
                 <h5>Nós estamos cientes dos novos perfis profissionais de que nossa empresa precisará no futuro e já estamos empenhados hoje para captar e formar esses perfis.</h5>
             </div>
@@ -226,10 +246,10 @@
 
 
         <!--EXPERIÊNCIA DO CLIENTE-->
-        <div class="card-subtitle bg-gradient mb-2 text-center rounded-5 w-75 m-auto mb-4">
+        <div class="card-subtitle bg-gradient mb-2 text-center rounded-5 w-75 m-auto mb-4 d-none">
             <h2 class="text-white py-1 mb-0">Experiência do Cliente</h2>
         </div>
-        <div class="container m-auto px-3">
+        <div class="container m-auto px-3 d-none">
             <div class="row text-center">
                 <h5>
                     Nós conhecemos a jornada do nosso cliente, estamos focados em entender suas preferências de consumo online
@@ -263,7 +283,7 @@
             </div>
             <span asp-validation-for="Experiencia1" class="text-danger text-center"></span>
         </div>
-        <div class="container m-auto px-3">
+        <div class="container m-auto px-3 d-none">
             <div class="row text-center">
                 <h5>A empresa usa diferentes estratégias nos canais digitais para aumentar o engajamento do consumidor.</h5>
             </div>
@@ -294,7 +314,7 @@
             </div>
             <span asp-validation-for="Experiencia2" class="text-danger text-center"></span>
         </div>
-        <div class="container m-auto px-3">
+        <div class="container m-auto px-3 d-none">
             <div class="row text-center">
                 <h5>Considera importante as avaliações dos clientes para o posicionamento de mercado da nossa marca.</h5>
             </div>
@@ -325,7 +345,7 @@
             </div>
             <span asp-validation-for="Experiencia3" class="text-danger text-center"></span>
         </div>
-        <div class="container m-auto px-3">
+        <div class="container m-auto px-3 d-none">
             <div class="row text-center">
                 <h5>Incentivamos nossos clientes a usar canais digitais para se comunicar conosco em todas as etapas do processo de venda, incluindo pré-venda, pós-venda e SAC.</h5>
             </div>
@@ -356,7 +376,7 @@
             </div>
             <span asp-validation-for="Experiencia4" class="text-danger text-center"></span>
         </div>
-        <div class="container m-auto px-3">
+        <div class="container m-auto px-3 d-none">
             <div class="row text-center">
                 <h5>Possui serviço de marketing e vendas capacitado para aproveitar as oportunidades digitais.</h5>
             </div>
@@ -387,7 +407,7 @@
             </div>
             <span asp-validation-for="Experiencia5" class="text-danger text-center"></span>
         </div>
-        <div class="container m-auto px-3">
+        <div class="container m-auto px-3 d-none">
             <div class="row text-center">
                 <h5>Utiliza ferramenta que permite o gerenciamento de relacionamento com clientes.</h5>
             </div>
@@ -420,10 +440,10 @@
         </div>
 
         <!--MERCADO E CONCORRÊNCIA-->
-        <div class="card-subtitle bg-gradient mb-2 text-center rounded-5 w-75 m-auto mb-4">
+        <div class="card-subtitle bg-gradient mb-2 text-center rounded-5 w-75 m-auto mb-4 d-none">
             <h2 class="text-white py-1 mb-0">Mercado e Concorrência</h2>
         </div>
-        <div class="container m-auto px-3">
+        <div class="container m-auto px-3 d-none">
             <div class="row text-center">
                 <h5>
                     Nossa organização tem uma visão clara do futuro, e para isso, utilizamos como referência empresas líderes de mercado em nosso setor de atividade.
@@ -456,7 +476,7 @@
             </div>
             <span asp-validation-for="Mercado1" class="text-danger text-center"></span>
         </div>
-        <div class="container m-auto px-3">
+        <div class="container m-auto px-3 d-none">
             <div class="row text-center">
                 <h5>Estamos abertos a cooperar com os concorrentes, trabalhando em rede para cocriar e gerar mais valor para os nossos clientes.</h5>
             </div>
@@ -487,7 +507,7 @@
             </div>
             <span asp-validation-for="Mercado2" class="text-danger text-center"></span>
         </div>
-        <div class="container m-auto px-3">
+        <div class="container m-auto px-3 d-none">
             <div class="row text-center">
                 <h5>Em relação aos nossos concorrentes, temos maior capacidade para reagir rapidamente às oportunidades e desafios do mercado.</h5>
             </div>
@@ -518,7 +538,7 @@
             </div>
             <span asp-validation-for="Mercado3" class="text-danger text-center"></span>
         </div>
-        <div class="container m-auto px-3">
+        <div class="container m-auto px-3 d-none">
             <div class="row text-center">
                 <h5>
                     Acompanhamos empresas ou startups que surgem com novos modelos de negócio, mesmo que não estejam diretamente relacionados ao nosso setor,
@@ -554,10 +574,10 @@
         </div>
 
         <!--INOVAÇÃO-->
-        <div class="card-subtitle bg-gradient mb-2 text-center rounded-5 w-75 m-auto mb-4">
+        <div class="card-subtitle bg-gradient mb-2 text-center rounded-5 w-75 m-auto mb-4 d-none">
             <h2 class="text-white py-1 mb-0">Inovação</h2>
         </div>
-        <div class="container m-auto px-3">
+        <div class="container m-auto px-3 d-none">
             <div class="row text-center">
                 <h5>
                     Investe em pesquisa, desenvolvimento e inovação para criar soluções competitivas de acordo com as tendências do mercado.
@@ -590,7 +610,7 @@
             </div>
             <span asp-validation-for="Inovacao1" class="text-danger text-center"></span>
         </div>
-        <div class="container m-auto px-3">
+        <div class="container m-auto px-3 d-none">
             <div class="row text-center">
                 <h5>Colabora com parceiros externos, como startups ou empresas de tecnologia, para impulsionar a inovação.</h5>
             </div>
@@ -621,7 +641,7 @@
             </div>
             <span asp-validation-for="Inovacao2" class="text-danger text-center"></span>
         </div>
-        <div class="container m-auto px-3">
+        <div class="container m-auto px-3 d-none">
             <div class="row text-center">
                 <h5>Identifica oportunidades de crescimento de receita por meio de inovação e novos modelos de negócios.</h5>
             </div>
@@ -652,7 +672,7 @@
             </div>
             <span asp-validation-for="Inovacao3" class="text-danger text-center"></span>
         </div>
-        <div class="container m-auto px-3">
+        <div class="container m-auto px-3 d-none">
             <div class="row text-center">
                 <h5>
                     A empresa investe na realização de experimentos para tomar decisões mais acertadas sobre quais iniciativas levar adiante.
@@ -687,10 +707,10 @@
         </div>
 
         <!---PROCESSOS-->
-        <div class="card-subtitle bg-gradient mb-2 text-center rounded-5 w-75 m-auto mb-4">
+        <div class="card-subtitle bg-gradient mb-2 text-center rounded-5 w-75 m-auto mb-4 d-none">
             <h2 class="text-white py-1 mb-0">Processos</h2>
         </div>
-        <div class="container m-auto px-3">
+        <div class="container m-auto px-3 d-none">
             <div class="row text-center">
                 <h5>
                     Todos os nossos principais processos internos já estão digitalizados.
@@ -723,7 +743,7 @@
             </div>
             <span asp-validation-for="Processos1" class="text-danger text-center"></span>
         </div>
-        <div class="container m-auto px-3">
+        <div class="container m-auto px-3 d-none">
             <div class="row text-center">
                 <h5>
                     Os colaboradores têm acesso a uma base de dados interna com informações e recursos necessários para a execução eficaz dos processos.
@@ -756,7 +776,7 @@
             </div>
             <span asp-validation-for="Processos2" class="text-danger text-center"></span>
         </div>
-        <div class="container m-auto px-3">
+        <div class="container m-auto px-3 d-none">
             <div class="row text-center">
                 <h5>
                     Nossa prioridade é gerar mais autonomia e melhorar a experiência das pessoas, reduzindo o esforço das atividades repetitivas.
@@ -789,7 +809,7 @@
             </div>
             <span asp-validation-for="Processos3" class="text-danger text-center"></span>
         </div>
-        <div class="container m-auto px-3">
+        <div class="container m-auto px-3 d-none">
             <div class="row text-center">
                 <h5>
                     Temos um conjunto suficiente de sistemas e ferramentas internos, e os principais já estão integrados.
@@ -822,7 +842,7 @@
             </div>
             <span asp-validation-for="Processos4" class="text-danger text-center"></span>
         </div>
-        <div class="container m-auto px-3">
+        <div class="container m-auto px-3 d-none">
             <div class="row text-center">
                 <h5>
                     Para elaboração de textos, planilhas, apresentações e arquivos utilizamos ambiente de compartilhamento em nuvem.
@@ -857,10 +877,10 @@
         </div>
 
         <!---MODELOS DE NEGÓCIOS-->
-        <div class="card-subtitle bg-gradient mb-2 text-center rounded-5 w-75 m-auto mb-4">
+        <div class="card-subtitle bg-gradient mb-2 text-center rounded-5 w-75 m-auto mb-4 d-none">
             <h2 class="text-white py-1 mb-0">Modelos de Negócio</h2>
         </div>
-        <div class="container m-auto px-3">
+        <div class="container m-auto px-3 d-none">
             <div class="row text-center">
                 <h5>
                     Utilizamos canais digitais, como site, Google Meu Negócio e alguns perfis em redes sociais.
@@ -893,7 +913,7 @@
             </div>
             <span asp-validation-for="Modelos1" class="text-danger text-center"></span>
         </div>
-        <div class="container m-auto px-3">
+        <div class="container m-auto px-3 d-none">
             <div class="row text-center">
                 <h5>
                     Caso seja necessário, é possível que eu trabalhe de forma remota e tenha acesso a todos os recursos necessários para desempenhar minhas atividades.
@@ -926,7 +946,7 @@
             </div>
             <span asp-validation-for="Modelos2" class="text-danger text-center"></span>
         </div>
-        <div class="container m-auto px-3">
+        <div class="container m-auto px-3 d-none">
             <div class="row text-center">
                 <h5>
                     Nosso modelo suporta um aumento na produção ou oferta de serviços sem comprometer a estrutura ou rentabilidade da empresa.
@@ -959,7 +979,7 @@
             </div>
             <span asp-validation-for="Modelos3" class="text-danger text-center"></span>
         </div>
-        <div class="container m-auto px-3">
+        <div class="container m-auto px-3 d-none">
             <div class="row text-center">
                 <h5>
                     Estamos sempre atentos às necessidades dos nossos clientes e adaptando nossa proposta de valor para o sucesso do cliente.
@@ -994,10 +1014,10 @@
         </div>
 
         <!---DADOS-->
-        <div class="card-subtitle bg-gradient mb-2 text-center rounded-5 w-75 m-auto mb-4">
+        <div class="card-subtitle bg-gradient mb-2 text-center rounded-5 w-75 m-auto mb-4 d-none">
             <h2 class="text-white py-1 mb-0">Dados</h2>
         </div>
-        <div class="container m-auto px-3">
+        <div class="container m-auto px-3 d-none">
             <div class="row text-center">
                 <h5>
                     Os colaboradores têm acesso adequado e seguro aos dados relevantes para suas funções e tomada de decisões.
@@ -1030,7 +1050,7 @@
             </div>
             <span asp-validation-for="Dados1" class="text-danger text-center"></span>
         </div>
-        <div class="container m-auto px-3">
+        <div class="container m-auto px-3 d-none">
             <div class="row text-center">
                 <h5>
                     Estamos conscientes e preparados para os desafios que os ambientes regulatórios apresentam para o uso e tratamento de dados no setor e mercado em que atuamos.
@@ -1063,7 +1083,7 @@
             </div>
             <span asp-validation-for="Dados2" class="text-danger text-center"></span>
         </div>
-        <div class="container m-auto px-3">
+        <div class="container m-auto px-3 d-none">
             <div class="row text-center">
                 <h5>
                     Utiliza ferramentas e possui habilidades necessárias para coletar, analisar e usar dados de forma eficaz em nossas operações.
@@ -1096,7 +1116,7 @@
             </div>
             <span asp-validation-for="Dados3" class="text-danger text-center"></span>
         </div>
-        <div class="container m-auto px-3">
+        <div class="container m-auto px-3 d-none">
             <div class="row text-center">
                 <h5>
                     Utiliza os dados para identificar oportunidades de negócios e gerar valor, seja por meio de novos produtos, serviços ou estratégias.
@@ -1129,7 +1149,7 @@
             </div>
             <span asp-validation-for="Dados4" class="text-danger text-center"></span>
         </div>
-        <div class="container m-auto px-3">
+        <div class="container m-auto px-3 d-none">
             <div class="row text-center">
                 <h5>
                     Temos conhecimento e treinamos os funcionários na legislação sobre privacidade, proteção de dados e transparência no uso de dados nos nossos clientes,
@@ -1165,8 +1185,8 @@
         </div>
 
         <!---TECNOLOGIAS-->
-        <div class="card-subtitle bg-gradient mb-2 text-center rounded-5 w-75 m-auto mb-4">
-            <h2 class="text-white py-1 mb-0">Tecnologias</h2>
+        <div class="card-subtitle mb-2 text-center rounded-5 w-75 m-auto mb-4">
+            <h2 class="text-primary py-1 mb-0">Tecnologias</h2>
         </div>
         <div class="container m-auto px-3">
             <div class="row text-center">
@@ -1334,19 +1354,42 @@
             <span asp-validation-for="Tecnologia5" class="text-danger text-center"></span>
         </div>
 
+        <!-- ATRIBUTOS DAS OUTRAS PÁGINAS (OCULTOS) -->
+        <!-- PÁGINA 1 -->
+        <input asp-for="Name" class="form-control border-2 shadow py-0 px-4 d-none" style="border-radius: 25px" />
+        <input asp-for="Email" class="form-control border-2 shadow p-4 d-none" style="border-radius: 25px" />
+        <input asp-for="GrauInstrucao" class="form-check-input border-primary d-none">
+        <input asp-for="TermosDeUso" class="form-check-input d-none">
+        <!-- PÁGINA 2 -->
+        <input asp-for="CompanySocialName" class="form-control border-2 shadow py-0 px-4 d-none" style="border-radius: 25px" />
+        <input asp-for="CompanyCNPJ" class="form-control border-2 shadow py-0 px-4 d-none" style="border-radius: 25px" />
+        <input asp-for="CompanySector" class="form-check-input border-primary d-none">
+        <!-- PÁGINA 3 -->
+        <input asp-for="CompanySize" class="form-check-input border-primary d-none">
+        <input asp-for="RolePosition" class="form-check-input border-primary d-none">
+        <!-- PÁGINA 4 -->
+        <input asp-for="Department" class="form-check-input border-primary d-none">
+        <input asp-for="TimeInRole" class="form-check-input border-primary d-none">
+        <input asp-for="PhoneNumber" class="form-check-input border-primary d-none">
 
 
-
-        <div class="card-body px-4 mx-4">
-            <div class="row pt-2 text-center">
-                <div class="col-6 col-md-3">
-                    <button type="submit" class="btn btn-primary form-control rounded-4">Avançar</button>
-                </div>
-                @*                 <div class="col-6 col-md-3">
-                <a asp-controller="Home" asp-action="Index" class="btn btn-outline-primary border bg-white text-dark form-control rounded-4">
-                Voltar ao Início
+        <!-- SUBMIT FORM -->
+        <div class="row py-2 my-3 m-auto align-content-center justify-content-between">
+            <div class="col-auto col-md-3">
+                <a asp-controller="AssessmentForm" asp-action="Formulario7" asp-route-id="@obj.Id" class="btn btn-secondary border text-dark form-control rounded-4 fw-bold sombra">
+                    VOLTAR
                 </a>
-                </div> *@
+            </div>
+
+            <div class="col-auto">
+                <h4 class="fw-bolder">
+                    8/8
+                </h4>
+            </div>
+            <div class="col-auto col-md-3">
+                <button type="submit" asp-controller="AssessmentForm" asp-action="Formulario8" class="btn-blue form-control text-light rounded-4 fw-bold sombra">
+                    AVANÇAR
+                </button>
             </div>
         </div>
     </form>

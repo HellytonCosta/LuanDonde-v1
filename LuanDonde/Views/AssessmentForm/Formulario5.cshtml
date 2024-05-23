@@ -1,0 +1,1410 @@
+﻿@model AssessmentForm
+
+@{
+    ViewData["Title"] = "Formulário";
+    // AssessmentForm obj = new AssessmentForm();
+    var obj = Model;
+
+}
+
+
+<h2 class="bg-transparent text-uppercase text-primary fw-bolder my-5 text-center m-auto" style="max-width: 80%">
+    COMO SUA EMPRESA ESTÁ EM RELAÇÃO A MATURIDADE DIGITAL?
+</h2>
+<p class="m-auto fs-5 mb-4" style="max-width: 80%; text-align: justify;">
+    Aqui você está a poucos passos de saber um pouco mais sobre como sua organização está posicionada e
+    descobrir alguns insights que podem mudar o futuro do seu negócio.
+</p>
+
+<!-- ABAS DE CONTATO / INFO / QUESTÕES-->
+<div class="row m-auto" style="max-width: 70%; border-radius:50px; min-height: 50px;">
+    <div class="col-auto row rounded-top-4 text-light align-items-center mx-1 px-2" style="background-color: grey">
+        <div class="col-auto px-1">
+            <img src="~/lib/images/icons/icons8-group-50.png" style="max-width: 2em;" />
+        </div>
+        <p class="col-auto mb-0 d-none d-lg-block">Contato</p>
+    </div>
+    <div class="col-auto row bg-primary rounded-top-4 text-light align-items-center mx-1 px-2">
+        <div class="col-auto px-1">
+            <img src="~/lib/images/icons/icons8-info-50.png" class="" style="max-width: 2em;" />
+        </div>
+        <p class="col-auto mb-0 px-1 d-none d-lg-block">Formulário</p>
+    </div>
+    <div class="col-auto row rounded-top-4 text-light align-items-center mx-1 px-2" style="background-color: grey">
+        <div class="col-auto px-1">
+            <img src="~/lib/images/icons/icons8-innovation-80.png" style="max-width: 2em;" />
+        </div>
+        <p class="col-auto mb-0 d-none d-lg-block">Questões</p>
+    </div>
+</div>
+<div class="card shadow border-0 mb-4 m-auto rounded-5 bg-grey" style="max-width: 80%; border-radius:50px;">
+
+    <div class="row">
+        <div class="col-12 text-center mt-3">
+            <h4 class="text-primary fw-bolder text-uppercase py-1">Avaliação da Maturidade Digital</h4>
+        </div>
+    </div>
+
+
+    <form method="post" class="row">
+        <div asp-validation-summary="ModelOnly"></div>
+        <h1>
+        </h1>
+
+
+        <!--CULTURA E PESSOAS-->
+        <div class="card-subtitle bg-gradient mb-2 text-center rounded-5 w-75 m-auto mb-4 d-none">
+            <h2 class="text-white py-1 mb-0">Cultura e Pessoas</h2>
+        </div>
+        <div class="container m-auto d-none" style="max-width: 80%">
+
+            <div class="row text-center ">
+                <h5>Promove a colaboração entre as equipes de diferentes departamentos e áreas de especialização.</h5>
+            </div>
+            <div class="row card-body align-content-center justify-content-center">    
+                <p class="col-auto text-end mb-0">Discordo totalmente</p>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto align-self-center">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Cultura1" value="20">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Cultura1" value="40">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Cultura1" value="60">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Cultura1" value="80">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Cultura1" value="100">
+                </div>
+                <div class="row mobile-display"></div>
+                <p class="col-auto text-start mb-0">Concordo totalmente</p>
+            </div>
+            <span asp-validation-for="Cultura1" class="text-danger text-center"></span>
+        </div>
+        <div class="container m-auto px-3 d-none">
+            <div class="row text-center">
+                <h5>Para organização de tarefas de equipe utiliza ferramentas de gerenciamento ágil, como quadros Kanban ou similares.</h5>
+            </div>
+            <div class="row card-body align-content-center justify-content-center">
+                <p class="col-auto text-end">Discordo totalmente</p>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto text-center">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Cultura2" value="20">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Cultura2" value="40">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Cultura2" value="60">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Cultura2" value="80">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Cultura2" value="100">
+                </div>
+                <div class="row mobile-display"></div>
+                <p class="col-auto text-start">Concordo totalmente</p>
+            </div>
+            <span asp-validation-for="Cultura1" class="text-danger text-center"></span>
+        </div>
+        <div class="container m-auto px-3 d-none">
+            <div class="row text-center">
+                <h5>Nossa liderança tem um claro entendimento de como as tendências digitais e tecnologias emergentes têm mudado o cenário de atuação do seu setor de atividade.</h5>
+            </div>
+            <div class="row card-body align-content-center justify-content-center">
+                <p class="col-auto text-end">Discordo totalmente</p>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto text-center">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Cultura3" value="20">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Cultura3" value="40">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Cultura3" value="60">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Cultura3" value="80">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Cultura3" value="100">
+                </div>
+                <div class="row mobile-display"></div>
+                <p class="col-auto text-start">Concordo totalmente</p>
+            </div>
+            <span asp-validation-for="Cultura3" class="text-danger text-center"></span>
+        </div>
+        <div class="container m-auto px-3 d-none">
+            <div class="row text-center">
+                <h5>Minha empresa oferece treinamentos frequentes e eficazes em habilidades digitais.</h5>
+            </div>
+            <div class="row card-body align-content-center justify-content-center">
+                <p class="col-auto text-end">Discordo totalmente</p>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto text-center">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Cultura4" value="20">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Cultura4" value="40">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Cultura4" value="60">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Cultura4" value="80">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Cultura4" value="100">
+                </div>
+                <div class="row mobile-display"></div>
+                <p class="col-auto text-start">Concordo totalmente</p>
+            </div>
+            <span asp-validation-for="Cultura4" class="text-danger text-center"></span>
+        </div>
+        <div class="container m-auto px-3 d-none">
+            <div class="row text-center">
+                <h5>Existe um estímulo organizacional para que as pessoas tenham espaço para dar sua opinião ou sugerir novas ideias.</h5>
+            </div>
+            <div class="row card-body align-content-center justify-content-center">
+                <p class="col-auto text-end">Discordo totalmente</p>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto text-center">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Cultura5" value="20">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Cultura5" value="40">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Cultura5" value="60">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Cultura5" value="80">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Cultura5" value="100">
+                </div>
+                <div class="row mobile-display"></div>
+                <p class="col-auto text-end">Concordo totalmente</p>
+            </div>
+            <span asp-validation-for="Cultura5" class="text-danger text-center"></span>
+        </div>
+        <div class="container m-auto px-3 d-none">
+            <div class="row text-center">
+                <h5>Nós estamos cientes dos novos perfis profissionais de que nossa empresa precisará no futuro e já estamos empenhados hoje para captar e formar esses perfis.</h5>
+            </div>
+            <div class="row card-body align-content-center justify-content-center">
+                <p class="col-auto text-end">Discordo totalmente</p>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto text-center">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Cultura6" value="20">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Cultura6" value="40">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Cultura6" value="60">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Cultura6" value="80">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Cultura6" value="100">
+                </div>
+                <div class="row mobile-display"></div>
+                <p class="col-auto text-start">Concordo totalmente</p>
+            </div>
+            <span asp-validation-for="Cultura6" class="text-danger text-center"></span>
+        </div>
+
+
+        <!--EXPERIÊNCIA DO CLIENTE-->
+        <div class="card-subtitle bg-gradient mb-2 text-center rounded-5 w-75 m-auto mb-4 d-none">
+            <h2 class="text-white py-1 mb-0">Experiência do Cliente</h2>
+        </div>
+        <div class="container m-auto px-3 d-none">
+            <div class="row text-center">
+                <h5>
+                    Nós conhecemos a jornada do nosso cliente, estamos focados em entender suas preferências de consumo online
+                    e usar essa informação para potencializar novas vendas digitais.
+                </h5>
+            </div>
+            <div class="row card-body align-content-center justify-content-center">
+                <p class="col-auto text-end">Discordo totalmente</p>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto text-center">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Experiencia1" value="20">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Experiencia1" value="40">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Experiencia1" value="60">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Experiencia1" value="80">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Experiencia1" value="100">
+                </div>
+                <div class="row mobile-display"></div>
+                <p class="col-auto text-start">Concordo totalmente</p>
+            </div>
+            <span asp-validation-for="Experiencia1" class="text-danger text-center"></span>
+        </div>
+        <div class="container m-auto px-3 d-none">
+            <div class="row text-center">
+                <h5>A empresa usa diferentes estratégias nos canais digitais para aumentar o engajamento do consumidor.</h5>
+            </div>
+            <div class="row card-body align-content-center justify-content-center">
+                <p class="col-auto text-end">Discordo totalmente</p>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto text-center">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Experiencia2" value="20">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Experiencia2" value="40">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Experiencia2" value="60">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Experiencia2" value="80">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Experiencia2" value="100">
+                </div>
+                <div class="row mobile-display"></div>
+                <p class="col-auto text-start">Concordo totalmente</p>
+            </div>
+            <span asp-validation-for="Experiencia2" class="text-danger text-center"></span>
+        </div>
+        <div class="container m-auto px-3 d-none">
+            <div class="row text-center">
+                <h5>Considera importante as avaliações dos clientes para o posicionamento de mercado da nossa marca.</h5>
+            </div>
+            <div class="row card-body align-content-center justify-content-center">
+                <p class="col-auto text-end">Discordo totalmente</p>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto text-center">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Experiencia3" value="20">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Experiencia3" value="40">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Experiencia3" value="60">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Experiencia3" value="80">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Experiencia3" value="100">
+                </div>
+                <div class="row mobile-display"></div>
+                <p class="col-auto text-start">Concordo totalmente</p>
+            </div>
+            <span asp-validation-for="Experiencia3" class="text-danger text-center"></span>
+        </div>
+        <div class="container m-auto px-3 d-none">
+            <div class="row text-center">
+                <h5>Incentivamos nossos clientes a usar canais digitais para se comunicar conosco em todas as etapas do processo de venda, incluindo pré-venda, pós-venda e SAC.</h5>
+            </div>
+            <div class="row card-body align-content-center justify-content-center">
+                <p class="col-auto text-end">Discordo totalmente</p>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto text-center">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Experiencia4" value="20">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Experiencia4" value="40">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Experiencia4" value="60">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Experiencia4" value="80">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Experiencia4" value="100">
+                </div>
+                <div class="row mobile-display"></div>
+                <p class="col-auto text-start">Concordo totalmente</p>
+            </div>
+            <span asp-validation-for="Experiencia4" class="text-danger text-center"></span>
+        </div>
+        <div class="container m-auto px-3 d-none">
+            <div class="row text-center">
+                <h5>Possui serviço de marketing e vendas capacitado para aproveitar as oportunidades digitais.</h5>
+            </div>
+            <div class="row card-body align-content-center justify-content-center">
+                <p class="col-auto text-end">Discordo totalmente</p>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto text-center">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Experiencia5" value="20">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Experiencia5" value="40">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Experiencia5" value="60">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Experiencia5" value="80">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Experiencia5" value="100">
+                </div>
+                <div class="row mobile-display"></div>
+                <p class="col-auto text-end">Concordo totalmente</p>
+            </div>
+            <span asp-validation-for="Experiencia5" class="text-danger text-center"></span>
+        </div>
+        <div class="container m-auto px-3 d-none">
+            <div class="row text-center">
+                <h5>Utiliza ferramenta que permite o gerenciamento de relacionamento com clientes.</h5>
+            </div>
+            <div class="row card-body align-content-center justify-content-center">
+                <p class="col-auto text-end">Discordo totalmente</p>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto text-center">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Experiencia6" value="20">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Experiencia6" value="40">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Experiencia6" value="60">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Experiencia6" value="80">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Experiencia6" value="100">
+                </div>
+                <div class="row mobile-display"></div>
+                <p class="col-auto text-start">Concordo totalmente</p>
+            </div>
+            <span asp-validation-for="Experiencia6" class="text-danger text-center"></span>
+        </div>
+
+        <!--MERCADO E CONCORRÊNCIA-->
+        <div class="card-subtitle bg-gradient mb-2 text-center rounded-5 w-75 m-auto mb-4 d-none">
+            <h2 class="text-white py-1 mb-0">Mercado e Concorrência</h2>
+        </div>
+        <div class="container m-auto px-3 d-none">
+            <div class="row text-center">
+                <h5>
+                    Nossa organização tem uma visão clara do futuro, e para isso, utilizamos como referência empresas líderes de mercado em nosso setor de atividade.
+                </h5>
+            </div>
+            <div class="row card-body align-content-center justify-content-center">
+                <p class="col-auto text-end">Discordo totalmente</p>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto text-center">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Mercado1" value="20">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Mercado1" value="40">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Mercado1" value="60">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Mercado1" value="80">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Mercado1" value="100">
+                </div>
+                <div class="row mobile-display"></div>
+                <p class="col-auto text-start">Concordo totalmente</p>
+            </div>
+            <span asp-validation-for="Mercado1" class="text-danger text-center"></span>
+        </div>
+        <div class="container m-auto px-3 d-none">
+            <div class="row text-center">
+                <h5>Estamos abertos a cooperar com os concorrentes, trabalhando em rede para cocriar e gerar mais valor para os nossos clientes.</h5>
+            </div>
+            <div class="row card-body align-content-center justify-content-center">
+                <p class="col-auto text-end">Discordo totalmente</p>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto text-center">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Mercado2" value="20">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Mercado2" value="40">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Mercado2" value="60">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Mercado2" value="80">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Mercado2" value="100">
+                </div>
+                <div class="row mobile-display"></div>
+                <p class="col-auto text-start">Concordo totalmente</p>
+            </div>
+            <span asp-validation-for="Mercado2" class="text-danger text-center"></span>
+        </div>
+        <div class="container m-auto px-3 d-none">
+            <div class="row text-center">
+                <h5>Em relação aos nossos concorrentes, temos maior capacidade para reagir rapidamente às oportunidades e desafios do mercado.</h5>
+            </div>
+            <div class="row card-body align-content-center justify-content-center">
+                <p class="col-auto text-end">Discordo totalmente</p>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto text-center">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Mercado3" value="20">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Mercado3" value="40">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Mercado3" value="60">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Mercado3" value="80">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Mercado3" value="100">
+                </div>
+                <div class="row mobile-display"></div>
+                <p class="col-auto text-start">Concordo totalmente</p>
+            </div>
+            <span asp-validation-for="Mercado3" class="text-danger text-center"></span>
+        </div>
+        <div class="container m-auto px-3 d-none">
+            <div class="row text-center">
+                <h5>
+                    Acompanhamos empresas ou startups que surgem com novos modelos de negócio, mesmo que não estejam diretamente relacionados ao nosso setor,
+                    pois podem ter um grande impacto em nosso negócio.
+                </h5>
+            </div>
+            <div class="row card-body align-content-center justify-content-center">
+                <p class="col-auto text-end">Discordo totalmente</p>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto text-center">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Mercado4" value="20">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Mercado4" value="40">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Mercado4" value="60">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Mercado4" value="80">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Mercado4" value="100">
+                </div>
+                <div class="row mobile-display"></div>
+                <p class="col-auto text-start">Concordo totalmente</p>
+            </div>
+            <span asp-validation-for="Mercado4" class="text-danger text-center"></span>
+        </div>
+
+        <!--INOVAÇÃO-->
+        <div class="card-subtitle bg-gradient mb-2 text-center rounded-5 w-75 m-auto mb-4 d-none">
+            <h2 class="text-white py-1 mb-0">Inovação</h2>
+        </div>
+        <div class="container m-auto px-3 d-none">
+            <div class="row text-center">
+                <h5>
+                    Investe em pesquisa, desenvolvimento e inovação para criar soluções competitivas de acordo com as tendências do mercado.
+                </h5>
+            </div>
+            <div class="row card-body align-content-center justify-content-center">
+                <p class="col-auto text-end">Discordo totalmente</p>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto text-center">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Inovacao1" value="20">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Inovacao1" value="40">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Inovacao1" value="60">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Inovacao1" value="80">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Inovacao1" value="100">
+                </div>
+                <div class="row mobile-display"></div>
+                <p class="col-auto text-start">Concordo totalmente</p>
+            </div>
+            <span asp-validation-for="Inovacao1" class="text-danger text-center"></span>
+        </div>
+        <div class="container m-auto px-3 d-none">
+            <div class="row text-center">
+                <h5>Colabora com parceiros externos, como startups ou empresas de tecnologia, para impulsionar a inovação.</h5>
+            </div>
+            <div class="row card-body align-content-center justify-content-center">
+                <p class="col-auto text-end">Discordo totalmente</p>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto text-center">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Inovacao2" value="20">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Inovacao2" value="40">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Inovacao2" value="60">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Inovacao2" value="80">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Inovacao2" value="100">
+                </div>
+                <div class="row mobile-display"></div>
+                <p class="col-auto text-start">Concordo totalmente</p>
+            </div>
+            <span asp-validation-for="Inovacao2" class="text-danger text-center"></span>
+        </div>
+        <div class="container m-auto px-3 d-none">
+            <div class="row text-center">
+                <h5>Identifica oportunidades de crescimento de receita por meio de inovação e novos modelos de negócios.</h5>
+            </div>
+            <div class="row card-body align-content-center justify-content-center">
+                <p class="col-auto text-end">Discordo totalmente</p>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto text-center">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Inovacao3" value="20">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Inovacao3" value="40">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Inovacao3" value="60">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Inovacao3" value="80">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Inovacao3" value="100">
+                </div>
+                <div class="row mobile-display"></div>
+                <p class="col-auto text-start">Concordo totalmente</p>
+            </div>
+            <span asp-validation-for="Inovacao3" class="text-danger text-center"></span>
+        </div>
+        <div class="container m-auto px-3 d-none">
+            <div class="row text-center">
+                <h5>
+                    A empresa investe na realização de experimentos para tomar decisões mais acertadas sobre quais iniciativas levar adiante.
+                </h5>
+            </div>
+            <div class="row card-body align-content-center justify-content-center">
+                <p class="col-auto text-end">Discordo totalmente</p>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto text-center">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Inovacao4" value="20">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Inovacao4" value="40">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Inovacao4" value="60">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Inovacao4" value="80">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Inovacao4" value="100">
+                </div>
+                <div class="row mobile-display"></div>
+                <p class="col-auto text-start">Concordo totalmente</p>
+            </div>
+            <span asp-validation-for="Inovacao4" class="text-danger text-center"></span>
+        </div>
+
+        <!---PROCESSOS-->
+        <div class="card-subtitle mb-2 text-center rounded-5 w-75 m-auto mb-4">
+            <h2 class="text-primary py-1 mb-0">Processos</h2>
+        </div>
+        <div class="container m-auto px-3">
+            <div class="row text-center">
+                <h5>
+                    Todos os nossos principais processos internos já estão digitalizados.
+                </h5>
+            </div>
+            <div class="row card-body align-content-center justify-content-center">
+                <p class="col-auto text-end">Discordo totalmente</p>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto text-center">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Processos1" value="20">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Processos1" value="40">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Processos1" value="60">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Processos1" value="80">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Processos1" value="100">
+                </div>
+                <div class="row mobile-display"></div>
+                <p class="col-auto text-start">Concordo totalmente</p>
+            </div>
+            <span asp-validation-for="Processos1" class="text-danger text-center"></span>
+        </div>
+        <div class="container m-auto px-3">
+            <div class="row text-center">
+                <h5>
+                    Os colaboradores têm acesso a uma base de dados interna com informações e recursos necessários para a execução eficaz dos processos.
+                </h5>
+            </div>
+            <div class="row card-body align-content-center justify-content-center">
+                <p class="col-auto text-end">Discordo totalmente</p>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto text-center">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Processos2" value="20">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Processos2" value="40">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Processos2" value="60">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Processos2" value="80">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Processos2" value="100">
+                </div>
+                <div class="row mobile-display"></div>
+                <p class="col-auto text-start">Concordo totalmente</p>
+            </div>
+            <span asp-validation-for="Processos2" class="text-danger text-center"></span>
+        </div>
+        <div class="container m-auto px-3">
+            <div class="row text-center">
+                <h5>
+                    Nossa prioridade é gerar mais autonomia e melhorar a experiência das pessoas, reduzindo o esforço das atividades repetitivas.
+                </h5>
+            </div>
+            <div class="row card-body align-content-center justify-content-center">
+                <p class="col-auto text-end">Discordo totalmente</p>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto text-center">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Processos3" value="20">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Processos3" value="40">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Processos3" value="60">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Processos3" value="80">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Processos3" value="100">
+                </div>
+                <div class="row mobile-display"></div>
+                <p class="col-auto text-start">Concordo totalmente</p>
+            </div>
+            <span asp-validation-for="Processos3" class="text-danger text-center"></span>
+        </div>
+        <div class="container m-auto px-3">
+            <div class="row text-center">
+                <h5>
+                    Temos um conjunto suficiente de sistemas e ferramentas internos, e os principais já estão integrados.
+                </h5>
+            </div>
+            <div class="row card-body align-content-center justify-content-center">
+                <p class="col-auto text-end">Discordo totalmente</p>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto text-center">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Processos4" value="20">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Processos4" value="40">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Processos4" value="60">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Processos4" value="80">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Processos4" value="100">
+                </div>
+                <div class="row mobile-display"></div>
+                <p class="col-auto text-start">Concordo totalmente</p>
+            </div>
+            <span asp-validation-for="Processos4" class="text-danger text-center"></span>
+        </div>
+        <div class="container m-auto px-3">
+            <div class="row text-center">
+                <h5>
+                    Para elaboração de textos, planilhas, apresentações e arquivos utilizamos ambiente de compartilhamento em nuvem.
+                </h5>
+            </div>
+            <div class="row card-body align-content-center justify-content-center">
+                <p class="col-auto text-end">Discordo totalmente</p>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto text-center">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Processos5" value="20">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Processos5" value="40">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Processos5" value="60">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Processos5" value="80">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Processos5" value="100">
+                </div>
+                <div class="row mobile-display"></div>
+                <p class="col-auto text-start">Concordo totalmente</p>
+            </div>
+            <span asp-validation-for="Processos5" class="text-danger text-center"></span>
+        </div>
+
+        <!---MODELOS DE NEGÓCIOS-->
+        <div class="card-subtitle bg-gradient mb-2 text-center rounded-5 w-75 m-auto mb-4 d-none">
+            <h2 class="text-white py-1 mb-0">Modelos de Negócio</h2>
+        </div>
+        <div class="container m-auto px-3 d-none">
+            <div class="row text-center">
+                <h5>
+                    Utilizamos canais digitais, como site, Google Meu Negócio e alguns perfis em redes sociais.
+                </h5>
+            </div>
+            <div class="row card-body align-content-center justify-content-center">
+                <p class="col-auto text-end">Discordo totalmente</p>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto text-center">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Modelos1" value="20">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Modelos1" value="40">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Modelos1" value="60">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Modelos1" value="80">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Modelos1" value="100">
+                </div>
+                <div class="row mobile-display"></div>
+                <p class="col-auto text-start">Concordo totalmente</p>
+            </div>
+            <span asp-validation-for="Modelos1" class="text-danger text-center"></span>
+        </div>
+        <div class="container m-auto px-3 d-none">
+            <div class="row text-center">
+                <h5>
+                    Caso seja necessário, é possível que eu trabalhe de forma remota e tenha acesso a todos os recursos necessários para desempenhar minhas atividades.
+                </h5>
+            </div>
+            <div class="row card-body align-content-center justify-content-center">
+                <p class="col-auto text-end">Discordo totalmente</p>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto text-center">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Modelos2" value="20">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Modelos2" value="40">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Modelos2" value="60">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Modelos2" value="80">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Modelos2" value="100">
+                </div>
+                <div class="row mobile-display"></div>
+                <p class="col-auto text-start">Concordo totalmente</p>
+            </div>
+            <span asp-validation-for="Modelos2" class="text-danger text-center"></span>
+        </div>
+        <div class="container m-auto px-3 d-none">
+            <div class="row text-center">
+                <h5>
+                    Nosso modelo suporta um aumento na produção ou oferta de serviços sem comprometer a estrutura ou rentabilidade da empresa.
+                </h5>
+            </div>
+            <div class="row card-body align-content-center justify-content-center">
+                <p class="col-auto text-end">Discordo totalmente</p>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto text-center">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Modelos3" value="20">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Modelos3" value="40">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Modelos3" value="60">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Modelos3" value="80">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Modelos3" value="100">
+                </div>
+                <div class="row mobile-display"></div>
+                <p class="col-auto text-start">Concordo totalmente</p>
+            </div>
+            <span asp-validation-for="Modelos3" class="text-danger text-center"></span>
+        </div>
+        <div class="container m-auto px-3 d-none">
+            <div class="row text-center">
+                <h5>
+                    Estamos sempre atentos às necessidades dos nossos clientes e adaptando nossa proposta de valor para o sucesso do cliente.
+                </h5>
+            </div>
+            <div class="row card-body align-content-center justify-content-center">
+                <p class="col-auto text-end">Discordo totalmente</p>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto text-center">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Modelos4" value="20">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Modelos4" value="40">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Modelos4" value="60">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Modelos4" value="80">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Modelos4" value="100">
+                </div>
+                <div class="row mobile-display"></div>
+                <p class="col-auto text-start">Concordo totalmente</p>
+            </div>
+            <span asp-validation-for="Modelos4" class="text-danger text-center"></span>
+        </div>
+
+        <!---DADOS-->
+        <div class="card-subtitle bg-gradient mb-2 text-center rounded-5 w-75 m-auto mb-4 d-none">
+            <h2 class="text-white py-1 mb-0">Dados</h2>
+        </div>
+        <div class="container m-auto px-3 d-none">
+            <div class="row text-center">
+                <h5>
+                    Os colaboradores têm acesso adequado e seguro aos dados relevantes para suas funções e tomada de decisões.
+                </h5>
+            </div>
+            <div class="row card-body align-content-center justify-content-center">
+                <p class="col-auto text-end">Discordo totalmente</p>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto text-center">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Dados1" value="20">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Dados1" value="40">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Dados1" value="60">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Dados1" value="80">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Dados1" value="100">
+                </div>
+                <div class="row mobile-display"></div>
+                <p class="col-auto text-start">Concordo totalmente</p>
+            </div>
+            <span asp-validation-for="Dados1" class="text-danger text-center"></span>
+        </div>
+        <div class="container m-auto px-3 d-none">
+            <div class="row text-center">
+                <h5>
+                    Estamos conscientes e preparados para os desafios que os ambientes regulatórios apresentam para o uso e tratamento de dados no setor e mercado em que atuamos.
+                </h5>
+            </div>
+            <div class="row card-body align-content-center justify-content-center">
+                <p class="col-auto text-end">Discordo totalmente</p>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto text-center">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Dados2" value="20">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Dados2" value="40">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Dados2" value="60">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Dados2" value="80">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Dados2" value="100">
+                </div>
+                <div class="row mobile-display"></div>
+                <p class="col-auto text-start">Concordo totalmente</p>
+            </div>
+            <span asp-validation-for="Dados2" class="text-danger text-center"></span>
+        </div>
+        <div class="container m-auto px-3 d-none">
+            <div class="row text-center">
+                <h5>
+                    Utiliza ferramentas e possui habilidades necessárias para coletar, analisar e usar dados de forma eficaz em nossas operações.
+                </h5>
+            </div>
+            <div class="row card-body align-content-center justify-content-center">
+                <p class="col-auto text-end">Discordo totalmente</p>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto text-center">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Dados3" value="20">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Dados3" value="40">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Dados3" value="60">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Dados3" value="80">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Dados3" value="100">
+                </div>
+                <div class="row mobile-display"></div>
+                <p class="col-auto text-start">Concordo totalmente</p>
+            </div>
+            <span asp-validation-for="Dados3" class="text-danger text-center"></span>
+        </div>
+        <div class="container m-auto px-3 d-none">
+            <div class="row text-center">
+                <h5>
+                    Utiliza os dados para identificar oportunidades de negócios e gerar valor, seja por meio de novos produtos, serviços ou estratégias.
+                </h5>
+            </div>
+            <div class="row card-body align-content-center justify-content-center">
+                <p class="col-auto text-end">Discordo totalmente</p>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto text-center">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Dados4" value="20">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Dados4" value="40">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Dados4" value="60">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Dados4" value="80">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Dados4" value="100">
+                </div>
+                <div class="row mobile-display"></div>
+                <p class="col-auto text-start">Concordo totalmente</p>
+            </div>
+            <span asp-validation-for="Dados4" class="text-danger text-center"></span>
+        </div>
+        <div class="container m-auto px-3 d-none">
+            <div class="row text-center">
+                <h5>
+                    Temos conhecimento e treinamos os funcionários na legislação sobre privacidade, proteção de dados e transparência no uso de dados nos nossos clientes,
+                    como a Lei Geral de Proteção de Dados (LGPD).
+                </h5>
+            </div>
+            <div class="row card-body align-content-center justify-content-center">
+                <p class="col-auto text-end">Discordo totalmente</p>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto text-center">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Dados5" value="20">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Dados5" value="40">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Dados5" value="60">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Dados5" value="80">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Dados5" value="100">
+                </div>
+                <div class="row mobile-display"></div>
+                <p class="col-auto text-start">Concordo totalmente</p>
+            </div>
+            <span asp-validation-for="Dados5" class="text-danger text-center"></span>
+        </div>
+
+        <!---TECNOLOGIAS-->
+        <div class="card-subtitle bg-gradient mb-2 text-center rounded-5 w-75 m-auto mb-4 d-none">
+            <h2 class="text-white py-1 mb-0">Tecnologias</h2>
+        </div>
+        <div class="container m-auto px-3 d-none">
+            <div class="row text-center">
+                <h5>
+                    Utiliza a tecnologia para criar uma conexão direta e interativa entre o cliente e as ofertas da empresa.
+                </h5>
+            </div>
+            <div class="row card-body align-content-center justify-content-center">
+                <p class="col-auto text-end">Discordo totalmente</p>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto text-center">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Tecnologia1" value="20">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Tecnologia1" value="40">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Tecnologia1" value="60">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Tecnologia1" value="80">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Tecnologia1" value="100">
+                </div>
+                <div class="row mobile-display"></div>
+                <p class="col-auto text-start">Concordo totalmente</p>
+            </div>
+            <span asp-validation-for="Tecnologia1" class="text-danger text-center"></span>
+        </div>
+        <div class="container m-auto px-3 d-none">
+            <div class="row text-center">
+                <h5>
+                    No último ano foram introduzidos processos ou contratações de novas tecnologias na empresa.
+                </h5>
+            </div>
+            <div class="row card-body align-content-center justify-content-center">
+                <p class="col-auto text-end">Discordo totalmente</p>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto text-center">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Tecnologia2" value="20">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Tecnologia2" value="40">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Tecnologia2" value="60">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Tecnologia2" value="80">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Tecnologia2" value="100">
+                </div>
+                <div class="row mobile-display"></div>
+                <p class="col-auto text-start">Concordo totalmente</p>
+            </div>
+            <span asp-validation-for="Tecnologia2" class="text-danger text-center"></span>
+        </div>
+        <div class="container m-auto px-3 d-none">
+            <div class="row text-center">
+                <h5>
+                    Utiliza serviços de computação em nuvem para armazenar e compartilhar arquivos com os colaboradores e clientes.
+                </h5>
+            </div>
+            <div class="row card-body align-content-center justify-content-center">
+                <p class="col-auto text-end">Discordo totalmente</p>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto text-center">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Tecnologia3" value="20">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Tecnologia3" value="40">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Tecnologia3" value="60">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Tecnologia3" value="80">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Tecnologia3" value="100">
+                </div>
+                <div class="row mobile-display"></div>
+                <p class="col-auto text-start">Concordo totalmente</p>
+            </div>
+            <span asp-validation-for="Tecnologia3" class="text-danger text-center"></span>
+        </div>
+        <div class="container m-auto px-3 d-none">
+            <div class="row text-center">
+                <h5>
+                    Você conhece os benefícios que as tecnologias digitais podem trazer para o curto, médio e longo prazo à sua empresa.
+                </h5>
+            </div>
+            <div class="row card-body align-content-center justify-content-center">
+                <p class="col-auto text-end">Discordo totalmente</p>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto text-center">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Tecnologia4" value="20">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Tecnologia4" value="40">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Tecnologia4" value="60">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Tecnologia4" value="80">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Tecnologia4" value="100">
+                </div>
+                <div class="row mobile-display"></div>
+                <p class="col-auto text-start">Concordo totalmente</p>
+            </div>
+            <span asp-validation-for="Tecnologia4" class="text-danger text-center"></span>
+        </div>
+        <div class="container m-auto px-3 d-none">
+            <div class="row text-center">
+                <h5>
+                    Os colaboradores usam dispositivos móveis com aplicativos dedicados ao trabalho e com conexão à internet.
+                </h5>
+            </div>
+            <div class="row card-body align-content-center justify-content-center">
+                <p class="col-auto text-end">Discordo totalmente</p>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto text-center">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Tecnologia5" value="20">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Tecnologia5" value="40">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Tecnologia5" value="60">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Tecnologia5" value="80">
+                </div>
+                <div class="row mobile-display"></div>
+                <div class="form-check col-auto">
+                    <input class="form-check-input border-primary" type="radio" asp-for="Tecnologia5" value="100">
+                </div>
+                <div class="row mobile-display"></div>
+                <p class="col-auto text-start">Concordo totalmente</p>
+            </div>
+            <span asp-validation-for="Tecnologia5" class="text-danger text-center"></span>
+        </div>
+
+        <!-- ATRIBUTOS DAS OUTRAS PÁGINAS (OCULTOS) -->
+        <!-- PÁGINA 1 -->
+        <input asp-for="Name" class="form-control border-2 shadow py-0 px-4 d-none" style="border-radius: 25px" />
+        <input asp-for="Email" class="form-control border-2 shadow p-4 d-none" style="border-radius: 25px" />
+        <input asp-for="GrauInstrucao" class="form-check-input border-primary d-none">
+        <input asp-for="TermosDeUso" class="form-check-input d-none">
+        <!-- PÁGINA 2 -->
+        <input asp-for="CompanySocialName" class="form-control border-2 shadow py-0 px-4 d-none" style="border-radius: 25px" />
+        <input asp-for="CompanyCNPJ" class="form-control border-2 shadow py-0 px-4 d-none" style="border-radius: 25px" />
+        <input asp-for="CompanySector" class="form-check-input border-primary d-none">
+        <!-- PÁGINA 3 -->
+        <input asp-for="CompanySize" class="form-check-input border-primary d-none">
+        <input asp-for="RolePosition" class="form-check-input border-primary d-none">
+        <!-- PÁGINA 4 -->
+        <input asp-for="Department" class="form-check-input border-primary d-none">
+        <input asp-for="TimeInRole" class="form-check-input border-primary d-none">
+        <input asp-for="PhoneNumber" class="form-check-input border-primary d-none">
+
+        <!-- SUBMIT FORM -->
+        <div class="row py-2 my-3 m-auto align-content-center justify-content-between">
+            <div class="col-auto col-md-3">
+                <a asp-controller="AssessmentForm" asp-action="Formulario4" asp-route-id="@obj.Id" class="btn btn-secondary border text-dark form-control rounded-4 fw-bold sombra">
+                    VOLTAR
+                </a>
+            </div>
+
+            <div class="col-auto">
+                <h4 class="fw-bolder">
+                    5/8
+                </h4>
+            </div>
+            <div class="col-auto col-md-3">
+                <button type="submit" asp-controller="AssessmentForm" asp-action="Formulario5" class="btn-blue form-control text-light rounded-4 fw-bold sombra">
+                    AVANÇAR
+                </button>
+            </div>
+        </div>
+
+    </form>
+
+
+</div>
+
+
+<div class="w-25">
+    <br />
+</div>
+
+
+@section Scripts {
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}

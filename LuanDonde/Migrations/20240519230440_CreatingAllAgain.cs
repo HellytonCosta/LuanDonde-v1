@@ -5,7 +5,7 @@
 namespace TransformaSeu.Migrations
 {
     /// <inheritdoc />
-    public partial class AddDbAndTables : Migration
+    public partial class CreatingAllAgain : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -19,6 +19,7 @@ namespace TransformaSeu.Migrations
                     TermosDeUso = table.Column<bool>(type: "bit", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(60)", maxLength: 60, nullable: false),
                     Email = table.Column<string>(type: "nvarchar(60)", maxLength: 60, nullable: false),
+                    GrauInstrucao = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
                     PhoneNumber = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
                     RolePosition = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
                     Department = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),

@@ -3,53 +3,89 @@
 }
 @model AssessmentForm
 @{
+    bool teste;
     var obj = Model;
 }
 
-
-<!-- Modal -->
-<div class="modal fade" style="min-width:80%;" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog" style="min-width:50%;">
+<!-- MODAL --> 
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-bs-backdrop="static">
+    <div class="modal-dialog" style="min-width:60%; max-width:62%;">
         <div class="modal-content bg-grey rounded-4 px-5">
             <div class="modal-header text-center m-auto border-0">
-                <h1 class="modal-title text-primary" id="staticBackdropLabel">Termos de Uso</h1>
 
             </div>
             <div class="modal-body p-3 border-0">
                 <p class="fs-5">
                     Para garantir um diagnóstico preciso da maturidade digital do seu negócio, dedique pelo menos 20 minutos para completar esta avaliação. 
-                    Ao prosseguir, você consente que Luan Dondé colete e processe seus dados pessoais, exclusivamente para o propósito de avaliar o nível de 
-                    maturidade digital da empresa que você representa.
+                    Ao prosseguir, você consente que Luan Dondé dos Santos colete e processe seus dados pessoais exclusivamente para o propósito de avaliar 
+                    o nível de maturidade digital da empresa que você representa, como parte do Trabalho de Conclusão de Curso (TCC) do aluno 
+                    Luan Dondé dos Santos, no âmbito do Mestrado Profissional em Propriedade Intelectual e 
+                    Transferência de Tecnologia para Inovação da Universidade Federal de Santa Catarina (UFSC), sob orientação do Prof. Irineu Afonso Frey, Dr.
                 </p>
                 <p class="fs-5">
                     Asseguramos que seus dados pessoais não serão compartilhados com terceiros e serão manejados com a máxima confidencialidade. 
-                    Após a compilação dos dados, você tem o direito de solicitar a remoção de suas informações a qualquer momento antes disso. 
+                    Você tem o direito de solicitar a remoção de suas informações a qualquer momento antes da compilação dos dados. 
                     Para tal, basta enviar um pedido para o e-mail <b>luan@transformeseu.digital</b>.
                 </p>
                 <p class="fs-5">
-                    Lembramos que este processo é fundamental para fornecer insights precisos e personalizados para o desenvolvimento digital do seu negócio. 
+                    Lembramos que este processo é fundamental para fornecer insights 
+                    precisos e personalizados para o desenvolvimento digital do seu negócio. 
                     Agradecemos sua confiança e compromisso com a transformação digital!
                 </p>
+
             </div>
+            <div class="modal-footer col-auto align-content-center justify-content-center form-check p-0 my-1 border-0">
+                <input class="form-check-input" id="modalInput" type="checkbox"  name="modalInput" required>
+
+                <p class="form-check-label align-content-center pb-0 mb-0">
+                    Concordo com os Termos de Uso
+                </p>
+                <span aria-checked="true"></span>
+            </div>
+
             <div class="modal-footer m-auto border-0">
-                <button type="button" class="btn bg-gradient text-light border-0" data-bs-dismiss="modal">Fechar</button>
+                <button type="button" id="btnSave" class="btn bg-gradient rounded-3 text-light border-0" data-bs-dismiss="modal">Fechar</button>
             </div>
         </div>
     </div>
 </div>
 
 
+
 <h2 class="bg-transparent text-uppercase text-primary fw-bolder my-5 text-center m-auto" style="max-width: 80%">
     COMO SUA EMPRESA ESTÁ EM RELAÇÃO A MATURIDADE DIGITAL?
 </h2>
-<p class="m-auto fs-5" style="max-width: 80%; text-align: justify;">
+<p class="m-auto fs-5 mb-4" style="max-width: 80%; text-align: justify;">
     Aqui você está a poucos passos de saber um pouco mais sobre como sua organização está posicionada e
     descobrir alguns insights que podem mudar o futuro do seu negócio.
 </p>
 
 
-<div class="card shadow border-0 my-4 m-auto rounded-5 bg-grey" style="max-width: 80%; border-radius:50px;">
+<!-- ABAS DE CONTATO / INFO / QUESTÕES-->
+<div class="row m-auto" style="max-width: 70%; border-radius:50px; min-height: 50px;">
+    <div class="col-auto row bg-primary rounded-top-4 text-light align-items-center mx-1 px-2">
+        <div class="col-auto px-1">
+            <img src="~/lib/images/icons/icons8-group-50.png" style="max-width: 2em;" />
+        </div>
+        <p class="col-auto mb-0 d-none d-lg-block">Contato</p>
+    </div>
+    <div class="col-auto row rounded-top-4 text-light align-items-center mx-1 px-2" style="background-color: grey">
+        <div class="col-auto px-1">
+            <img src="~/lib/images/icons/icons8-info-50.png" class="" style="max-width: 2em;" />
+        </div> 
+        <p class="col-auto mb-0 px-1 d-none d-lg-block">Formulário</p>
+    </div>
+    <div class="col-auto row rounded-top-4 text-light align-items-center mx-1 px-2" style="background-color: grey">
+        <div class="col-auto px-1">
+            <img src="~/lib/images/icons/icons8-innovation-80.png" style="max-width: 2em;" />
+        </div>
+        <p class="col-auto mb-0 d-none d-lg-block">Questões</p>
+    </div>
+</div>
 
+
+<div class="card shadow border-0 mb-4 m-auto rounded-5 bg-grey" style="max-width: 80%; border-radius:50px;">
+   
     <div class="row">
         <div class="col-12 text-center mt-3">
             <h3 class="text-primary fw-bolder text-uppercase py-1">Informações Gerais</h3>
@@ -57,14 +93,18 @@
     </div>
 
     <div class="card-body px-4 py-1">
-        <form method="post" class="row">
+        <!-- <form method="post" >  -->
+        <form method="post" >
 
+            <!--NAME-->
             <div class="form-floating pb-2 col-12">
-                <p class="text-primary fw-bolder fs-4 mb-1">Digite seu nome completo:</p>
+                <p class="text-primary fw-bolder fs-4 mb-1">
+                    Digite seu nome completo:
+                </p>
                 <input asp-for="Name" class="form-control border-2 shadow py-0 px-4" style="border-radius: 25px" />
-                @*  <label asp-for="Name" class="ms-2"></label> *@
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
+            <!--EMAIL-->
             <div class="form-floating py-2 col-12">
                 <p class="text-primary fw-bolder fs-4 mb-1">Qual seu E-mail?</p>
                 <input asp-for="Email" class="form-control border-2 shadow p-4" style="border-radius: 25px" />
@@ -78,347 +118,88 @@
                 <span asp-validation-for="PhoneNumber" class="text-danger"></span>
             </div>
 
-
-            <!--RATIO FORM - CARGO-->
-            <p class="text-primary fw-bolder fs-4 my-1">Qual seu cargo?</p>
+            <!--RATIO FORM - GRAU DE INSTRUÇÃO-->
+            <p class="text-primary fw-bolder fs-4 my-1">Qual seu grau de instrução?</p>
             <div class="row m-sm-auto py-2">
                 <div class="col-auto">
                     <div class="form-check col-12">
-                        <input class="form-check-input border-primary" type="radio" asp-for="RolePosition" value="Estagiário">
+                        <input class="form-check-input border-primary" type="radio" asp-for="GrauInstrucao" value="Ensino Fundamental incompleto">
                         <label class="form-check-label" for="flexRadioDefault1">
-                            Estagiário
+                            Ensino Fundamental incompleto
                         </label>
                     </div>
                     <div class="form-check col-12">
-                        <input class="form-check-input border-primary" type="radio" asp-for="RolePosition" value="Auxiliar">
+                        <input class="form-check-input border-primary" type="radio" asp-for="GrauInstrucao" value="Ensino Fundamental completo">
                         <label class="form-check-label" for="flexRadioDefault2">
-                            Auxiliar
+                            Ensino Fundamental completo
                         </label>
                     </div>
                     <div class="form-check col-12">
-                        <input class="form-check-input border-primary" type="radio" asp-for="RolePosition" value="Analista">
+                        <input class="form-check-input border-primary" type="radio" asp-for="GrauInstrucao" value="Ensino Médio incompleto">
                         <label class="form-check-label" for="flexRadioDefault1">
-                            Analista
+                            Ensino Médio incompleto
                         </label>
                     </div>
                     <div class="form-check col-12">
-                        <input class="form-check-input border-primary" type="radio" asp-for="RolePosition" value="Gerente">
+                        <input class="form-check-input border-primary" type="radio" asp-for="GrauInstrucao" value="Ensino Médio completo">
                         <label class="form-check-label" for="flexRadioDefault2">
-                            Gerente
+                            Ensino Médio completo
+                        </label>
+                    </div>
+                    <div class="form-check col-12">
+                        <input class="form-check-input border-primary" type="radio" asp-for="GrauInstrucao" value="Ensino Técnico">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Ensino Técnico
+                        </label>
+                    </div>
+                    <div class="form-check col-12">
+                        <input class="form-check-input border-primary" type="radio" asp-for="GrauInstrucao" value="Ensino Superior incompleto">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Ensino Superior incompleto
                         </label>
                     </div>
                 </div>
                 <div class="col-auto">
                     <div class="form-check col-12">
-                        <input class="form-check-input border-primary" type="radio" asp-for="RolePosition" value="Coordenador">
+                        <input class="form-check-input border-primary" type="radio" asp-for="GrauInstrucao" value="Ensino Superior completo">
                         <label class="form-check-label" for="flexRadioDefault1">
-                            Coordenador
+                            Ensino Superior completo
                         </label>
                     </div>
                     <div class="form-check col-12">
-                        <input class="form-check-input border-primary" type="radio" asp-for="RolePosition" value="Diretor">
+                        <input class="form-check-input border-primary" type="radio" asp-for="GrauInstrucao" value="Pós-graduação (Especialização, MBA)">
                         <label class="form-check-label" for="flexRadioDefault2">
-                            Diretor
+                            Pós-graduação (Especialização, MBA)
                         </label>
                     </div>
                     <div class="form-check col-12">
-                        <input class="form-check-input border-primary" type="radio" asp-for="RolePosition" value="Consultor">
+                        <input class="form-check-input border-primary" type="radio" asp-for="GrauInstrucao" value="Mestrado">
                         <label class="form-check-label" for="flexRadioDefault1">
-                            Consultor
+                            Mestrado
                         </label>
                     </div>
                     <div class="form-check col-12">
-                        <input class="form-check-input border-primary" type="radio" asp-for="RolePosition" value="Outro">
+                        <input class="form-check-input border-primary" type="radio" asp-for="GrauInstrucao" value="Doutorado">
                         <label class="form-check-label" for="flexRadioDefault1">
-                            Outro
+                            Doutorado
+                        </label>
+                    </div>
+                    <div class="form-check col-12">
+                        <input class="form-check-input border-primary" type="radio" asp-for="GrauInstrucao" value="Pós-Doutorado">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Pós-Doutorado
                         </label>
                     </div>
                 </div>
-                <span asp-validation-for="RolePosition" class="text-danger"></span>
-            </div>
-
-            <!--RATIO FORM - DEPARTAMENTO-->
-            <p class="text-primary fw-bolder fs-4 my-1">Qual sua área dentro da empresa?</p>
-            <div class="row m-sm-auto py-2">
-                <div class="col-auto">
-                    <div class="form-check col-12">
-                        <input class="form-check-input border-primary" type="radio" asp-for="Department" value="Administrativo">
-                        <label class="form-check-label" for="flexRadioDefault1">
-                            Administrativo
-                        </label>
-                    </div>
-                    <div class="form-check col-12">
-                        <input class="form-check-input border-primary" type="radio" asp-for="Department" value="Marketing">
-                        <label class="form-check-label" for="flexRadioDefault2">
-                            Marketing
-                        </label>
-                    </div>
-                    <div class="form-check col-12">
-                        <input class="form-check-input border-primary" type="radio" asp-for="Department" value="Jurídico">
-                        <label class="form-check-label" for="flexRadioDefault1">
-                            Jurídico
-                        </label>
-                    </div>
-                    <div class="form-check col-12">
-                        <input class="form-check-input border-primary" type="radio" asp-for="Department" value="Produção">
-                        <label class="form-check-label" for="flexRadioDefault2">
-                            Produção
-                        </label>
-                    </div>
-                    <div class="form-check col-12">
-                        <input class="form-check-input border-primary" type="radio" asp-for="Department" value="Diretoria">
-                        <label class="form-check-label" for="flexRadioDefault2">
-                            Diretoria
-                        </label>
-                    </div>
-                </div>
-                <div class="col-auto">
-                    <div class="form-check col-12">
-                        <input class="form-check-input border-primary" type="radio" asp-for="Department" value="Comercial">
-                        <label class="form-check-label" for="flexRadioDefault1">
-                            Comercial
-                        </label>
-                    </div>
-                    <div class="form-check col-12">
-                        <input class="form-check-input border-primary" type="radio" asp-for="Department" value="Financeiro">
-                        <label class="form-check-label" for="flexRadioDefault2">
-                            Financeiro
-                        </label>
-                    </div>
-                    <div class="form-check col-12">
-                        <input class="form-check-input border-primary" type="radio" asp-for="Department" value="Design">
-                        <label class="form-check-label" for="flexRadioDefault1">
-                            Design
-                        </label>
-                    </div>
-                    <div class="form-check col-12">
-                        <input class="form-check-input border-primary" type="radio" asp-for="Department" value="Tecnologia da Informação">
-                        <label class="form-check-label" for="flexRadioDefault1">
-                            Tecnologia da Informação
-                        </label>
-                    </div>
-                    <div class="form-check col-12">
-                        <input class="form-check-input border-primary" type="radio" asp-for="Department" value="Outra">
-                        <label class="form-check-label" for="flexRadioDefault1">
-                            Outra
-                        </label>
-                    </div>
-                </div>
-                <span asp-validation-for="Department" class="text-danger"></span>
+                <span asp-validation-for="GrauInstrucao" class="text-danger"></span>
             </div>
 
 
-            <div class="form-floating py-2 col-12">
-                <p class="text-primary fw-bolder fs-4 mb-1">Razão social/Nome da empresa</p>
-                <input asp-for="CompanySocialName" class="form-control border-2 shadow py-0 px-4" style="border-radius: 25px" />
-                @*                     <label asp-for="CompanySocialName" class="ms-2"></label> *@
-                <span asp-validation-for="CompanySocialName" class="text-danger"></span>
-            </div>
-            <div class="form-floating py-2 col-12">
-                <p class="text-primary fw-bolder fs-4 mb-1">CNPJ</p>
-                <input asp-for="CompanyCNPJ" class="form-control border-2 shadow py-0 px-4" style="border-radius: 25px" />
-                @*                     <label asp-for="CompanyCNPJ" class="ms-2"></label> *@
-                <span asp-validation-for="CompanyCNPJ" class="text-danger"></span>
-            </div>
-
-            <!--SELECT - ESTADO DO BRASIL-->
-            <div class="form-floating py-2 col-12">
-                @*asp-for="CompanyState"*@
-                <p class="text-primary fw-bolder fs-4 mb-1">Qual a UF de sua empresa?</p>
-                <select asp-for="CompanyState" class="form-select border-0 shadow py-0 px-2" style="border-radius: 25px; max-width: 50%">
-                    <option disabled selected>--Selecione seu estado--</option>
-                    <option>AC - Acre</option>
-                    <option>AL - Alagoas</option>
-                    <option>AP - Amapá</option>
-                    <option>AM - Amazonas</option>
-                    <option>BA - Bahia</option>
-                    <option>CE - Ceará</option>
-                    <option>DF - Distrito Federal</option>
-                    <option>ES - Espírito Santo</option>
-                    <option>GO - Goiás</option>
-                    <option>MA - Maranhão</option>
-                    <option>MT - Mato Grosso</option>
-                    <option>MS - Mato Grosso do Sul</option>
-                    <option>MG - Minas Gerais</option>
-                    <option>PA - Pará</option>
-                    <option>PB - Paraíba</option>
-                    <option>PR - Paraná</option>
-                    <option>PE - Pernambuco</option>
-                    <option>PI - Piauí</option>
-                    <option>RJ - Rio de Janeiro</option>
-                    <option>RN - Rio Grande do Norte</option>
-                    <option>RS - Rio Grande do Sul</option>
-                    <option>RO - Rondônia</option>
-                    <option>RR - Roraima</option>
-                    <option>SC - Santa Catarina</option>
-                    <option>SP - São Paulo</option>
-                    <option>SE - Sergipe </option>
-                    <option>TO - Tocantins</option>
-                </select>
-                @*                     <label asp-for="CompanyState" class="ms-2"></label> *@
-                <span asp-validation-for="CompanyState" class="text-danger"></span>
-            </div>
-
-            <!--RATIO FORM - RECEITA EMPRESA-->
-            <p class="text-primary fw-bolder fs-4 mb-0">Qual o tamanho da sua empresa?</p>
-            <p class="text-dark fw-light fs-5 mb-1">(Classificação segundo BNDES, considerando a RENDA ou a RECEITA OPERACIONAL BRUTA ANUAL)</p>
-            <div class="row m-sm-auto py-2">
-                <div class="col-12">
-                    <div class="form-check col-12">
-                        <input class="form-check-input border-primary" type="radio" asp-for="CompanyRevenue" value="MEI">
-                        <label class="form-check-label" for="flexRadioDefault1">
-                            MEI (Receita ≤ R$ 81 mil)
-                        </label>
-                    </div>
-                    <div class="form-check col-12">
-                        <input class="form-check-input border-primary" type="radio" asp-for="CompanyRevenue" value="Microempresa">
-                        <label class="form-check-label" for="flexRadioDefault2">
-                            Microempresa (Receita > R$ 81 mil ≤ R$ 360 mil)
-                        </label>
-                    </div>
-                    <div class="form-check col-12">
-                        <input class="form-check-input border-primary" type="radio" asp-for="CompanyRevenue" value="Pequena Empresa">
-                        <label class="form-check-label" for="flexRadioDefault1">
-                            Pequena Empresa (Receita > R$ 360 mil ≤ R$ 4,8 milhões)
-                        </label>
-                    </div>
-                    <div class="form-check col-12">
-                        <input class="form-check-input border-primary" type="radio" asp-for="CompanyRevenue" value="Media Empresa">
-                        <label class="form-check-label" for="flexRadioDefault2">
-                            Média Empresa (Receita > R$ 4,8 milhões ≤ R$ 300 milhões)
-                        </label>
-                    </div>
-                    <div class="form-check col-12">
-                        <input class="form-check-input border-primary" type="radio" asp-for="CompanyRevenue" value="Grande Empresa">
-                        <label class="form-check-label" for="flexRadioDefault2">
-                            Grande Empresa (Receita > R$ 300 milhões)
-                        </label>
-                    </div>
-                    <span asp-validation-for="CompanyRevenue" class="text-danger"></span>
-                </div>
-            </div>
-
-            <!--RATIO FORM - DEPARTAMENTO-->
-            <p class="text-primary fw-bolder fs-4 my-1">Qual é o principal setor de atividade de sua empresa?</p>
-            <div class="row m-sm-auto py-2">
-                <div class="col-auto">
-                    <div class="form-check col-12">
-                        <input class="form-check-input border-primary" type="radio" asp-for="CompanySector" value="Construção Civil">
-                        <label class="form-check-label" for="flexRadioDefault1">
-                            Construção Civil
-                        </label>
-                    </div>
-                    <div class="form-check col-12">
-                        <input class="form-check-input border-primary" type="radio" asp-for="CompanySector" value="Educação">
-                        <label class="form-check-label" for="flexRadioDefault2">
-                            Educação
-                        </label>
-                    </div>
-                    <div class="form-check col-12">
-                        <input class="form-check-input border-primary" type="radio" asp-for="CompanySector" value="Finaceiro">
-                        <label class="form-check-label" for="flexRadioDefault1">
-                            Finaceiro
-                        </label>
-                    </div>
-                    <div class="form-check col-12">
-                        <input class="form-check-input border-primary" type="radio" asp-for="CompanySector" value="Contabilidade">
-                        <label class="form-check-label" for="flexRadioDefault2">
-                            Contabilidade
-                        </label>
-                    </div>
-                    <div class="form-check col-12">
-                        <input class="form-check-input border-primary" type="radio" asp-for="CompanySector" value="Saúde">
-                        <label class="form-check-label" for="flexRadioDefault2">
-                            Saúde
-                        </label>
-                    </div>
-                    <div class="form-check col-12">
-                        <input class="form-check-input border-primary" type="radio" asp-for="CompanySector" value="Tecnologia">
-                        <label class="form-check-label" for="flexRadioDefault2">
-                            Tecnologia
-                        </label>
-                    </div>
-                </div>
-                <div class="col-auto">
-                    <div class="form-check col-12">
-                        <input class="form-check-input border-primary" type="radio" asp-for="CompanySector" value="Indústria">
-                        <label class="form-check-label" for="flexRadioDefault1">
-                            Indústria
-                        </label>
-                    </div>
-                    <div class="form-check col-12">
-                        <input class="form-check-input border-primary" type="radio" asp-for="CompanySector" value="Serviços">
-                        <label class="form-check-label" for="flexRadioDefault2">
-                            Serviços
-                        </label>
-                    </div>
-                    <div class="form-check col-12">
-                        <input class="form-check-input border-primary" type="radio" asp-for="CompanySector" value="Transporte">
-                        <label class="form-check-label" for="flexRadioDefault1">
-                            Transporte
-                        </label>
-                    </div>
-                    <div class="form-check col-12">
-                        <input class="form-check-input border-primary" type="radio" asp-for="CompanySector" value="Varejo">
-                        <label class="form-check-label" for="flexRadioDefault1">
-                            Varejo
-                        </label>
-                    </div>
-                    <div class="form-check col-12">
-                        <input class="form-check-input border-primary" type="radio" asp-for="CompanySector" value="Imobiliário">
-                        <label class="form-check-label" for="flexRadioDefault1">
-                            Imobiliário
-                        </label>
-                    </div>
-                    <div class="form-check col-12">
-                        <input class="form-check-input border-primary" type="radio" asp-for="CompanySector" value="Turismo">
-                        <label class="form-check-label" for="flexRadioDefault1">
-                            Turismo
-                        </label>
-                    </div>
-                </div>
-                <span asp-validation-for="CompanySector" class="text-danger"></span>
-            </div>
-
-            <!--RATIO FORM - TAMANHO DA EMPRESA-->
-            <p class="text-primary fw-bolder fs-4 my-1">Qual é o principal setor de atividade de sua empresa?</p>
-            <div class="row m-sm-auto py-2">
-                <div class="col-auto">
-                    <div class="form-check col-12">
-                        <input class="form-check-input border-primary" type="radio" asp-for="CompanySize" value="Até 19 colaboradores">
-                        <label class="form-check-label" for="flexRadioDefault1">
-                            Até 19 colaboradores
-                        </label>
-                    </div>
-                    <div class="form-check col-12">
-                        <input class="form-check-input border-primary" type="radio" asp-for="CompanySize" value="Entre 100 e 499 colaboradores">
-                        <label class="form-check-label" for="flexRadioDefault2">
-                            Entre 100 e 499 colaboradores
-                        </label>
-                    </div>
-
-                </div>
-                <div class="col-auto">
-                    <div class="form-check col-12">
-                        <input class="form-check-input border-primary" type="radio" asp-for="CompanySize" value="Entre 20 e 99 colaboradores">
-                        <label class="form-check-label" for="flexRadioDefault1">
-                            Entre 20 e 99 colaboradores
-                        </label>
-                    </div>
-                    <div class="form-check col-12">
-                        <input class="form-check-input border-primary" type="radio" asp-for="CompanySize" value="Mais de 500 colaboradores">
-                        <label class="form-check-label" for="flexRadioDefault2">
-                            Mais de 500 colaboradores
-                        </label>
-                    </div>
-
-                </div>
-                <span asp-validation-for="CompanySize" class="text-danger"></span>
-            </div>
 
 
-            <div class="col-auto align-content-center form-check mx-3 my-3">
-                <input class="form-check-input" type="checkbox" asp-for="TermosDeUso" value="true" required id="flexCheckDefault">
+            <!--CHAMA MODAL TERMOS DE USO-->
+            <div class="col-auto align-content-center form-check mx-3 my-3 d-none">
+                <input class="form-check-input" type="checkbox" asp-for="TermosDeUso" value="true" id="flexCheckDefault">
                 
                 <p class="form-check-label align-content-center pb-0 mb-0">
                     Concordo com os <a class="link-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Termos de Uso</a>
@@ -426,21 +207,27 @@
                 <span asp-validation-for="TermosDeUso" class="text-danger"></span>
             </div>
 
-
-            <div class="row pt-2 align-content-center">
+            <!--SUBMIT FORM - AVANÇAR / RETORNAR   -->
+            <div class="row pt-2 align-content-center justify-content-between">
                 <div class="col-auto col-md-3">
-                    <button type="submit" asp-controller="AssessmentForm" asp-action="Index" class="btn btn-primary form-control rounded-4">Avançar</button>
-                </div>
-                <div class="col-auto col-md-3">
-                    <a asp-controller="Home" asp-action="Index" class="btn btn-outline-primary border bg-white text-dark form-control rounded-4">
-                        Voltar ao Início
+                    <a asp-controller="Home" asp-action="Index" class="btn btn-secondary border text-dark form-control rounded-4 fw-bold sombra">
+                        VOLTAR AO INÍCIO
                     </a>
                 </div>
                 
+                <div class="col-auto">
+                    <h4 class="fw-bolder">1/4</h4>
+                </div>
+                <div class="col-auto col-md-3">
+                    <button type="submit" asp-controller="AssessmentForm" asp-action="Index" class="btn-blue form-control text-light rounded-4 fw-bold sombra" >
+                        AVANÇAR
+                    </button>
+                </div>    
             </div>
+
+
             <br />
-            <br />
-            <br />
+
         </form>
     </div>
 
@@ -449,6 +236,26 @@
 <br />
 <br />
 <br />
+
+<script>
+$(document).ready(function(){
+    $('#myModal').modal('show');
+});
+</script>
+<script>
+    $(document).ready(function () {
+        $('#btnSave').click(function () {
+            var value = $('#modalInput').val(); // Captura o valor do campo de entrada
+            var valorCheckbox = $('#modalInput').prop("checked");
+            // Envia o valor de volta para o servidor usando AJAX
+            $.ajax({
+                type: "POST",
+                url: "@Url.Action("ReceberValorDoModal", "AssessmentForm")", // Substitua pelo URL correto do seu controller
+                data: { valorCheckbox: valorCheckbox }
+            });
+        });
+    });
+</script>
 
 
 @section Scripts {

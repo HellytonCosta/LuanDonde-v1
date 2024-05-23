@@ -9,7 +9,5 @@ namespace LuanDonde.Models.ViewModels
 
         [ValidateNever]
         public int ContatoId { get; set; }
-        [ValidateNever]
-        public Contact Contato { get; set; }
     }
 }

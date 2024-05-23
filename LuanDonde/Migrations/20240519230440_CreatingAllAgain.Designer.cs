@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace TransformaSeu.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240425193734_AddDbAndTables")]
-    partial class AddDbAndTables
+    [Migration("20240519230440_CreatingAllAgain")]
+    partial class CreatingAllAgain
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -158,6 +158,11 @@ namespace TransformaSeu.Migrations
 
                     b.Property<int>("ExperienciaTotal")
                         .HasColumnType("int");
+
+                    b.Property<string>("GrauInstrucao")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<int>("Inovacao1")
                         .HasColumnType("int");

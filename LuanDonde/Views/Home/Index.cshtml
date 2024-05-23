@@ -4,7 +4,7 @@
 
 
 <div class="bg-main-image mb-0 pb-0">
-    <div class="row container py-5 bg-transparent m-sm-auto m-auto" style="min-height:500px">
+@*     <div class="row container py-5 bg-transparent m-sm-auto m-auto" style="min-height:500px">
         <div class="col-md-6  align-content-center">
             <h1 class="text-center text-white fw-bold " >
                 +100 NEGÓCIOS TRANSFORMADOS
@@ -16,18 +16,21 @@
                 AJUDO VOCÊ A TRANSFORMAR SUA JORNADA, DO EMPREENDEDOR AO NEGÓCIO
             </h3>
         </div>
-    </div>
+    </div> *@
+    <br />
 
-    <div class="row py-3 container m-sm-auto">
-        <div class="col-6 px-4 align-content-center  ">
-            <h2 class="text-start text-white fw-light">
+
+    <div class="row py-5 container m-auto my-5" style="min-height: 320px;">
+        <div class="col-md-6 px-2 align-content-center  ">
+            <h2 class=" text-white fw-bolder">
                 Descubra o nível de maturidade digital da sua empresa. 
                 Realize agora uma pesquisa e tenha a resposta em alguns segundos
             </h2>
         </div>
-        <div class="col-6 text-center align-content-center">
+        <div class="mobile-display"></div>
+        <div class="col-md-6 text-center align-content-center">
             <a asp-controller="AssessmentForm" asp-action="Index">
-                <button type="button" class="btn btn-primary fs-4 shadow-sm bg-gradient border-0 px-3 py-3 rounded-4 fw-medium"
+                <button type="button" class="btn btn-primary fs-4 shadow-lg bg-gradient border-0 px-3 py-3 rounded-4 fw-medium"
                         style="min-width:50%; min-height:20%;">
                     COMECE AGORA
                 </button>
@@ -40,144 +43,197 @@
 
 
     <!--EXPLANATION - TRANSFORMAÇÃO DIGITAL-->
-    <div class="card bg-gradient my-5 text-center" style="min-height:400px">
-        <h2 class=" text-white text-uppercase pt-4">Descubra os pilares da Transformação Digital</h2>
-        <span class="" style="color: lightgray">(Clique nos ícones para abrir e fechar os itens)</span>
-        <div class="row gx-5 bg-transparent border-0 text-center m-auto">
-            <div class="col-auto px-0">
-                <button class=" bg-transparent border-0 p-0 mx-3" type="button" data-bs-toggle="collapse" data-bs-target="#cult" aria-expanded="false" aria-controls="cult">
-                    <img src="~/lib/images/icons/icons8-group-50.png" class="bg-transparent"/>
-                </button>
-            </div>
-            <div class="col-auto px-0">
-                <button class="bg-transparent border-0 p-0 mx-3" type="button" data-bs-toggle="collapse" data-bs-target="#experience" aria-expanded="false" aria-controls="multicollapse">
-                    <img src="~/lib/images/icons/icons8-shopping-bag-50.png" class="bg-transparent" />
-                </button>
-            </div>
-            <div class="col-auto px-0">
-                <button class="bg-transparent border-0 p-0 mx-3" type="button" data-bs-toggle="collapse" data-bs-target="#market" aria-expanded="false" aria-controls="market">
-                    <img src="~/lib/images/icons/icons8-leaderboard-50.png" class="bg-transparent" />
-                </button>
-            </div>
-            <div class="col-auto px-0">
-                <button class="bg-transparent border-0 p-0 mx-3" type="button" data-bs-toggle="collapse" data-bs-target="#innovation" aria-expanded="false" aria-controls="innovation">
-                    <img src="~/lib/images/icons/icons8-innovation-80.png" style="max-width:50px;" class="bg-transparent" />
-                </button>
-            </div>
-            <div class="col-auto px-0">
-                <button class=" bg-transparent border-0 p-0 mx-3" type="button" data-bs-toggle="collapse" data-bs-target="#process" aria-expanded="false" aria-controls="process">
-                    <img src="~/lib/images/icons/icons8-process-improvement-50.png" class="bg-transparent" />
-                </button>
-            </div>
-            <div class="col-auto px-0">
-                <button class="bg-transparent border-0 p-0 mx-3" type="button" data-bs-toggle="collapse" data-bs-target="#models" aria-expanded="false" aria-controls="models">
-                    <img src="~/lib/images/icons/icons8-business-50.png" class="bg-transparent" />
-                </button>
-            </div>
-            <div class="col-auto px-0">
-                <button class="bg-transparent border-0 p-0 mx-3" type="button" data-bs-toggle="collapse" data-bs-target="#data" aria-expanded="false" aria-controls="data">
-                    <img src="~/lib/images/icons/icons8-big-data-50.png" class="bg-transparent" />
-                </button>
-            </div>
-            <div class="col-auto px-0">
-                <button class="bg-transparent border-0 p-0 mx-3" type="button" data-bs-toggle="collapse" data-bs-target="#technology" aria-expanded="false" aria-controls="technology">
-                    <img src="~/lib/images/icons/icons8-laptop-64.png" style="max-width:50px;" class="bg-transparent" />
-                </button>
-            </div>
-        </div>
+    <div class="card bg-gradient  py-3 text-center" style="min-height:400px">
+        <h2 class="text-white text-uppercase my-5 mx-4">Descubra os pilares da Transformação Digital</h2>
+     
             <!--ITENS DA TRANSFORMAÇÃO DIGITAL-->
-        <div class="text-center m-auto my-4" style="min-height: 120px;">
-            <div class="collapse multicollapse" id="cult">
-                <div class="card card-body m-auto bg-transparent border-0 text-white" style="width: 80%;">
-                    <h4 class="card-title">Cultura e Pessoas</h4>
-                    <p style="text-align: justify;"> 
-                        Esta categoria enfoca a importância da cultura organizacional e do capital humano na jornada de transformação digital. 
-                        Uma cultura digitalmente madura encoraja a colaboração, inovação e flexibilidade. Pessoas são os principais agentes de mudança; 
-                        portanto, investir em suas habilidades digitais e adaptabilidade é crucial. A liderança deve modelar e fomentar essa cultura, promovendo um ambiente onde a experimentação, 
-                        aprendizagem contínua e a adoção de novas tecnologias são valorizadas e incentivadas.
-                    </p>
+        <div class="wrapper m-auto" style="max-width:80%;">
+
+            <div class="cols">
+                <!-- CAROUSEL - CULTURA E PESSOAS -->
+                <div class="carousel-col" ontouchstart="this.classList.toggle('hover');">
+                    <div class="carousel-card">
+                        <div class="front bg-primary">
+                            <div class="inner">
+                                <p class="fs-5">CULTURA E PESSOAS</p>
+                                <img src="~/lib/images/icons/icons8-group-50.png" class="bg-transparent" />
+                            </div>
+                        </div>
+                        <div class="back text-start bg-primary">
+                            <div class="inner">
+                                <h5 style="font-size: .55em;">
+                                    Esta categoria enfoca a importância da cultura organizacional e do capital humano 
+                                    na jornada de transformação digital. Uma cultura digitalmente madura encoraja a colaboração, 
+                                    inovação e flexibilidade. Pessoas são os principais agentes de mudança; 
+                                    portanto, investir em suas habilidades digitais e adaptabilidade é crucial. 
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="collapse" id="experience">
-                <div class="card card-body m-auto bg-transparent border-0 text-white" style="width: 80%;">
-                    <h4 class="card-title">Experiência do Cliente</h4>
-                    <p style="text-align: justify;">
-                        Aqui, o foco é na redefinição da interação com o cliente através da digitalização. Isso envolve entender profundamente as 
-                        necessidades e comportamentos dos clientes e usar tecnologias digitais para melhorar a experiência do cliente em todos os pontos de contato. 
-                        A experiência do cliente digital deve ser intuitiva, personalizada e consistente, proporcionando um alto nível de satisfação e engajamento.
-                    </p>
+                <!-- CAROUSEL - EXPERIÊNCIA DO CLIENTE -->
+                <div class="carousel-col" ontouchstart="this.classList.toggle('hover');">
+                    <div class="carousel-card">
+                        <div class="front bg-primary">
+                            <div class="inner">
+                                <p class="fs-5">EXPERIÊNCIA DO CLIENTE</p>
+                                <img src="~/lib/images/icons/icons8-shopping-bag-50.png" class="bg-transparent" />
+                            </div>
+                        </div>
+                        <div class="back bg-primary">
+                            <div class="inner text-start">
+                                <h5 style="font-size: .55em;">
+                                    Esta categoria enfoca a importância da cultura organizacional e do capital 
+                                    humano na jornada de transformação digital. Uma cultura digitalmente madura 
+                                    encoraja a colaboração, inovação e flexibilidade. Pessoas são os principais 
+                                    agentes de mudança; portanto, investir em suas habilidades digitais e 
+                                    adaptabilidade é crucial.
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="collapse" id="market">
-                <div class="card card-body m-auto bg-transparent border-0 text-white" style="width: 80%;">
-                    <h4 class="card-title">Mercado e Concorrência</h4>
-                    <p style="text-align: justify;">
-                        Esta categoria aborda a compreensão do ambiente de mercado e a posição da empresa em relação aos concorrentes. 
-                        Inclui a análise de tendências do setor, adaptação às mudanças do mercado e benchmarking contra concorrentes. 
-                        A transformação digital neste contexto implica em permanecer competitivo e inovador, entendendo e reagindo rapidamente às oportunidades e desafios do mercado.
-                    </p>
+                <!-- CAROUSEL - MERCADO E CONCORRÊNCIA -->
+                <div class="carousel-col" ontouchstart="this.classList.toggle('hover');">
+                    <div class="carousel-card">
+                        <div class="front bg-primary" >
+                            <div class="inner">
+                                <p class="fs-5">MERCADO E CONCORRÊNCIA</p>
+                                <img src="~/lib/images/icons/icons8-leaderboard-50.png" class="bg-transparent" />
+                            </div>
+                        </div>
+                        <div class="back bg-primary">
+                            <div class="inner text-start">
+                                <h5 style="font-size: .55em;">
+                                    Esta categoria aborda a compreensão do ambiente de mercado e a 
+                                    posição da empresa em relação aos concorrentes. Inclui a análise de 
+                                    tendências do setor, adaptação às mudanças do mercado e benchmarking 
+                                    contra concorrentes. A transformação digital neste contexto implica em 
+                                    permanecer competitivo e inovador, entendendo e reagindo rapidamente às 
+                                    oportunidades e desafios do mercado.
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="collapse multicollapse" id="innovation">
-                <div class="card card-body m-auto bg-transparent border-0 text-white" style="width: 80%;">
-                    <h4 class="card-title">Inovação</h4>
-                    <p style="text-align: justify;">
-                        Inovação na transformação digital significa integrar novas tecnologias e ideias para criar valor. 
-                        Isso pode envolver o desenvolvimento de novos produtos e serviços ou a melhoria de processos e modelos de negócio existentes. 
-                        Uma abordagem inovadora requer uma cultura que apoie a experimentação e aceite o risco, 
-                        além de processos que permitam a rápida implementação e iteração de ideias.
-                    </p>
+                <!-- CAROUSEL - INOVAÇÃO -->
+                <div class="carousel-col" ontouchstart="this.classList.toggle('hover');">
+                    <div class="carousel-card">
+                        <div class="front bg-primary">
+                            <div class="inner">
+                                <p class="fs-5">INOVAÇÃO</p>
+                                <img src="~/lib/images/icons/icons8-innovation-80.png" style="max-width:50px;" class="bg-transparent" />
+                                
+                            </div>
+                        </div>
+                        <div class="back bg-primary">
+                            <div class="inner text-start">
+                                <h5 style="font-size: .57em;">
+                                    Inovação na transformação digital significa integrar novas tecnologias e 
+                                    ideias para criar valor. Isso pode envolver o desenvolvimento de novos 
+                                    produtos e serviços ou a melhoria de processos e modelos de negócio existentes. 
+                                    Uma abordagem inovadora requer uma cultura que apoie a experimentação e aceite 
+                                    o risco, além de processos que permitam a rápida implementação e iteração de ideias.
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="collapse" id="process">
-                <div class="card card-body m-auto bg-transparent border-0 text-white" style="width: 80%;">
-                    <h4 class="card-title">Processos</h4>
-                    <p style="text-align: justify;">
-                        Os processos na transformação digital referem-se à otimização e automatização dos processos de negócio. 
-                        Isso inclui a digitalização de processos manuais para aumentar a eficiência, reduzir custos e melhorar a qualidade. 
-                        Processos eficientes e automatizados permitem que a empresa seja mais ágil e adaptável às mudanças do mercado e às necessidades dos clientes.
-                    </p>
+                <!-- CAROUSEL - PROCESSOS -->
+                <div class="carousel-col" ontouchstart="this.classList.toggle('hover');">
+                    <div class="carousel-card">
+                        <div class="front bg-primary">
+                            <div class="inner">
+                                <p class="fs-5">PROCESSOS</p>
+                                <img src="~/lib/images/icons/icons8-process-improvement-50.png" class="bg-transparent" />
+                            </div>
+                        </div>
+                        <div class="back bg-primary">
+                            <div class="inner text-start">
+                                <h5 style="font-size: .57em;">
+                                    Os processos na transformação digital referem-se à otimização e automatização 
+                                    dos processos de negócio. Isso inclui a digitalização de processos manuais 
+                                    para aumentar a eficiência, reduzir custos e melhorar a qualidade. 
+                                    Processos eficientes e automatizados permitem que a empresa seja mais 
+                                    ágil e adaptável às mudanças do mercado e às necessidades dos clientes.
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="collapse" id="models">
-                <div class="card card-body m-auto bg-transparent border-0 text-white" style="width: 80%;">
-                    <h4 class="card-title">Modelos de Negócio</h4>
-                    <p style="text-align: justify;">
-                        Esta categoria envolve repensar e modificar o modelo de negócio da empresa para aproveitar as vantagens das tecnologias digitais. 
-                        Pode significar a introdução de novos canais de distribuição digital, modelos de receita ou a transformação da maneira como a empresa cria, entrega e captura valor. 
-                        Um modelo de negócio adaptado digitalmente é essencial para manter a relevância e competitividade no mercado digital de hoje.
-                    </p>
+                <!-- CAROUSEL - MODELOS DE NEGÓCIO -->
+                <div class="carousel-col" ontouchstart="this.classList.toggle('hover');">
+                    <div class="carousel-card">
+                        <div class="front bg-primary">
+                            <div class="inner">
+                                <p class="fs-5">MODELOS DE NEGÓCIO</p>
+                                <img src="~/lib/images/icons/icons8-business-50.png" class="bg-transparent" />  
+                            </div>
+                        </div>
+                        <div class="back bg-primary">
+                            <div class="inner text-start">
+                                <h5 style ="font-size: .60em;">
+                                    Esta categoria envolve repensar e modificar o modelo de negócio da empresa 
+                                    para aproveitar as vantagens das tecnologias digitais. Pode significar a 
+                                    introdução de novos canais de distribuição digital, modelos de receita 
+                                    ou a transformação da maneira como a empresa cria, entrega e captura valor. 
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="collapse" id="data">
-                <div class="card card-body m-auto bg-transparent border-0 text-white" style="width: 80%;">
-                    <h4 class="card-title">Dados</h4>
-                    <p style="text-align: justify;">
-                        A gestão de dados é central para a transformação digital. 
-                        Envolve a coleta, análise e utilização de dados para informar a tomada de decisão, otimizar operações e personalizar a experiência do cliente. 
-                        Dados precisos e acessíveis são um recurso valioso que permite às empresas serem mais proativas, previsíveis e inovadoras em suas estratégias.
-                    </p>
+                <!-- CAROUSEL - DADOS -->
+                <div class="carousel-col" ontouchstart="this.classList.toggle('hover');">
+                    <div class="carousel-card">
+                        <div class="front bg-primary" >
+                            <div class="inner">
+                                <p class="fs-5">DADOS</p>
+                                <img src="~/lib/images/icons/icons8-big-data-50.png" class="bg-transparent" />
+                            </div>
+                        </div>
+                        <div class="back bg-primary">
+                            <div class="inner text-start">
+                                <h5 style="font-size: 60%;">
+                                    A gestão de dados é central para a transformação digital. Envolve a coleta, 
+                                    análise e utilização de dados para informar a tomada de decisão, otimizar 
+                                    operações e personalizar a experiência do cliente. Dados precisos e acessíveis 
+                                    são um recurso valioso que permite às empresas serem mais proativas, previsíveis 
+                                    e inovadoras em suas estratégias.
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="collapse" id="technology">
-                <div class="card card-body m-auto bg-transparent border-0 text-white" style="width: 80%;">
-                    <h4 class="card-title">Tecnologia</h4>
-                    <p style="text-align: justify;">
-                        Esta categoria abrange a adoção e integração de tecnologias digitais na empresa. Inclui infraestrutura de TI, software, 
-                        plataformas em nuvem, inteligência artificial, internet das coisas (IoT), entre outros. 
-                        A escolha e implementação de tecnologias apropriadas são fundamentais para habilitar todas as outras áreas da transformação digital, 
-                        permitindo que a empresa opere de maneira mais eficiente, inovadora e centrada no cliente.
-                    </p>
+                <!-- CAROUSEL - TECNOLOGIAS -->
+                <div class="carousel-col" ontouchstart="this.classList.toggle('hover');">
+                    <div class="carousel-card">
+                        <div class="front bg-primary">
+                            <div class="inner">
+                                <p class="fs-5">TECNOLOGIAS</p>
+                                <img src="~/lib/images/icons/icons8-laptop-64.png" style="max-width:50px;" class="bg-transparent" />
+                            </div>
+                        </div>
+                        <div class="back bg-primary">
+                            <div class="inner text-start ">
+                                <h5 style="font-size: .55em;">
+                                    Esta categoria abrange a adoção e integração de tecnologias digitais na empresa. 
+                                    Inclui infraestrutura de TI, software, plataformas em nuvem, inteligência 
+                                    artificial, internet das coisas (IoT), entre outros. A escolha e implementação 
+                                    de tecnologias apropriadas são fundamentais para habilitar todas as outras áreas 
+                                    da transformação digital, permitindo que a empresa opere de maneira mais eficiente,
+                                    inovadora e centrada no cliente.
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+        <br />
 
     </div>
 
 
-    <br />
-    <br />
-    <br />
     <br />
     <br />
    
@@ -185,18 +241,16 @@
     <div class="" style="min-height:500px">
         <div class="bg-opacity-dark align-content-center py-4">
             <div class=" mb-3 container m-sm-auto text-white align-content-center" style="max-width: 1200px; min-height: 350px; margin:auto">
-                <div class="row g-0">
-                    <div class="col-md-3 mx-5 rounded-circle circle">
-                        <img src="~/lib/images/14_JOH_1565.jpg" class="img-fluid rounded-start bg-transparent" style="border:50%; transform: scale(1.6); zoom: 200%;" alt="Foto Luan Donde">
+                <div class="row g-0 m-auto">
+                    <div class="col-md-2 mx-5 rounded-circle circle">
+                        <img src="~/lib/images/14_JOH_1565.jpg" class="img-fluid rounded-start bg-transparent" style="border: 50%; transform: scale(1.6); zoom: 200%;" alt="Foto Luan Donde">
                     </div>
                     <div class="col-md-7 px-4 mt-1">
-                        <div class="card-body" id="card-luan">
+                        <div class="card-body p-0" id="card-luan">
                             @* <h3 class="card-title display-3">Luan Donde</h3> *@
 
-                            <p class="text-white fs-3 mb-0">
-                                <p class="text-white fs-5 mb-0">- Consultor Corporativo</p>
-                                <p class="text-white fs-5 mb-0">- Especialista em Transformação Digital</p>
-                                <p class="text-white fs-5 mb-0">- Mestrando em Propriedade Intelectual e Transferência de Tecnologia para Inovação pela UFSC</p>
+                            <p class="text-white mb-0">
+                                <h4 class="text-white mb-0">Mestrando em Propriedade Intelectual e Transferência de Tecnologia para Inovação pela UFSC</h4>
                             </p>
                             <div class="row text-center m-auto">
                                 <a class="col-auto navbar-nav mx-0 px-0" target="_blank" href="https://wa.me/5549999128510?text=Ol%C3%A1%21+Venho+do+seu+site+sobre+transforma%C3%A7%C3%A3o+digital.">

@@ -3,6 +3,7 @@ using LuanDonde.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace TransformaSeu.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240521135642_UpgradingTheTable")]
+    partial class UpgradingTheTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -175,11 +178,6 @@ namespace TransformaSeu.Migrations
                     b.Property<int>("InovacaoTotal")
                         .HasColumnType("int");
 
-                    b.Property<string>("MainGoal")
-                        .IsRequired()
-                        .HasMaxLength(80)
-                        .HasColumnType("nvarchar(80)");
-
                     b.Property<double>("MaturidadeDigital")
                         .HasColumnType("float");
 
@@ -241,11 +239,6 @@ namespace TransformaSeu.Migrations
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
-                    b.Property<string>("Priority")
-                        .IsRequired()
-                        .HasMaxLength(80)
-                        .HasColumnType("nvarchar(80)");
-
                     b.Property<int>("Processos1")
                         .HasColumnType("int");
 
@@ -272,11 +265,6 @@ namespace TransformaSeu.Migrations
 
                     b.Property<int>("ProcessosTotal")
                         .HasColumnType("int");
-
-                    b.Property<string>("ProximityOfGoal")
-                        .IsRequired()
-                        .HasMaxLength(15)
-                        .HasColumnType("nvarchar(15)");
 
                     b.Property<string>("RolePosition")
                         .IsRequired()

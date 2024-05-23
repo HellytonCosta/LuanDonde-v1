@@ -1,15 +1,14 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="~/lib/images/main-icon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="~/lib/images/luan-icon.ico" type="image/x-icon">
     <title>@ViewData["Title"] - Trasforme Seu</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <!-- 
-        <link rel="stylesheet" href="~/LuanDonde.styles.css" asp-append-version="true" />
-    -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="~/js/ModalContato.js"></script>
     
     <link rel="stylesheet" href="~/css/general-styles.css" />
 
@@ -50,9 +49,9 @@
                         <li class="nav-item mx-4">
                             <a class="nav-link text-center text-light" asp-area="" asp-controller="AssessmentForm" asp-action="Index">Maturidade Digital</a>
                         </li>                   
-                        <li class="nav-item mx-4">
+@*                         <li class="nav-item mx-4">
                             <a class="nav-link text-center text-light" asp-area="" asp-controller="" asp-action="">Artigos</a>
-                        </li>
+                        </li> *@
                         <li class="nav-item mx-4">
                             <a class="nav-link text-center text-light" href="https://linktr.ee/luandonde" target="_blank">Links</a>
                         </li>
@@ -95,6 +94,7 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/Chart.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
