@@ -23,7 +23,7 @@ namespace LuanDonde.Models
         [DisplayName("E-mail")]
         public string Email { get; set; }
         [Required]
-        [MaxLength(20)]
+        [MaxLength(100)]
         [DisplayName("Grau de Instrução")]
         public string GrauInstrucao{ get; set; }
         [Required]
