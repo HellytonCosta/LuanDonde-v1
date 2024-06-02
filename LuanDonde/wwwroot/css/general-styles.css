@@ -6,7 +6,7 @@ html{
 }
 .bg-gradient {
     /*--bs-gradient: linear-gradient(90deg, rgba(37,130,159,1) 0%, rgba(44,69,106,1) 50%, rgba(28,30,67,1) 100%);*/
-    --bs-gradient: linear-gradient(90deg, rgba(28,30,67,1) 0%, rgba(44,69,106,1) 50%, rgba(37,130,159,1) 90%);
+    --bs-gradient: linear-gradient(90deg, rgba(28,30,67,1) 0%, rgba(44,69,106,1) 50%, rgba(37,130,159,1) 70%);
     background-image: var(--bs-gradient) !important;
 }
 .bg-logo {

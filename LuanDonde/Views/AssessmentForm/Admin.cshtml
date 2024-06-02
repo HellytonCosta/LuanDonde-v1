@@ -1,0 +1,58 @@
+﻿@model List<AssessmentForm>
+@{
+    ViewData["Title"] = "Admin";
+   
+
+
+}
+
+
+    <div class="row m-0 my-2">
+        <div class="col-12 text-center mt-3">
+            <h4 class="text-primary fw-bolder text-uppercase py-1">Lista de Formulários preenchidos</h4>
+        </div>
+    </div>
+
+    <div class ="card shadow border-0 mb-5 m-auto rounded-5 bg-grey p-4" style="max-width: 80%; border-radius:50px;">
+
+        
+
+        <div class="container">
+
+            <table class="table table-bordered table-striped m-0">
+                <thead>
+                    <tr>
+                        <th class=" bg-primary text-light">
+                            Nome
+                        </th>
+                        <th class=" bg-primary text-light">
+                            Resultado Maturidade
+                        </th>
+                        <th class=" bg-primary text-light">
+
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var obj in Model.OrderBy(u => u.Id))
+                    {
+                        <tr>
+                            <td class="align-content-center bg-transparent">@obj.Name</td>
+                            <td class="align-content-center bg-transparent">@obj.MaturidadeDigital</td>
+                            <td class="bg-transparent align-content-center text-center">
+                                <div class="w-75 btn-group m-auto" role="group">
+                                    <a asp-controller="AssessmentForm" asp-action="AdminResults" asp-route-id="@obj.Id" class="btn btn-primary mx-2">
+                                        <i class="bi bi-pencil-square"></i>Visualizar
+                                    </a>
+                                    <a asp-controller="AssessmentForm" asp-action="Delete" asp-route-id="@obj.Id" class="btn btn-danger border mx-2 d-none">
+                                        <i class="bi bi-trash-fill"></i>Apagar
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+

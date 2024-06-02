@@ -67,7 +67,7 @@
         <div class="col-auto px-1">
             <img src="~/lib/images/icons/icons8-group-50.png" style="max-width: 2em;" />
         </div>
-        <p class="col-auto mb-0 d-none d-lg-block">Contato</p>
+        <p class="col-auto mb-0">Contato</p>
     </div>
     <div class="col-auto row rounded-top-4 text-light align-items-center mx-1 px-2" style="background-color: grey">
         <div class="col-auto px-1">
@@ -111,7 +111,7 @@
                 @* <label asp-for="Email" class="ms-2"></label> *@
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
-            <div class="form-floating py-2 col-12">
+            <div class="form-floating py-2 col-12 d-none">
                 <p class="text-primary fw-bolder fs-4 mb-1">Qual seu número de telefone (com DDD)?</p>
                 <input asp-for="PhoneNumber" class="form-control border-2 shadow py-0 px-4" style="border-radius: 25px" />
                 @*                     <label asp-for="PhoneNumber" class="ms-2"></label> *@
@@ -248,11 +248,12 @@ $(document).ready(function(){
         $('#btnSave').click(function () {
             var value = $('#modalInput').val(); // Captura o valor do campo de entrada
             var valorCheckbox = $('#modalInput').prop("checked");
+            var x = document.getElementById('#modalInput').value;
             // Envia o valor de volta para o servidor usando AJAX
             $.ajax({
                 type: "POST",
                 url: "@Url.Action("ReceberValorDoModal", "AssessmentForm")", // Substitua pelo URL correto do seu controller
-                data: { valorCheckbox: valorCheckbox }
+                data: { x: x }
             });
         });
     });

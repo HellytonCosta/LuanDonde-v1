@@ -257,6 +257,8 @@ namespace LuanDonde.Controllers
             }
             return View(_formAux);
         }
+
+        // MÉTODO QUE REALIZA TODAS AS CONTAS DO FORMULÁRIO
         [HttpPost]
         public IActionResult Formulario8(AssessmentForm _formVM)
         {
@@ -496,6 +498,27 @@ namespace LuanDonde.Controllers
             // AssessmentForm _form = _unitOfWork.Formulario.Get(u => u.Id == id);
             return View(_form);
         }
+        public IActionResult Admin()
+        {
+            List<AssessmentForm> formList = _unitOfWork.Formulario.GetAll().ToList();
+            return View(formList);
+        }
+
+
+        public IActionResult AdminResults(int? id)
+        {
+            if (id == null || id == 0)
+            {
+                return NotFound();
+            }
+            AssessmentForm _formAux = _unitOfWork.Formulario.Get(u => u.Id == id);
+            if (_formAux == null)
+            {
+                return NotFound();
+            }
+            return View(_formAux);
+        }
+
 
         [HttpPost]
         public ActionResult ReceberValorDoModal(bool value)
@@ -503,6 +526,7 @@ namespace LuanDonde.Controllers
             // Faça o que quiser com o valor recebido do modal
             ViewBag.ValorRecebido = value;
             return PartialView(); // Retorna uma PartialView se necessário
+            // return RedirectToAction("Index", "Home");
         }
 
 
