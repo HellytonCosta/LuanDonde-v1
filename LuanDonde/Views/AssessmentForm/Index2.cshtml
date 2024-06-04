@@ -49,25 +49,38 @@
 
             <!--NOME DA EMPRESA-->
             <div class="form-floating py-2 col-12">
-                <p class="text-primary fw-bolder fs-4 mb-1">
-                    Razão social/Nome da empresa
-                </p>
+                <div class="row">
+
+                    <p class="col-auto text-primary fw-bolder fs-4 mb-1">
+                        Razão social/Nome da empresa
+                    </p>
+                    <span class="col-auto fst-italic align-content-center px-0">(OPCIONAL)</span>
+
+                </div>
                 <input asp-for="CompanySocialName" class="form-control border-2 shadow py-0 px-4" style="border-radius: 25px" />
 
-                <span asp-validation-for="CompanySocialName" class="text-danger"></span>
+                @* <span asp-validation-for="CompanySocialName" class="text-danger"></span> *@
             </div>
             <!--CNPJ EMPRESA-->
             <div class="form-floating py-2 col-12">
-                <p class="text-primary fw-bolder fs-4 mb-1">
-                    CNPJ
-                </p>
+                <div class="row">
+                    <p class="col-auto text-primary fw-bolder fs-4 mb-1">
+                        CNPJ
+                    </p>
+                    <span class="col-auto fst-italic align-content-center px-0">(OPCIONAL)</span>
+                </div>
+
                 <input asp-for="CompanyCNPJ" class="form-control border-2 shadow py-0 px-4" style="border-radius: 25px" />
                 @*                     <label asp-for="CompanyCNPJ" class="ms-2"></label> *@
-                <span asp-validation-for="CompanyCNPJ" class="text-danger"></span>
+               @*  <span asp-validation-for="CompanyCNPJ" class="text-danger"></span> *@
             </div>
 
             <!--RATIO FORM - SETOR ATIVIDADE EMPRESA -->
-            <p class="text-primary fw-bolder fs-4 my-1">Qual é o principal setor de atividade de sua empresa?</p>
+            <div class="row">
+                <p class="col-auto text-primary fw-bolder fs-4 my-1">Qual é o principal setor de atividade de sua empresa?</p>
+                <span class="col-auto fst-italic align-content-center px-0">(OBRIGATÓRIO)</span>
+            </div>
+
             <div class="row m-sm-auto py-2">
                 <div class="col-auto">
                     <div class="form-check col-12">
@@ -167,7 +180,7 @@
             <!--SUBMIT FORM  type="submit"    -->
             <div class="row pt-2 align-content-center justify-content-between">
                 <div class="col-auto col-md-3">
-                    <a asp-controller="AssessmentForm" asp-action="Index" asp-route-id="@obj.Id" class="btn btn-secondary border text-dark form-control rounded-4 fw-bold sombra">
+                    <a asp-controller="AssessmentForm" asp-action="Index1" asp-route-id="@obj.Id" class="btn btn-secondary border text-dark form-control rounded-4 fw-bold sombra">
                         VOLTAR
                     </a>
                 </div>

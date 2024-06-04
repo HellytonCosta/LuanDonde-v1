@@ -22,6 +22,9 @@ namespace LuanDonde.Controllers
         {
             return View(); 
         }
+
+
+
         [HttpPost]
         public IActionResult Index(AssessmentForm _formulario) 
         {
@@ -30,6 +33,26 @@ namespace LuanDonde.Controllers
             _unitOfWork.Save();
             _id = _formulario.Id;
             return RedirectToAction("Index2", _formulario);
+        }
+
+        public IActionResult Index1(int? id)
+        {
+            AssessmentForm _formAux = _unitOfWork.Formulario.Get(u => u.Id == id);
+            if (_formAux == null)
+            {
+                return NotFound();
+            }
+            return View(_formAux);
+        }
+        [HttpPost]
+        public IActionResult Index1(AssessmentForm _formulario)
+        {
+            _formulario.auxIndex();
+            _unitOfWork.Formulario.Update(_formulario);
+            _unitOfWork.Save();
+            _id = _formulario.Id;
+            return RedirectToAction("Index2", _formulario);
+
         }
         public IActionResult Index2(int? id)
         {

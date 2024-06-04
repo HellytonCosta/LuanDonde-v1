@@ -9,61 +9,7 @@
     bool modalTeste;
 }
 
-<!-- MODAL --> 
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-bs-backdrop="static">
-    <div class="modal-dialog" style="min-width:60%; max-width:62%;">
-        <div class="modal-content bg-grey rounded-4 px-5">
-            <div class="modal-header text-center m-auto border-0 p-0 mt-4">
-                <h3 class="text-primary fw-bold fs-4 mb-0">TERMO DE CONSENTIMENTO LIVRE E ESCLARECIDO</h3>
-            </div>
-            <div class="modal-body p-3 border-0">
-                <!-- TEXTOS DO MODAL EM PARÁGRAFOS -->
-                <p class="fs-5">
-                    Para garantir um diagnóstico preciso da maturidade digital do seu negócio, dedique pelo menos 20 
-                    minutos para completar esta avaliação. Ao prosseguir, você consente que Luan Dondé dos Santos colete e 
-                    processe seus dados pessoais exclusivamente para o propósito de avaliar o nível de maturidade digital 
-                    da empresa que você representa, como parte do trabalho de pesquisa para o Mestrado Profissional em 
-                    Propriedade Intelectual e Transferência de Tecnologia para Inovação da Universidade Federal de Santa 
-                    Catarina (UFSC), sob orientação dos professores Dr. Irineu Afonso Frey  e  Dr. Mário Steindel.
-                </p>
-                <p class="fs-5">
-                    Asseguramos que seus dados pessoais não serão compartilhados com terceiros e serão manejados 
-                    com a máxima confidencialidade. Você tem o direito de solicitar a remoção de suas informações a 
-                    qualquer momento antes da compilação dos dados. Para tal, basta enviar um pedido para o e-mail 
-                    <b>luan.donde@yahoo.com</b>.
-                </p>
-                <p class="fs-5">
-                    Lembramos que este processo é fundamental para fornecer insights precisos e personalizados para o 
-                    desenvolvimento digital do seu negócio. 
-                    Agradecemos sua confiança e compromisso com a transformação digital!
-                </p>
 
-            </div>
-            <div class="modal-footer col-auto align-content-center justify-content-center form-check p-0 my-1 border-0">
-                <input class="form-check-input" id="modalInput" type="checkbox" name="modalInput" required>
-
-                <p class="form-check-label align-content-center pb-0 mb-0">
-                    Concordo com os Termos de Uso
-                </p>
-                <span aria-checked="true"></span>
-            </div>
-
-            <div class="modal-footer m-auto border-0">
-                <script>
-
-                    
-                    
-                </script>
-
-                
-                
-                 <button type="button" id="btnSave" class="btn bg-gradient rounded-3 text-light border-0" data-bs-dismiss="modal">OK</button>
-                
-                
-            </div>
-        </div>
-    </div>
-</div>
 
 
 
@@ -268,26 +214,7 @@
 <br />
 <br />
 
-<script>
-$(document).ready(function(){
-    $('#myModal').modal('show');
-});
-</script>
-<script>
-    $(document).ready(function () {
-        $('#btnSave').click(function () {
-            var value = $('#modalInput').val(); // Captura o valor do campo de entrada
-            var valorCheckbox = $('#modalInput').prop("checked");
-            var x = document.getElementById('#modalInput').value;
-            // Envia o valor de volta para o servidor usando AJAX
-            $.ajax({
-                type: "POST",
-                url: "@Url.Action("ReceberValorDoModal", "AssessmentForm")", // Substitua pelo URL correto do seu controller
-                data: { x: x }
-            });
-        });
-    });
-</script>
+
 
 
 @section Scripts {
