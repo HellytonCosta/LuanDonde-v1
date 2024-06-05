@@ -48,16 +48,9 @@
                 <span aria-checked="true"></span>
             </div>
 
-            <div class="modal-footer m-auto border-0">
-                <script>
-
-                    
-                    
-                </script>
-
+            <div class="modal-footer m-auto border-0">                
                 
-                
-                 <button type="button" id="btnSave" class="btn bg-gradient rounded-3 text-light border-0" data-bs-dismiss="modal">OK</button>
+                 <button type="button" id="btnSave" class="btn bg-gradient rounded-3 text-light border-0" required checked data-bs-dismiss="modal">OK</button>
                 
                 
             </div>
@@ -287,11 +280,20 @@ $(document).ready(function(){
             });
         });
     });
+
+    // $(document).ready(function(){
+
+    //     if ($('#modalInput').value == true){
+    //         $('#btnSave').;
+    //     }  
+    // })
+
+
 </script>
 
 
 @section Scripts {
     @{
-            <partial name="_ValidationScriptsPartial" />
+                <partial name="_ValidationScriptsPartial" />
     }
 }

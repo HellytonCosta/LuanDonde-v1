@@ -397,9 +397,24 @@ namespace LuanDonde.Controllers
             _formVM.TecnologiaMedia = _formVM.CalculoMediana(TecList);
             _formVM.TecnologiaFinal = (_formVM.TecnologiaMedia* 15);   
 
-           
-            
-            _formVM.MaturidadeDigital = ( _formVM.CulturaFinal + _formVM.ExperienciaFinal + _formVM.MercadoFinal + _formVM.InovacaoFinal + _formVM.ProcessosFinal + _formVM.ModelosFinal + _formVM.DadosFinal + _formVM.TecnologiaFinal ) / 100;
+            List<double> MaturidadeList = new List<double>();
+            MaturidadeList.Add(_formVM.CulturaFinal);
+            MaturidadeList.Add(_formVM.ExperienciaFinal);
+            MaturidadeList.Add(_formVM.MercadoFinal);
+            MaturidadeList.Add(_formVM.InovacaoFinal);
+            MaturidadeList.Add(_formVM.ProcessosFinal);
+            MaturidadeList.Add(_formVM.ModelosFinal);
+            MaturidadeList.Add(_formVM.DadosFinal);
+            MaturidadeList.Add(_formVM.TecnologiaFinal);
+            MaturidadeList.Sort();
+            _formVM.MaturidadeDigital = _formVM.CalculoMediana(MaturidadeList);
+
+
+             _formVM.MaturidadeDigital = _formVM.MaturidadeDigital / 10;
+            if (_formVM.MaturidadeDigital > 100.0)
+            {
+                _formVM.MaturidadeDigital = 100.0;
+            }
 
 
             _formVM.CulturaFinal = _formVM.CulturaFinal / 10;
@@ -513,7 +528,7 @@ namespace LuanDonde.Controllers
             _unitOfWork.Formulario.Update(_formulario);
             _unitOfWork.Save();
             _id = _formulario.Id;
-            return RedirectToAction("Results", _formulario); 
+            return RedirectToAction("AdminResults", _formulario); 
         }
 
         public IActionResult Results(AssessmentForm _form)
