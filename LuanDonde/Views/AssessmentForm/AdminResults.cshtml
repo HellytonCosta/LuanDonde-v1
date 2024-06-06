@@ -309,7 +309,7 @@
         COM BASE EM SUA RESPOSTAS, AQUI ESTÃO OS RESULTADOS:
     </h2>
     <p class="m-auto fs-5 mb-4" style="max-width: 80%; text-align: justify;">
-        Sua instituição alcançou <b>@obj.MaturidadeDigital%</b> de maturidade digital. Baseado nessa porcentagem, aqui estão
+        Sua instituição alcançou <b>@obj.MaturidadeDigital.ToString("N1")%</b> de maturidade digital. Baseado nessa porcentagem, aqui estão
         algumas recomendações para o seu negócio
     </p>
 
@@ -325,7 +325,7 @@
         <div class="row justify-content-start mt-3 mb-0 mx-0 gap-4" style="max-width: 100%;">
 
             <div class="col-3 progress m-auto rounded-3 mx-0 px-0 position-relative" style="min-height: 30px; max-width: 100%; background-color: darkgray" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="50">
-                <p class="m-0 fs-5 text-white position-absolute top-50 start-50 translate-middle">@obj.CulturaFinal%</p>
+                <p class="m-0 fs-5 text-white position-absolute top-50 start-50 translate-middle">@obj.CulturaFinal.ToString("N0")%</p>
                 <div class="progress-bar bg-primary justify-content-center " style="width: @obj.CulturaFinal%">
                     
                 </div>
