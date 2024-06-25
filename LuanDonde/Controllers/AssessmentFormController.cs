@@ -4,12 +4,25 @@ using LuanDonde.Models.ViewModels;
 using LuanDonde.Repository.IRepository;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using PdfSharp.Pdf;
+using PdfSharp.Drawing;
+//using MigraDoc.DocumentObjectModel;
+using MigraDoc.Rendering;
+using System.Text;
+using QuestPDF.Fluent;
+using QuestPDF.Helpers;
+using QuestPDF.Infrastructure;
+
 
 namespace LuanDonde.Controllers
 {
     public class AssessmentFormController : Controller
     {
+
+
         private readonly IUnitOfWork _unitOfWork;
+
+
 
         public int _id;
 
@@ -594,7 +607,134 @@ namespace LuanDonde.Controllers
             // return RedirectToAction("Index", "Home");
         }
 
+        public IActionResult AdminResultsPDF(int? id)
+        {
+            if (id == null || id == 0)
+            {
+                return NotFound();
+            }
+            AssessmentForm _formAux = _unitOfWork.Formulario.Get(u => u.Id == id);
+            if (_formAux == null)
+            {
+                return NotFound();
+            }
+            // var model = form;// Seu modelo de dados, se necessário
+
+            return View();
+
+        }
+
+        public ActionResult ExportarPDF()
+        {
+            Document.Create(container =>
+            {
+                container.Page(page =>
+                {
+                    page.Size(PageSizes.A4);
+                    page.Margin(2, Unit.Centimetre);
+                    page.PageColor(Colors.White);
+                    page.DefaultTextStyle(x => x.FontSize(20));
+
+                    page.Header()
+                        .Text("Hello PDF!")
+                        .SemiBold().FontSize(36).FontColor(Colors.Blue.Medium);
+
+                    page.Content()
+                        .PaddingVertical(1, Unit.Centimetre)
+                        .Column(x =>
+                        {
+                            x.Spacing(20);
+
+                            x.Item().Text(Placeholders.LoremIpsum());
+                            x.Item().Image(Placeholders.Image(200, 100));
+                        });
+
+                    page.Footer()
+                        .AlignCenter()
+                        .Text(x =>
+                        {
+                            x.Span("Page ");
+                            x.CurrentPageNumber();
+                        });
+                });
+            })
+            .GeneratePdf("hello.pdf");
+            return View();
+        }
+
+        public ActionResult GerarPdf(AssessmentForm obj)
+        {
+            string textMaturidade = "DEFAULT";
+            if (obj.MaturidadeDigital <= 20.0)
+                textMaturidade = "Neste estágio, a empresa mostra um entendimento muito básico ou inexistente das práticas digitais. Há pouca ou nenhuma colaboração entre equipes de diferentes departamentos para a integração digital, e o uso de ferramentas ágeis é quase inexistente. A liderança carece de compreensão clara sobre as tendências digitais e suas implicações no setor. O treinamento em habilidades digitais é escasso ou ineficaz, com pouca ênfase em fomentar a inovação ou acolher ideias novas. A experiência do cliente digital é negligenciada, e há pouco esforço em entender e utilizar dados de clientes para potencializar vendas. A empresa mostra uma reatividade limitada às mudanças do mercado e às novas tecnologias.";
+            else if (obj.MaturidadeDigital > 20.0 && obj.MaturidadeDigital <= 50.0)
+                textMaturidade = "Empresas emergentes estão começando a adotar práticas digitais, mas de maneira inconsistente. Existe alguma colaboração interdepartamental, e ferramentas de gerenciamento ágil começam a ser exploradas. A liderança tem um entendimento básico das tendências digitais. Há esforços pontuais para treinar colaboradores em habilidades digitais e alguma abertura para novas ideias e opiniões. A experiência do cliente digital é reconhecida, mas não totalmente integrada ou otimizada. A empresa começa a observar a concorrência e a reagir às mudanças do mercado, mas ainda de forma limitada.";
+            else if (obj.MaturidadeDigital > 50.0 && obj.MaturidadeDigital <= 75.0)
+                textMaturidade = "Empresas com maturidade consolidada têm uma abordagem mais integrada à digitalização. Há uma colaboração efetiva entre departamentos, e ferramentas de gerenciamento ágil são mais comuns. A liderança entende o impacto das tendências digitais no setor e promove um ambiente de aprendizado contínuo. A experiência do cliente digital é bem compreendida, e há esforços para alinhar estratégias de marketing e vendas com as preferências digitais dos clientes. A empresa reage de forma mais eficaz às mudanças do mercado e começa a inovar com alguma regularidade.";
+            else if (obj.MaturidadeDigital > 75.0 && obj.MaturidadeDigital <= 90.0)
+                textMaturidade = "Neste nível, a empresa exibe uma forte integração de práticas digitais em suas operações. A colaboração entre departamentos é uma norma, com uma adoção extensiva de ferramentas ágeis. A liderança possui uma compreensão profunda das tendências digitais e promove uma cultura de inovação constante. A experiência do cliente digital é central para a estratégia da empresa, com uma abordagem sofisticada de marketing e vendas digitais. A empresa é proativa em relação às mudanças do mercado e busca ativamente inovações e parcerias para manter sua vantagem competitiva.";
+            else if (obj.MaturidadeDigital > 90.0 && obj.MaturidadeDigital <= 100.0)
+                textMaturidade = "Empresas líderes são exemplares em maturidade digital. Demonstram excelência na colaboração interdepartamental com uma utilização avançada de ferramentas de gerenciamento ágil. A liderança tem visão de futuro e está totalmente alinhada com as tendências digitais, conduzindo a empresa com inovações disruptivas. A experiência do cliente digital é excepcional, com uma utilização avançada de dados para personalizar e otimizar a jornada do cliente. A empresa é altamente adaptável, rápida em responder às mudanças do mercado e sempre à frente em inovação e aplicação de novas tecnologias.";
 
 
+
+            // Cria um novo documento PDF
+            PdfDocument documento = new PdfDocument();
+
+            // Adiciona uma página ao documento
+            PdfPage pagina = documento.AddPage();
+
+            // Obtém o objeto XGraphics para desenhar na página
+            XGraphics gfx = XGraphics.FromPdfPage(pagina);
+
+            // Define uma fonte para o texto
+            XFont fonte = new XFont("Arial", 12);
+
+            // Desenha um texto na página
+            gfx.DrawString(textMaturidade, fonte, XBrushes.Black,
+                new XRect(2, 2, pagina.Width, pagina.Height),
+                XStringFormats.TopLeft);
+
+            // Salva o documento em memória
+            byte[] conteudoPdf;
+            using (System.IO.MemoryStream stream = new System.IO.MemoryStream())
+            {
+                documento.Save(stream, false);
+                conteudoPdf = stream.ToArray();
+            }
+
+            // Retorna o PDF como um arquivo para download
+            return File(conteudoPdf, "application/pdf", "MaturidadeDigital.pdf");
+        }
+
+
+
+        public ActionResult GerarCsv(AssessmentForm _form)
+        {
+            // Dados para o arquivo CSV (exemplo)
+            var dados = new[]
+            {
+                new { Nome = "João", Sobrenome = "Silva", Idade = 30 },
+                new { Nome = "Maria", Sobrenome = "Souza", Idade = 25 },
+                new { Nome = "Pedro", Sobrenome = "Santos", Idade = 35 }
+            };
+
+            // Construir o conteúdo do arquivo CSV
+            StringBuilder csvContent = new StringBuilder();
+            csvContent.AppendLine("Nome,Sobrenome,Idade");
+
+            foreach (var pessoa in dados)
+            {
+                csvContent.AppendLine($"{pessoa.Nome},{pessoa.Sobrenome},{pessoa.Idade}");
+            }
+
+            // Converter o conteúdo do CSV em bytes
+            byte[] csvBytes = Encoding.UTF8.GetBytes(csvContent.ToString());
+
+            // Retornar o arquivo para download
+            return File(csvBytes, "text/csv", "dados.pdf");
+        }
     }
+
+    
 }

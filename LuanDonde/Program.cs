@@ -1,8 +1,15 @@
 using LuanDonde.Data;
 using LuanDonde.Repository;
 using LuanDonde.Repository.IRepository;
+using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.EntityFrameworkCore;
+using System.Web.Services.Description;
 using TransformaSeu.DbInitializer;
+using Rotativa.AspNetCore;
+using QuestPDF.Fluent;
+using QuestPDF.Infrastructure;
+using QuestPDF.Previewer;
+using QuestPDF;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,7 +19,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
             options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<IDbInitializer, DbInitializer>();
-
+Settings.License = LicenseType.Community;
 
 var app = builder.Build();
 

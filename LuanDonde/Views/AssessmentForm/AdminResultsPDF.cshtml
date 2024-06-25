@@ -1,0 +1,460 @@
+﻿@model AssessmentForm
+@{
+
+    ViewData["Title"] = "Resultados";
+    AssessmentForm obj = new AssessmentForm();
+    obj = Model;
+    string teste = "Hellyton";
+
+    // AQUI ESTÃO AS ATRIBUIÇÕES DOS TEXTOS CONFORME SUA PORCENTAGEM
+
+    // RESULTADO FINAL MATURIDADE DIGITAL 
+    string textMaturidade = "";
+    if (obj.MaturidadeDigital <= 20.0)
+        textMaturidade = "Neste estágio, a empresa mostra um entendimento muito básico ou inexistente das práticas digitais. Há pouca ou nenhuma colaboração entre equipes de diferentes departamentos para a integração digital, e o uso de ferramentas ágeis é quase inexistente. A liderança carece de compreensão clara sobre as tendências digitais e suas implicações no setor. O treinamento em habilidades digitais é escasso ou ineficaz, com pouca ênfase em fomentar a inovação ou acolher ideias novas. A experiência do cliente digital é negligenciada, e há pouco esforço em entender e utilizar dados de clientes para potencializar vendas. A empresa mostra uma reatividade limitada às mudanças do mercado e às novas tecnologias.";
+    else if (obj.MaturidadeDigital > 20.0 && obj.MaturidadeDigital <= 50.0)
+        textMaturidade = "Empresas emergentes estão começando a adotar práticas digitais, mas de maneira inconsistente. Existe alguma colaboração interdepartamental, e ferramentas de gerenciamento ágil começam a ser exploradas. A liderança tem um entendimento básico das tendências digitais. Há esforços pontuais para treinar colaboradores em habilidades digitais e alguma abertura para novas ideias e opiniões. A experiência do cliente digital é reconhecida, mas não totalmente integrada ou otimizada. A empresa começa a observar a concorrência e a reagir às mudanças do mercado, mas ainda de forma limitada.";
+    else if (obj.MaturidadeDigital > 50.0 && obj.MaturidadeDigital <= 75.0)
+        textMaturidade = "Empresas com maturidade consolidada têm uma abordagem mais integrada à digitalização. Há uma colaboração efetiva entre departamentos, e ferramentas de gerenciamento ágil são mais comuns. A liderança entende o impacto das tendências digitais no setor e promove um ambiente de aprendizado contínuo. A experiência do cliente digital é bem compreendida, e há esforços para alinhar estratégias de marketing e vendas com as preferências digitais dos clientes. A empresa reage de forma mais eficaz às mudanças do mercado e começa a inovar com alguma regularidade.";
+    else if (obj.MaturidadeDigital > 75.0 && obj.MaturidadeDigital <= 90.0)
+        textMaturidade = "Neste nível, a empresa exibe uma forte integração de práticas digitais em suas operações. A colaboração entre departamentos é uma norma, com uma adoção extensiva de ferramentas ágeis. A liderança possui uma compreensão profunda das tendências digitais e promove uma cultura de inovação constante. A experiência do cliente digital é central para a estratégia da empresa, com uma abordagem sofisticada de marketing e vendas digitais. A empresa é proativa em relação às mudanças do mercado e busca ativamente inovações e parcerias para manter sua vantagem competitiva.";
+    else if (obj.MaturidadeDigital > 90.0 && obj.MaturidadeDigital <= 100.0)
+        textMaturidade = "Empresas líderes são exemplares em maturidade digital. Demonstram excelência na colaboração interdepartamental com uma utilização avançada de ferramentas de gerenciamento ágil. A liderança tem visão de futuro e está totalmente alinhada com as tendências digitais, conduzindo a empresa com inovações disruptivas. A experiência do cliente digital é excepcional, com uma utilização avançada de dados para personalizar e otimizar a jornada do cliente. A empresa é altamente adaptável, rápida em responder às mudanças do mercado e sempre à frente em inovação e aplicação de novas tecnologias.";
+
+
+    // TEXTOS DE CULTURA E PESSOAS
+    string textCultura = "";
+    if (obj.CulturaFinal <= 20.0)
+        textCultura = "A cultura corporativa é rígida, com pouca colaboração ou comunicação entre departamentos. Há resistência significativa a mudanças e inovações digitais. Treinamentos em habilidades digitais são raros ou ineficazes, e a liderança mostra pouco entendimento ou interesse em tendências digitais.";
+    else if (obj.CulturaFinal > 20.0 && obj.CulturaFinal <= 50.0)
+        textCultura = "A cultura começa a reconhecer a importância da colaboração, mas ainda há barreiras significativas. Treinamentos digitais são realizados, mas não de maneira consistente ou eficaz. A liderança tem alguma consciência das tendências digitais, mas não as integra plenamente na estratégia da empresa.";
+    else if (obj.CulturaFinal > 50.0 && obj.CulturaFinal <= 75.0)
+        textCultura = "Existe uma cultura de colaboração moderada, com algumas iniciativas de treinamento digital. A liderança mostra um entendimento razoável das tendências digitais e começa a promover uma cultura mais aberta a inovações e mudanças.";
+    else if (obj.CulturaFinal > 75.0 && obj.CulturaFinal <= 90.0)
+        textCultura = "A empresa possui uma cultura colaborativa forte, com treinamentos digitais regulares e eficazes. A liderança entende bem as tendências digitais e trabalha para integrá-las na visão e estratégia da empresa.";
+    else if (obj.CulturaFinal > 90.0 && obj.CulturaFinal <= 100.0)
+        textCultura = "A cultura é altamente inovadora e colaborativa. A liderança está totalmente comprometida com a digitalização e promove ativamente uma mentalidade digital em todos os níveis. Treinamentos em habilidades digitais são avançados e uma parte integrante do desenvolvimento profissional.";
+
+
+
+    // TEXTOS DE EXPERIÊNCIA DO CLIENTE 
+    string textExperiencia = "";
+    if (obj.ExperienciaFinal <= 20.0)
+        textExperiencia = "A experiência do cliente é tradicional e pouco focada no digital. A empresa tem pouco entendimento das preferências digitais dos clientes e não utiliza efetivamente os canais digitais para engajamento ou suporte.";
+    else if (obj.ExperienciaFinal > 20.0 && obj.ExperienciaFinal <= 50.0)
+        textExperiencia = "Há algum reconhecimento da importância da experiência do cliente, mas as estratégias e ferramentas utilizadas são básicas. A empresa começa a explorar canais digitais, mas com integração e eficácia limitadas.";
+    else if (obj.ExperienciaFinal > 50.0 && obj.ExperienciaFinal <= 75.0)
+        textExperiencia = "A empresa tem uma abordagem mais consolidada da experiência do cliente, utilizando canais digitais de maneira mais efetiva. Há esforços para entender as preferências dos clientes e usar essas informações para melhorar o engajamento.";
+    else if (obj.ExperienciaFinal > 75.0 && obj.ExperienciaFinal <= 90.0)
+        textExperiencia = "A experiência do cliente é uma prioridade, com estratégias bem desenvolvidas e integradas. A empresa utiliza de forma eficaz os dados dos clientes para personalizar a experiência e melhorar o engajamento em todos os canais digitais.";
+    else if (obj.ExperienciaFinal > 90.0 && obj.ExperienciaFinal <= 100.0)
+        textExperiencia = "A experiência do cliente é excepcional e inovadora. A empresa lidera com estratégias digitais avançadas, personalização profunda e um entendimento superior das necessidades e preferências dos clientes.";
+
+    // TEXTOS DE MERCADO E CONCORRÊNCIA
+    string textMercado = "";
+    if (obj.MercadoFinal <= 20.0)
+        textMercado = "A empresa tem pouca visão de mercado e reage lentamente às mudanças do setor. Há pouco entendimento ou acompanhamento dos concorrentes e das tendências de mercado.";
+    else if (obj.MercadoFinal > 20.0 && obj.MercadoFinal <= 50.0)
+        textMercado = "Começa a haver uma maior conscientização sobre a importância de entender o mercado e os concorrentes, mas ainda há uma reatividade limitada às mudanças e tendências do setor.";
+    else if (obj.MercadoFinal > 50.0 && obj.MercadoFinal <= 75.0)
+        textMercado = "A empresa tem uma compreensão razoável do mercado e dos concorrentes. Começa a responder de forma mais eficaz às mudanças do setor e a observar empresas emergentes para insights.";
+    else if (obj.MercadoFinal > 75.0 && obj.MercadoFinal <= 90.0)
+        textMercado = "A empresa tem uma visão clara do mercado e mantém um acompanhamento ativo dos concorrentes e tendências. Responde rapidamente às mudanças do mercado e busca ativamente oportunidades de inovação e cooperação.";
+    else if (obj.MercadoFinal > 90.0 && obj.MercadoFinal <= 100.0)
+        textMercado = "A empresa é líder em entender e antecipar as tendências do mercado. Está sempre à frente na adaptação e na resposta às mudanças, colaborando e inovando de maneira proativa com concorrentes e parceiros.";
+
+    // TEXTOS DE INOVAÇÃO
+    string textInovacao = "";
+    if (obj.InovacaoFinal <= 20.0)
+        textInovacao = "A inovação é quase inexistente, com pouca ou nenhuma iniciativa em pesquisa e desenvolvimento. A empresa não colabora com parceiros externos e não explora novos modelos de negócios ou tecnologias.";
+    else if (obj.InovacaoFinal > 20.0 && obj.InovacaoFinal <= 50.0)
+        textInovacao = "Há algum esforço em inovação, mas é limitado e não estruturado. A empresa começa a explorar parcerias externas e novos modelos de negócios, mas sem uma estratégia clara.";
+    else if (obj.InovacaoFinal > 50.0 && obj.InovacaoFinal <= 75.0)
+        textInovacao = "A empresa tem uma abordagem mais consolidada para a inovação, investindo em pesquisa e desenvolvimento e colaborando com parceiros externos. Explora novas oportunidades de negócios com um certo grau de sucesso.";
+    else if (obj.InovacaoFinal > 75.0 && obj.InovacaoFinal <= 90.0)
+        textInovacao = "A inovação é uma parte central da estratégia da empresa. Investimentos significativos em pesquisa e desenvolvimento resultam em soluções competitivas. A empresa colabora ativamente com parceiros externos para impulsionar inovações.";
+    else if (obj.InovacaoFinal > 90.0 && obj.InovacaoFinal <= 100.0)
+        textInovacao = "A empresa é líder em inovação, com uma estratégia clara e eficaz. Há uma forte colaboração com parceiros externos, e a empresa é pioneira na criação de novos modelos de negócios e tecnologias disruptivas.";
+
+    // TEXTOS DE PROCESSOS
+    string textProcessos = "";
+    if (obj.ProcessosFinal <= 20.0)
+        textProcessos = "Os processos internos são majoritariamente manuais e não otimizados. Há pouca digitalização e os sistemas existentes são fragmentados e ineficientes.";
+    else if (obj.ProcessosFinal > 20.0 && obj.ProcessosFinal <= 50.0)
+        textProcessos = "A empresa começa a digitalizar alguns processos, mas a integração e automatização ainda são limitadas. Há esforços para melhorar a eficiência, mas estes são inconsistentes.";
+    else if (obj.ProcessosFinal > 50.0 && obj.ProcessosFinal <= 75.0)
+        textProcessos = "A maioria dos processos internos está digitalizada, e a empresa começa a integrar e automatizar sistemas. Há um foco crescente em melhorar a eficiência e a experiência dos colaboradores.";
+    else if (obj.ProcessosFinal > 75.0 && obj.ProcessosFinal <= 90.0)
+        textProcessos = "Os processos são amplamente digitalizados e integrados, com um alto nível de automatização. A empresa foca na otimização contínua dos processos para melhorar a eficiência e a experiência dos colaboradores.";
+    else if (obj.ProcessosFinal > 90.0 && obj.ProcessosFinal <= 100.0)
+        textProcessos = "A empresa tem excelência em processos, com sistemas totalmente integrados e automatizados. Há um foco constante em inovação e melhoria de processos, buscando a máxima eficiência e eficácia.";
+
+    // TEXTOS DE MODELOS DE NEGÓCIO
+    string textModelos = "";
+    if (obj.ModelosFinal <= 20.0)
+        textModelos = "O modelo de negócio é tradicional e pouco adaptado ao ambiente digital. Há pouca flexibilidade e inovação na maneira como a empresa opera e se engaja com clientes.";
+    else if (obj.ModelosFinal > 20.0 && obj.ModelosFinal <= 50.0)
+        textModelos = "A empresa começa a adaptar seu modelo de negócio para o digital, mas a mudança é lenta e limitada. Há um reconhecimento da necessidade de maior flexibilidade e inovação.";
+    else if (obj.ModelosFinal > 50.0 && obj.ModelosFinal <= 75.0)
+        textModelos = "O modelo de negócio está se adaptando de forma mais eficaz ao ambiente digital. A empresa mostra flexibilidade e começa a inovar em suas operações e na forma como se engaja com clientes.";
+    else if (obj.ModelosFinal > 75.0 && obj.ModelosFinal <= 90.0)
+        textModelos = "O modelo de negócio é bastante adaptado ao ambiente digital, com inovações constantes e uma abordagem flexível. A empresa se destaca na forma como opera e se engaja digitalmente com os clientes.";
+    else if (obj.ModelosFinal > 90.0 && obj.ModelosFinal <= 100.0)
+        textModelos = "O modelo de negócio é totalmente digitalizado e inovador, liderando o setor com sua abordagem flexível e adaptativa. A empresa é exemplar na forma como opera e interage com os clientes no ambiente digital.";
+
+
+    // TEXTOS DE DADOS E ANÁLISES
+    string textDados = "";
+    if (obj.DadosFinal <= 20.0)
+        textDados = "O uso e gestão de dados são primitivos. A empresa tem pouca capacidade de coleta, análise e utilização de dados, com fraca conscientização sobre a privacidade e proteção de dados.";
+    else if (obj.DadosFinal > 20.0 && obj.DadosFinal <= 50.0)
+        textDados = "Há um reconhecimento da importância dos dados, mas a capacidade de coleta, análise e uso ainda é básica. A empresa começa a se conscientizar sobre questões de privacidade e proteção de dados.";
+    else if (obj.DadosFinal > 50.0 && obj.DadosFinal <= 75.0)
+        textDados = "A empresa tem uma abordagem mais consolidada na gestão de dados, com capacidades razoáveis de coleta e análise. Há uma conscientização crescente sobre a importância da privacidade e proteção de dados.";
+    else if (obj.DadosFinal > 75.0 && obj.DadosFinal <= 90.0)
+        textDados = "A gestão de dados é avançada, com sólidas capacidades de coleta, análise e aplicação de dados. A empresa é bem informada sobre privacidade e proteção de dados e utiliza essas informações para gerar valor.";
+    else if (obj.DadosFinal > 90.0 && obj.DadosFinal <= 100.0)
+        textDados = "A empresa é líder em gestão de dados, com excelentes capacidades de coleta, análise e utilização estratégica de dados. Há uma compreensão profunda e prática das leis de privacidade e proteção de dados, usando os dados de forma inovadora para gerar valor significativo.";
+
+
+    // TEXTOS DE TECNOLOGIAS
+    string textTecnologias = "";
+    if (obj.TecnologiaFinal <= 20.0)
+        textTecnologias = "A adoção de tecnologia é mínima, com pouca ou nenhuma inovação tecnológica. A empresa não utiliza efetivamente a tecnologia em suas operações ou para se conectar com clientes.";
+    else if (obj.TecnologiaFinal > 20.0 && obj.TecnologiaFinal <= 50.0)
+        textTecnologias = "A empresa começa a incorporar tecnologia, mas de forma limitada e sem uma estratégia clara. O uso de tecnologia para aprimorar operações e conexões com clientes é básico.";
+    else if (obj.TecnologiaFinal > 50.0 && obj.TecnologiaFinal <= 75.0)
+        textTecnologias = "Há uma adoção mais efetiva de tecnologia, com alguns avanços na integração de novas tecnologias nas operações da empresa. O uso de tecnologia para conectar com clientes é mais estratégico.";
+    else if (obj.TecnologiaFinal > 60.0 && obj.TecnologiaFinal <= 90.0)
+        textTecnologias = "A empresa utiliza tecnologia de forma avançada e integrada, com inovações constantes nas operações e na conexão com os clientes. A tecnologia é um componente central da estratégia empresarial.";
+    else if (obj.TecnologiaFinal > 90.0 && obj.TecnologiaFinal <= 100.0)
+        textTecnologias = "A empresa é líder em inovação tecnológica, com uso de tecnologias de ponta para transformar operações e a forma de se conectar com clientes. A tecnologia é usada de maneira inovadora e disruptiva, estabelecendo padrões no setor.";
+
+
+    string textSetor1 = "";
+    string textSetor2 = "";
+    string textSetor3 = "";
+    string textSetor4 = "";
+    string textSetor5 = "";
+
+    if (obj.CompanySector.ToLower() == "educação")
+    {
+        textSetor1 = "1. Plataformas de Aprendizagem Online: Desenvolva ou adote plataformas de e-learning para fornecer educação acessível e flexível.";
+        textSetor2 = "2. Tecnologias Interativas: Integre tecnologias como realidade aumentada(AR) e virtual (VR) para enriquecer a experiência de aprendizagem.";
+        textSetor3 = "3. Análise de Dados Educacionais: Utilize dados para personalizar o aprendizado e melhorar os métodos de ensino.";
+        textSetor4 = "4. Capacitação Digital de Professores: Invista na formação de professores para o uso eficaz de ferramentas digitais.";
+        textSetor5 = "";
+    }
+    else if (obj.CompanySector.ToLower() == "educação")
+    {
+        textSetor1 = "1. Bancos Digitais e Mobile Banking: Desenvolva soluções de bancos digitais para oferecer serviços financeiros acessíveis e convenientes.";
+        textSetor2 = "2. Segurança e Conformidade: Assegure a conformidade com regulamentos financeiros digitais e invista em segurança cibernética.";
+        textSetor3 = "3. Big Data e IA para Análise Financeira: Use big data e inteligência artificial para análise de risco, previsão de mercado e personalização de serviços.";
+        textSetor4 = "4. Blockchain para Transparência: Explore o uso de blockchain para maior transparência e eficiência em transações.";
+        textSetor5 = "";
+
+    }
+    else if (obj.CompanySector.ToLower() == "contabilidade")
+    {
+        textSetor1 = "1. Software de Contabilidade em Nuvem: Adote soluções em nuvem para contabilidade, para eficiência, acessibilidade e colaboração.";
+        textSetor2 = "2. Automação de Processos: Implemente a automação para tarefas repetitivas, melhorando a precisão e a eficiência.";
+        textSetor3 = "3. Análise Preditiva: Utilize a análise preditiva para fornecer insights financeiros e aconselhamento estratégico aos clientes.";
+        textSetor4 = "4. Educação Continuada em Tecnologia: Mantenha os profissionais atualizados sobre novas tecnologias e práticas do setor.";
+        textSetor5 = "";
+    }
+    else if (obj.CompanySector.ToLower() == "saúde")
+    {
+        textSetor1 = "1. Prontuários Eletrônicos: Implemente sistemas de prontuários eletrônicos para melhorar o acesso à informação do paciente e a coordenação do cuidado.";
+        textSetor2 = "2. Telemedicina: Adote a telemedicina para expandir o acesso aos cuidados de saúde, especialmente em áreas remotas.";
+        textSetor3 = "3. Análise de Big Data para Cuidados Preventivos: Utilize análise de dados para pesquisas e para desenvolver estratégias de cuidados preventivos.";
+        textSetor4 = "4. Dispositivos Médicos Conectados: Integre dispositivos médicos conectados para monitoramento contínuo e melhor gestão da saúde do paciente.";
+        textSetor5 = "";
+    }
+    else if (obj.CompanySector.ToLower() == "tecnologia")
+    {
+        textSetor1 = "1. Inovação Contínua: Mantenha-se na vanguarda das tendências tecnológicas, investindo constantemente em pesquisa e desenvolvimento.";
+        textSetor2 = "2. Parcerias Estratégicas: Colabore com universidades, startups e outras empresas para impulsionar a inovação.";
+        textSetor3 = "3. Cultura Ágil e Flexível: Adote uma cultura empresarial que valorize a agilidade, a experimentação e a adaptação rápida às mudanças.";
+        textSetor4 = "4. Foco no Usuário: Desenvolva produtos e serviços com uma forte orientação para as necessidades e experiências do usuário.";
+        textSetor5 = "";
+    }
+    else if (obj.CompanySector.ToLower() == "indústria")
+    {
+        textSetor1 = "1. Manufatura Inteligente: Implemente soluções de manufatura inteligente, como a Internet das Coisas (IoT) e automação, para aumentar a eficiência da produção.";
+        textSetor2 = "2. Cadeia de Suprimentos Digitalizada: Digitalize a cadeia de suprimentos para melhor visibilidade e gestão.";
+        textSetor3 = "3. Manutenção Preditiva: Utilize a manutenção preditiva para prever falhas e otimizar a manutenção de equipamentos.";
+        textSetor4 = "4. Sustentabilidade e Inovação: Concentre-se em soluções sustentáveis e inovadoras para atender às demandas de um mercado consciente.";
+        textSetor5 = "";
+
+    }
+    else if (obj.CompanySector.ToLower() == "serviços")
+    {
+        textSetor1 = "1. Digitalização do Atendimento ao Cliente: Implemente soluções digitais para melhorar a eficiência e a qualidade do atendimento ao cliente.";
+        textSetor2 = "2. Soluções Baseadas em Nuvem: Adote soluções baseadas em nuvem para fornecer serviços acessíveis e escaláveis.";
+        textSetor3 = "3. Analytics para Melhorar Serviços: Use análise de dados para entender melhor as necessidades dos clientes e personalizar os serviços.";
+        textSetor4 = "4. Automatização de Tarefas: Automatize tarefas administrativas para aumentar a eficiência operacional.";
+        textSetor5 = "";
+    }
+    else if (obj.CompanySector.ToLower() == "transporte")
+    {
+        textSetor1 = "1. Tecnologia para Eficiência Logística: Implemente sistemas de gerenciamento de frota e soluções GPS para otimizar rotas e reduzir custos.";
+        textSetor2 = "2. Veículos Autônomos e Drones: Explore o uso de veículos autônomos e drones para entrega e logística.";
+        textSetor3 = "3. Sistemas de Bilhetagem Digital: Adote sistemas de bilhetagem e pagamento digital para facilitar a experiência do usuário.";
+        textSetor4 = "4. Sustentabilidade: Invista em tecnologias sustentáveis, como veículos elétricos e melhorias de eficiência de combustível.";
+        textSetor5 = "";
+    }
+    else if (obj.CompanySector.ToLower() == "varejo")
+    {
+        textSetor1 = "1. E-commerce e Omnicanalidade: Desenvolva estratégias de e-commerce e omnicanal para oferecer uma experiência de compra sem costura.";
+        textSetor2 = "2. Personalização com IA: Use inteligência artificial para personalizar a experiência de compra e recomendar produtos.";
+        textSetor3 = "3. Gerenciamento de Inventário Digital: Adote sistemas avançados de gerenciamento de inventário para melhor precisão e eficiência.";
+        textSetor4 = "4. Realidade Aumentada para Experiência de Compra: Implemente realidade aumentada para oferecer experiências de compra interativas e envolventes.";
+        textSetor5 = "";
+    }
+    else if (obj.CompanySector.ToLower() == "imobiliário")
+    {
+        textSetor1 = "1. Realidade Virtual para Visualização de Propriedades: Utilize realidade virtual para tours imersivos em propriedades, melhorando a experiência do cliente.";
+        textSetor2 = "2. Plataformas Digitais para Vendas e Locações: Crie plataformas online para facilitar as transações de compra, venda e locação.";
+        textSetor3 = "3. Big Data para Análise de Mercado: Use big data para analisar tendências do mercado imobiliário e tomar decisões informadas.";
+        textSetor4 = "4. Automatização da Gestão de Propriedades: Implemente soluções automatizadas para gerenciamento de propriedades, incluindo manutenção e pagamentos.";
+        textSetor5 = "";
+    }
+    else if (obj.CompanySector.ToLower() == "turismo")
+    {
+        textSetor1 = "1. Experiências Virtuais e Realidade Aumentada: Ofereça tours virtuais e experiências de realidade aumentada para atrair turistas.";
+        textSetor2 = "2. Plataformas de Reserva Online: Desenvolva ou integre-se a plataformas de reserva online para facilitar o planejamento de viagens.";
+        textSetor3 = "3. Marketing Digital Focado em Experiências: Utilize o marketing digital para promover destinos e experiências únicas.";
+        textSetor4 = "4. Análise de Dados para Personalização: Use análise de dados para personalizar ofertas e melhorar a experiência de viagem.";
+        textSetor5 = "";
+    }
+    else
+    {
+        textSetor1 = "";
+        textSetor2 = "";
+        textSetor3 = "";
+        textSetor4 = "";
+        textSetor5 = "";
+    }
+
+
+
+
+
+
+}
+<!-- DIV DO RESULTADO PRINCIPAL -->
+<div class="row m-0">
+    <!--RESULTADO PARTE GRANDE --> 
+    <div class="col-sm-7 bg-results-image p-0 align-content-center" style="min-height: 1rem;">
+        <div class="bg-gradient-results align-content-center py-2 my-0" style="height:100%;">
+            <div class="row mb-0 mt-5 mx-0">
+                <h2 class="text-primary text-center text-uppercase mb-0">Seu nível maturidade é:</h2>
+            </div>
+            <div class="row mt-0 mb-0 mx-0">
+                <h1 class="text-primary text-center mt-0" style="font-size:5em;">@obj.MaturidadeDigital.ToString("N0")%</h1>
+            </div>
+
+            <!-- <div class="my-0 d-none" id="chart"></div> -->
+        </div>
+    </div>
+
+    <!-- CARD RESULTADOS -->
+    <div class="col-sm-5 px-0 justify-content-center bg-grey">
+        <div class="row m-4 text-center text-dark">
+            <h4 class="text-primary fw-bold">A transformação já está em ascenção, porém ainda há muito a alcançar.</h4>
+        </div>
+
+        <div class="row my-3 mx-0 px-5 justify-content-start gap-2">
+            <h2 class="text-primary text-center col-auto mb-0">@obj.CulturaFinal.ToString("N0")%</h2>
+            <p class="col-auto align-content-center px-0 mb-0">CULTURA E PESSOAS</p>
+        </div>
+        <div class="row my-3 mx-0 px-5 justify-content-start">
+            <h2 class="text-primary text-center col-auto mb-0">@obj.ExperienciaFinal.ToString("N0")%</h2>
+            <p class="col-auto align-content-center px-0 mb-0">EXPERIÊNCIA DO CLIENTE</p>
+        </div>
+        <div class="row my-3 mx-0 px-5 justify-content-start">
+            <h2 class="text-primary text-center col-auto mb-0">@obj.MercadoFinal.ToString("N0")%</h2>
+            <p class="col-auto align-content-center px-0 mb-0">MERCADO E CONCORRÊNCIA</p>
+        </div>
+        <div class="row my-3 mx-0 px-5 justify-content-start">
+            <h2 class="text-primary text-center col-auto mb-0">@obj.InovacaoFinal.ToString("N0")%</h2>
+            <p class="col-auto align-content-center px-0 mb-0"1>INOVAÇÃO</p>
+        </div>
+        <div class="row my-3 mx-0 px-5 justify-content-start">
+            <h2 class="text-primary text-center col-auto mb-0">@obj.ProcessosFinal.ToString("N0")%</h2>
+            <p class="col-auto align-content-center px-0 mb-0"1>PROCESSOS</p>
+        </div>
+        <div class="row my-3 mx-0 px-5 justify-content-start">
+            <h2 class="text-primary text-center col-auto mb-0">@obj.ModelosFinal.ToString("N0")%</h2>
+            <p class="col-auto align-content-center px-0 mb-0"1>MODELOS DE NEGÓCIO</p>
+        </div>
+        <div class="row my-3 mx-0 px-5 justify-content-start">
+            <h2 class="text-primary text-center col-auto mb-0">@obj.DadosFinal.ToString("N0")%</h2>
+            <p class="col-auto align-content-center px-0 mb-0"1>DADOS</p>
+        </div>
+        <div class="row mt-3 mb-5 mx-0 px-5 justify-content-start">
+            <h2 class="text-primary text-center col-auto mb-0">@obj.TecnologiaFinal.ToString("N0")%</h2>
+            <p class="col-auto align-content-center px-0 mb-0"1>TECNOLOGIAS</p>
+        </div>
+
+    </div>
+
+
+</div>
+
+
+<!-- DIV RESULTADOS CONFORME PORCENTAGENS -->
+<div class="col-sm-5 px-0 justify-content-center w-100" style="">
+    
+    <h2 class="bg-transparent text-uppercase text-primary fw-bolder my-5 text-center m-auto" style="max-width: 80%">
+        COM BASE EM SUA RESPOSTAS, AQUI ESTÃO OS RESULTADOS:
+    </h2>
+    <p class="m-auto fs-5 mb-4" style="max-width: 80%; text-align: justify;">
+        Sua instituição alcançou <b>@obj.MaturidadeDigital.ToString("N1")%</b> de maturidade digital. Baseado nessa porcentagem, aqui estão
+        algumas recomendações para o seu negócio
+    </p>
+
+    <div class="px-5 border-1 border rounded-4 bg-grey text-center m-auto mb-5" style="max-width: 90%;"> 
+        <!-- RESULTADO MATURIDADE PRINCIPAL -->
+        <h3 class="bg-transparent text-uppercase text-primary fw-bolder my-4 text-center m-auto" style="max-width: 80%">
+            Com base na sua Maturidade Digital:
+        </h3>
+        <p class="m-auto" style="text-align: justify;">@textMaturidade</p>
+
+
+        <!-- RESULTADO CULTURA E PESSOAS --> 
+        <div class="row justify-content-start mt-3 mb-0 mx-0 gap-4" style="max-width: 100%;">
+
+            <div class="col-3 progress m-auto rounded-3 mx-0 px-0 position-relative" style="min-height: 30px; max-width: 100%; background-color: darkgray" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="50">
+                <p class="m-0 fs-5 text-white position-absolute top-50 start-50 translate-middle">@obj.CulturaFinal.ToString("N0")%</p>
+                <div class="progress-bar bg-primary justify-content-center " style="width: @obj.CulturaFinal%">
+                    
+                </div>
+            </div>
+            <h3 class="col-auto bg-transparent text-uppercase text-primary fw-bold fs-6 my-3 mx-0 px-0 text-center m-auto" style="max-width: 80%">
+                Cultura e Pessoas
+            </h3>
+        </div>
+        <p class="m-auto" style="text-align: justify;">@textCultura</p>
+
+
+        <!-- RESULTADO EXPERIÊNCIA DO CLIENTE -->
+        <div class="row justify-content-start mt-3 mb-0 mx-0 gap-4 " style="max-width: 100%;">
+
+            <div class="col-3 progress m-auto rounded-3 mx-0 px-0 position-relative " style="min-height: 30px; max-width: 100%;  background-color: darkgray" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="50">
+                <p class="m-0 fs-5 text-white position-absolute top-50 start-50 translate-middle">@obj.ExperienciaFinal%</p>
+                <div class="progress-bar bg-primary justify-content-center " style="width: @obj.ExperienciaFinal%">
+                </div>
+            </div>
+            <h3 class="col-auto bg-transparent text-uppercase text-primary fw-bold fs-6 my-3 mx-0 px-0 text-center m-auto" style="max-width: 80%;">
+                Experiência do Cliente
+            </h3>
+        </div>
+        <p class="m-auto" style="text-align: justify;">@textExperiencia</p>
+
+
+        <!-- RESULTADO MERCADO E CONCORRÊNCIA -->
+        <div class="row justify-content-start mt-3 mb-0 mx-0 gap-4 " style="max-width: 100%;">
+            <div class="col-3 progress m-auto rounded-3 mx-0 px-0 position-relative" style="min-height: 30px; max-width: 100%; background-color: darkgray" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="50">
+                <p class="m-0 fs-5 text-white position-absolute top-50 start-50 translate-middle">@obj.MercadoFinal%</p>
+                <div class="progress-bar bg-primary justify-content-center " style="width: @obj.MercadoFinal%">
+                </div>
+            </div>
+            <h3 class="col-auto bg-transparent text-uppercase text-primary fw-bold fs-6 my-3 mx-0 px-0 text-center m-auto" style="max-width: 80%">
+                Mercado e Concorrência
+            </h3>
+        </div>
+        <p class="m-auto" style="text-align: justify;">@textMercado</p>
+
+        <!-- RESULTADO INOVAÇÃO -->
+        <div class="row justify-content-start mt-3 mb-0 mx-0 gap-4 " style="max-width: 100%;">
+            <div class="col-3 progress m-auto rounded-3 mx-0 px-0 position-relative" style="min-height: 30px; max-width: 100%; background-color: darkgray" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="50">
+                <p class="m-0 fs-5 text-white position-absolute top-50 start-50 translate-middle">@obj.InovacaoFinal%</p>
+                <div class="progress-bar bg-primary justify-content-center " style="width: @obj.InovacaoFinal%">
+                </div>
+            </div>
+            <h3 class="col-auto bg-transparent text-uppercase text-primary fw-bold fs-6 my-3 mx-0 px-0 text-center m-auto" style="max-width: 80%">
+                Inovação
+            </h3>
+        </div>
+        <p class="m-auto" style="text-align: justify;">@textInovacao</p>
+
+        <!-- RESULTADO PROCESSOS -->
+        <div class="row justify-content-start mt-3 mb-0 mx-0 gap-4 " style="max-width: 100%;">
+            <div class="col-3 progress m-auto rounded-3 mx-0 px-0 position-relative" style="min-height: 30px; max-width: 100%; background-color: darkgray" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="50">
+                <p class="m-0 fs-5 text-white position-absolute top-50 start-50 translate-middle">@obj.ProcessosFinal%</p>
+                <div class="progress-bar bg-primary justify-content-center " style="width: @obj.ProcessosFinal%">
+                </div>
+            </div>
+            <h3 class="col-auto bg-transparent text-uppercase text-primary fw-bold fs-6 my-3 mx-0 px-0 text-center m-auto" style="max-width: 80%">
+                Processos
+            </h3>
+        </div>
+        <p class="m-auto" style="text-align: justify;">@textProcessos</p>
+
+        <!-- RESULTADO MODELOS DE NEGÓCIO -->
+        <div class="row justify-content-start mt-3 mb-0 mx-0 gap-4 " style="max-width: 100%;">
+            <div class="col-3 progress m-auto rounded-3 mx-0 px-0 position-relative" style="min-height: 30px; max-width: 100%; background-color: darkgray" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="50">
+                <p class="m-0 fs-5 text-white position-absolute top-50 start-50 translate-middle">@obj.ModelosFinal%</p>
+                <div class="progress-bar bg-primary justify-content-center " style="width: @obj.ModelosFinal%">
+                </div>
+            </div>
+            <h3 class="col-auto bg-transparent text-uppercase text-primary fw-bold fs-6 my-3 mx-0 px-0 text-center m-auto" style="max-width: 80%">
+                Modelos de Negócio
+            </h3>
+        </div>
+        <p class="m-auto" style="text-align: justify;">@textModelos</p>
+
+
+        <!-- RESULTADO DADOS -->
+        <div class="row justify-content-start mt-3 mb-0 mx-0 gap-4 " style="max-width: 100%;">
+            <div class="col-3 progress m-auto rounded-3 mx-0 px-0 position-relative" style="min-height: 30px; max-width: 100%; background-color: darkgray" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="50">
+                <p class="m-0 fs-5 text-white position-absolute top-50 start-50 translate-middle">@obj.DadosFinal%</p>
+                <div class="progress-bar bg-primary justify-content-center" style="width: @obj.DadosFinal%">
+                </div>
+            </div>
+            <h3 class="col-auto bg-transparent text-uppercase text-primary fw-bold fs-6 my-3 mx-0 px-0 text-center m-auto" style="max-width: 80%">
+                Dados
+            </h3>
+        </div>
+        <p class="m-auto" style="text-align: justify;">@textDados</p>
+
+        <!-- RESULTADO TECNOLOGIAS -->
+        <div class="row justify-content-start mt-3 mb-0 mx-0 gap-4 " style="max-width: 100%;">
+            <div class="col-3 progress m-auto rounded-3 mx-0 px-0 position-relative" style="min-height: 30px; max-width: 100%; background-color: darkgray" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="50">
+                <p class="m-0 fs-5 text-white position-absolute top-50 start-50 translate-middle">@obj.TecnologiaFinal%</p>
+                <div class="progress-bar bg-primary justify-content-center tec-progress" style="width: @obj.TecnologiaFinal%">
+                </div>
+            </div>
+            <h3 class="col-auto bg-transparent text-uppercase text-primary fw-bold fs-6 my-3 mx-0 px-0 text-center m-auto" style="max-width: 80%">
+                Tecnologias
+            </h3>
+        </div>
+        <p class="m-auto" style="text-align: justify;">@textTecnologias</p>
+
+
+
+        <!-- RESULTADO COM BASE NO SETOR -->
+        <h3 class="bg-transparent text-uppercase text-primary fw-bolder my-4 text-center m-auto" style="max-width: 80%">
+            Algumas recomendações com base em seu setor de negócio: <i class="text-center text-decoration-underline">@obj.CompanySector</i>
+        </h3>
+        <p class="m-auto" style="text-align: justify;">@textSetor1</p>
+        <p class="m-auto" style="text-align: justify;">@textSetor2</p>
+        <p class="m-auto" style="text-align: justify;">@textSetor3</p>
+        <p class="m-auto" style="text-align: justify;">@textSetor4</p>
+
+
+        <br />
+        <br />
+        <br />
+        <br />
+    </div>
+
+
+</div>
+
+
+<script>
+
+    
+</script>
