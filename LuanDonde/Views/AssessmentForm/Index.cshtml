@@ -159,9 +159,9 @@
                 <span asp-validation-for="PhoneNumber" class="text-danger"></span>
             </div>
 
-            <!--RATIO FORM - GRAU DE INSTRUÇÃO-->
+            <!--RATIO FORM - GRAU DE FORMAÇÃO-->
             <div class="row">
-                <p class="col-auto text-primary fw-bolder fs-4 my-1">Qual seu grau de instrução?</p>
+                <p class="col-auto text-primary fw-bolder fs-4 my-1">Qual seu grau de formação?</p>
                 <span class="col-auto fst-italic align-content-center px-0">(OBRIGATÓRIO)</span>
             </div>
             <div class="row m-sm-auto py-2">
@@ -169,25 +169,19 @@
                     <div class="form-check col-12">
                         <input class="form-check-input border-primary" type="radio" asp-for="GrauInstrucao" value="EF incompleto">
                         <label class="form-check-label" for="flexRadioDefault1">
-                            Ensino Fundamental incompleto
+                            Não completei o Ensino Fundamental
                         </label>
                     </div>
                     <div class="form-check col-12">
-                        <input class="form-check-input border-primary" type="radio" asp-for="GrauInstrucao" value="EF completo">
+                        <input class="form-check-input border-primary" type="radio" asp-for="GrauInstrucao" value="Ens Fund.">
                         <label class="form-check-label" for="flexRadioDefault2">
-                            Ensino Fundamental completo
+                            Ensino Fundamental
                         </label>
                     </div>
                     <div class="form-check col-12">
-                        <input class="form-check-input border-primary" type="radio" asp-for="GrauInstrucao" value="EM incompleto">
+                        <input class="form-check-input border-primary" type="radio" asp-for="GrauInstrucao" value="Ens Medio">
                         <label class="form-check-label" for="flexRadioDefault1">
-                            Ensino Médio incompleto
-                        </label>
-                    </div>
-                    <div class="form-check col-12">
-                        <input class="form-check-input border-primary" type="radio" asp-for="GrauInstrucao" value="EM completo">
-                        <label class="form-check-label" for="flexRadioDefault2">
-                            Ensino Médio completo
+                            Ensino Médio
                         </label>
                     </div>
                     <div class="form-check col-12">
@@ -197,19 +191,13 @@
                         </label>
                     </div>
                     <div class="form-check col-12">
-                        <input class="form-check-input border-primary" type="radio" asp-for="GrauInstrucao" value="ES incompleto">
+                        <input class="form-check-input border-primary" type="radio" asp-for="GrauInstrucao" value="Ens Sup">
                         <label class="form-check-label" for="flexRadioDefault1">
-                            Ensino Superior incompleto
+                            Ensino Superior
                         </label>
                     </div>
                 </div>
                 <div class="col-auto">
-                    <div class="form-check col-12">
-                        <input class="form-check-input border-primary" type="radio" asp-for="GrauInstrucao" value="ES completo">
-                        <label class="form-check-label" for="flexRadioDefault1">
-                            Ensino Superior completo
-                        </label>
-                    </div>
                     <div class="form-check col-12">
                         <input class="form-check-input border-primary" type="radio" asp-for="GrauInstrucao" value="Pós-graduação">
                         <label class="form-check-label" for="flexRadioDefault2">
@@ -261,7 +249,7 @@
                 </div>
                 
                 <div class="col-auto">
-                    <h4 class="fw-bolder">1/4</h4>
+                    <h4 class="fw-bolder">1/3</h4>
                 </div>
                 <div class="col-auto col-md-3">
                     <button type="submit" asp-controller="AssessmentForm" asp-action="Index" class="btn-blue form-control text-light rounded-4 fw-bold sombra" >

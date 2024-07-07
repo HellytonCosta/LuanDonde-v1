@@ -83,7 +83,7 @@ namespace LuanDonde.Controllers
             _unitOfWork.Formulario.Update(_formulario);
             _unitOfWork.Save();
             _id = _formulario.Id;
-            return RedirectToAction("Index3", _formulario);
+            return RedirectToAction("Index4", _formulario);
 
         }
         public IActionResult Index3(int? id)
@@ -117,6 +117,8 @@ namespace LuanDonde.Controllers
         [HttpPost]
         public IActionResult Index4(AssessmentForm _formulario)
         {
+
+            _formulario.auxIndex3();
             _formulario.auxIndex4();
             _unitOfWork.Formulario.Update(_formulario);
             _unitOfWork.Save();
@@ -141,6 +143,7 @@ namespace LuanDonde.Controllers
         [HttpPost]
         public IActionResult Formulario1(AssessmentForm _formulario)
         {
+            _formulario.auxIndex3();
             _formulario.auxIndex4();
             _unitOfWork.Formulario.Update(_formulario);
             _unitOfWork.Save();

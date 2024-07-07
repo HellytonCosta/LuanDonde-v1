@@ -56,7 +56,10 @@
             <p class="text-primary fw-bolder fs-4 my-1">
                 Quais os objetivos a serem alcançados pela Estratégia de Transformação Digital da sua organização?
             </p>
-            <span class="col-auto fst-italic align-content-center px-0 mx-2">(OBRIGATÓRIO)</span>
+            <div class="row">
+                <p class="col-auto align-content-center px-0 mx-2 d-none">Selecione até 3 opções.</p>
+                <span class="col-auto fst-italic align-content-center px-0 mx-2">(OBRIGATÓRIO)</span>
+            </div>
         </div>
         <div class="row m-sm-auto py-2">
             <div class="form-check col-12">
@@ -234,7 +237,7 @@
         <!-- SUBMIT FORM -->
         <div class="row py-2 my-3 m-auto align-content-center justify-content-between">
             <div class="col-auto col-md-3">
-                <a asp-controller="AssessmentForm" asp-action="Formulario8" asp-route-id="@obj.Id" class="btn btn-secondary border text-dark form-control rounded-4 fw-bold sombra">
+                <a asp-controller="AssessmentForm" asp-action="Formulario8" asp-route-id="@Model.Id" class="btn btn-secondary border text-dark form-control rounded-4 fw-bold sombra">
                     VOLTAR
                 </a>
             </div>

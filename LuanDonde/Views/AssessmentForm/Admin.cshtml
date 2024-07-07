@@ -28,6 +28,9 @@
                         <th class=" bg-primary text-light">
                             Resultado Maturidade
                         </th>
+                        <th class=" bg-primary text-light d-none">
+                            Horário de Criação
+                        </th>
                         <th class=" bg-primary text-light">
 
                         </th>
@@ -38,7 +41,8 @@
                     {
                         <tr>
                             <td class="align-content-center bg-transparent">@obj.Name</td>
-                            <td class="align-content-center bg-transparent">@obj.MaturidadeDigital</td>
+                            <td class="align-content-center bg-transparent">@obj.MaturidadeDigital.ToString("N0")</td>
+                            <td class="align-content-center bg-transparent d-none">@obj.MaturidadeDigital.ToString("N0")</td>
                             <td class="bg-transparent align-content-center text-center">
                                 <div class="w-75 btn-group m-auto" role="group">
                                     <a asp-controller="AssessmentForm" asp-action="AdminResults" asp-route-id="@obj.Id" class="btn btn-primary mx-2">

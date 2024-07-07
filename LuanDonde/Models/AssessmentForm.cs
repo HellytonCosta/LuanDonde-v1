@@ -330,9 +330,14 @@ namespace LuanDonde.Models
             ProximityOfGoal = "";
             Priority = "";
             MainGoal = "";
+            RolePosition = "";
+
         }
         public void auxIndex4()
         {
+            TimeInRole = "";
+            RolePosition = "";
+            Department = "";
             PhoneNumber = "";
             ProximityOfGoal = "";
             Priority = "";
@@ -340,6 +345,9 @@ namespace LuanDonde.Models
         }
         public void auxQuestion1()
         {
+            TimeInRole = "";
+            RolePosition = "";
+            Department = "";
             PhoneNumber = "";
             ProximityOfGoal = "";
             Priority = "";
@@ -347,11 +355,17 @@ namespace LuanDonde.Models
         }
         public void auxQuestion2()
         {
+            TimeInRole = "";
+            RolePosition = "";
+            Department = "";
             PhoneNumber = "";
             Priority = "";
         }
         public void auxQuestion3()
         {
+            TimeInRole = "";
+            RolePosition = "";
+            Department = "";
             PhoneNumber = "";
          
         }

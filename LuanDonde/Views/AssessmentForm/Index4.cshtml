@@ -49,11 +49,11 @@
         <form method="post" class="row">
 
             <!--RATIO FORM - DEPARTAMENTO-->
-            <div class="row">
+            <div class="row d-none">
                 <p class="col-auto text-primary fw-bolder fs-4 my-1">Qual sua área dentro da empresa?</p>
                 <span class="col-auto fst-italic align-content-center px-0">(OBRIGATÓRIO)</span>
             </div>
-            <div class="row m-sm-auto py-2">
+            <div class="row m-sm-auto py-2 d-none">
                 <div class="col-auto">
                     <div class="form-check col-12">
                         <input class="form-check-input border-primary" type="radio" asp-for="Department" value="Administrativo">
@@ -116,14 +116,61 @@
                         <label class="form-check-label" for="flexRadioDefault1">
                             Outra
                         </label>
+                    </div>     
+                    <div class="form-check col-12">
+                        <input class="form-check-input border-primary" type="radio" asp-for="Department" default value="default">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Outra
+                        </label>
                     </div>
                 </div>
                 <span asp-validation-for="Department" class="text-danger"></span>
             </div>
 
+            <!--RATIO FORM - TAMANHO DA EMPRESA-->
+            <div class="row">
+                <p class="col-auto text-primary fw-bolder fs-4 my-1">Qual o tamanho da sua empresa?</p>
+                <span class="col-auto fst-italic align-content-center px-0">(OBRIGATÓRIO)</span>
+            </div>
+            <p class="bg-grey">(Classificação segundo o BNDES, considerando a RENDA ou a RECEITA OPERACIONAL BRUTA ANUAL)</p>
+            <div class="row m-sm-auto py-2">
+                <div class="col-auto">
+                    <div class="form-check col-12">
+                        <input class="form-check-input border-primary" type="radio" asp-for="CompanySize" value="Até 19 colaboradores">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            MEI (Receita ≤ R$ 81 mil)
+                        </label>
+                    </div>
+                    <div class="form-check col-12">
+                        <input class="form-check-input border-primary" type="radio" asp-for="CompanySize" value="Entre 100 e 499 colaboradores">
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            Microempresa (Receita > R$ 81 mil ≤ R$ 360 mil)
+                        </label>
+                    </div>
+                    <div class="form-check col-12">
+                        <input class="form-check-input border-primary" type="radio" asp-for="CompanySize" value="Mais de 500 colaboradores">
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            Pequena Empresa (Receita > R$ 360 mil ≤ R$ 4,8 milhões)
+                        </label>
+                    </div>
+                </div>
+                <div class="col-auto d-none">
+                    <div class="form-check col-12">
+                        <input class="form-check-input border-primary" type="radio" asp-for="CompanySize" value="Entre 20 e 99 colaboradores">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Entre 20 e 99 colaboradores
+                        </label>
+                    </div>
+
+
+                </div>
+                <span asp-validation-for="CompanySize" class="text-danger"></span>
+            </div>
+
+
             <!--RATIO FORM - TEMPO NA FUNÇÃO -->
             <div class="row">
-                <p class="col-auto text-primary fw-bolder fs-4 my-1">Há quantos a empresa existe?</p>
+                <p class="col-auto text-primary fw-bolder fs-4 my-1">Há quanto tempo a empresa existe?</p>
                 <span class="col-auto fst-italic align-content-center px-0">(OBRIGATÓRIO)</span>
             </div>
             <div class="row m-sm-auto py-2">
@@ -182,7 +229,7 @@
             <input asp-for="CompanyCNPJ" class="form-control border-2 shadow py-0 px-4 d-none" style="border-radius: 25px" />
             <input asp-for="CompanySector" class="form-check-input border-primary d-none">
             <!-- PÁGINA 3 -->
-            <input asp-for="CompanySize" class="form-check-input border-primary d-none">
+            
             <input asp-for="RolePosition" class="form-check-input border-primary d-none">
             <input asp-for="PhoneNumber" class="form-check-input border-primary d-none">
 
@@ -196,7 +243,7 @@
 
                 <div class="col-auto">
                     <h4 class="fw-bolder">
-                        4/4
+                        3/3
                     </h4>
                 </div>
                 <div class="col-auto col-md-3">

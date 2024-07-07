@@ -314,7 +314,7 @@
     <div class="col-sm-7 bg-results-image p-0 align-content-center" style="min-height: 1rem;">
         <div class="bg-gradient-results align-content-center py-2 my-0" style="height:100%;">
             <div class="row mb-0 mt-5 mx-0">
-                <h2 class="text-primary text-center text-uppercase mb-0">Seu nível maturidade é:</h2>
+                <h2 class="text-primary text-center text-uppercase mb-0">Seu nível de maturidade digital é:</h2>
             </div>
             <div class="row mt-0 mb-0 mx-0">
                 <h1 class="text-primary text-center mt-0" style="font-size:5em;">@obj.MaturidadeDigital.ToString("N0")%</h1>
@@ -450,7 +450,7 @@
         <div class="row mt-3 mb-5 mx-0 px-5 justify-content-center m-auto text-center">
             <button type="button" class="btn btn-primary text-white text-decoration-none fs-4 border-0 px-3 py-3 rounded-4 fw-medium text-white"
                     href="AdminResultsPDF" style="min-width:50%; min-height:20%;">
-                    @Html.ActionLink("Gerar PDF", "GerarPdf", "AssessmentForm", @obj)
+                    @Html.ActionLink("FAZER O DOWNLOAD DO SEU RELATÓRIO", "GerarPdf", "AssessmentForm", @obj)
             </button>
         </div>
         <div class="row mt-3 mb-5 mx-0 px-5 justify-content-center m-auto text-center d-none">
@@ -472,7 +472,7 @@
         COM BASE EM SUA RESPOSTAS, AQUI ESTÃO OS RESULTADOS:
     </h2>
     <p class="m-auto fs-5 mb-4" style="max-width: 80%; text-align: justify;">
-        Sua instituição alcançou <b>@obj.MaturidadeDigital.ToString("N1")%</b> de maturidade digital. Baseado nessa porcentagem, aqui estão
+        Sua instituição alcançou <b>@obj.MaturidadeDigital.ToString("N0")%</b> de maturidade digital. Baseado nessa porcentagem, aqui estão
         algumas recomendações para o seu negócio
     </p>
 
