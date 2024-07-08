@@ -1,17 +1,18 @@
 ﻿using LuanDonde.Data;
 using LuanDonde.Models;
-using LuanDonde.Models.ViewModels;
 using LuanDonde.Repository.IRepository;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using PdfSharp.Pdf;
 using PdfSharp.Drawing;
-//using MigraDoc.DocumentObjectModel;
-using MigraDoc.Rendering;
 using System.Text;
 using QuestPDF.Fluent;
 using QuestPDF.Helpers;
 using QuestPDF.Infrastructure;
+using SelectPdf;
+using Microsoft.AspNetCore.Mvc.ViewEngines;
+using Microsoft.AspNetCore.Mvc.ViewFeatures;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Rotativa.AspNetCore;
 
 
 namespace LuanDonde.Controllers
@@ -665,6 +666,8 @@ namespace LuanDonde.Controllers
             return View();
         }
 
+
+
         public ActionResult GerarPdf(AssessmentForm obj)
         {
             string textMaturidade = "DEFAULT";
@@ -681,62 +684,34 @@ namespace LuanDonde.Controllers
 
 
 
-            // Cria um novo documento PDF
-            PdfDocument documento = new PdfDocument();
 
-            // Adiciona uma página ao documento
-            PdfPage pagina = documento.AddPage();
+            //            ";
 
-            // Obtém o objeto XGraphics para desenhar na página
-            XGraphics gfx = XGraphics.FromPdfPage(pagina);
+            //            // Pode ser uma URL ou o conteúdo HTML diretamente
+            //            SelectPdf.PdfDocument doc = converter.ConvertUrl("https://transformeseu.azurewebsites.net/");
+            //            SelectPdf.PdfDocument doc2 = converter.ConvertHtmlString(htmlContent);
 
-            // Define uma fonte para o texto
-            XFont fonte = new XFont("Arial", 12);
+            //            // Salvar PDF em um stream de memória
+            //            MemoryStream ms = new MemoryStream();
+            //            doc2.Save(ms);
+            //            doc2.Close();
+            //            return File(ms.ToArray(), "application/pdf", "ResultadoTransformacao.pdf");
 
-            // Desenha um texto na página
-            gfx.DrawString(textMaturidade, fonte, XBrushes.Black,
-                new XRect(2, 2, pagina.Width, pagina.Height),
-                XStringFormats.TopLeft);
+            AssessmentForm assessmentForm = new AssessmentForm();
+            assessmentForm = obj;
 
-            // Salva o documento em memória
-            byte[] conteudoPdf;
-            using (System.IO.MemoryStream stream = new System.IO.MemoryStream())
+            var pdf = new ViewAsPdf("MinhaView")
             {
-                documento.Save(stream, false);
-                conteudoPdf = stream.ToArray();
-            }
-
-            // Retorna o PDF como um arquivo para download
-            return File(conteudoPdf, "application/pdf", "MaturidadeDigital.pdf");
-        }
-
-
-
-        public ActionResult GerarCsv(AssessmentForm _form)
-        {
-            // Dados para o arquivo CSV (exemplo)
-            var dados = new[]
-            {
-                new { Nome = "João", Sobrenome = "Silva", Idade = 30 },
-                new { Nome = "Maria", Sobrenome = "Souza", Idade = 25 },
-                new { Nome = "Pedro", Sobrenome = "Santos", Idade = 35 }
+                FileName = "Exemplo.pdf",
+                // Ajuste o caminho conforme necessário
+               // RotativaPath = @"Caminho\Para\wkhtmltopdf.exe"
             };
 
-            // Construir o conteúdo do arquivo CSV
-            StringBuilder csvContent = new StringBuilder();
-            csvContent.AppendLine("Nome,Sobrenome,Idade");
+            return pdf;
 
-            foreach (var pessoa in dados)
-            {
-                csvContent.AppendLine($"{pessoa.Nome},{pessoa.Sobrenome},{pessoa.Idade}");
-            }
-
-            // Converter o conteúdo do CSV em bytes
-            byte[] csvBytes = Encoding.UTF8.GetBytes(csvContent.ToString());
-
-            // Retornar o arquivo para download
-            return File(csvBytes, "text/csv", "dados.pdf");
         }
+
+    
     }
 
     

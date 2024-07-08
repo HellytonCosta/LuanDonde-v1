@@ -309,323 +309,340 @@
 
 }
 <!-- DIV DO RESULTADO PRINCIPAL -->
-<div class="row m-0">
-    <!--RESULTADO PARTE GRANDE --> 
-    <div class="col-sm-7 bg-results-image p-0 align-content-center" style="min-height: 1rem;">
-        <div class="bg-gradient-results align-content-center py-2 my-0" style="height:100%;">
-            <div class="row mb-0 mt-5 mx-0">
-                <h2 class="text-primary text-center text-uppercase mb-0">Seu nível de maturidade digital é:</h2>
-            </div>
-            <div class="row mt-0 mb-0 mx-0">
-                <h1 class="text-primary text-center mt-0" style="font-size:5em;">@obj.MaturidadeDigital.ToString("N0")%</h1>
-            </div>
+<div id="parentDiv">
 
-            <div class="m-0 p-0">    
-                <div class="m-auto p-0" style="max-width: 70%;">
-                    <canvas id="myChart" class="m-auto w-100 h-100" ></canvas>
+
+    <div  class="row m-0">
+        <!--RESULTADO PARTE GRANDE --> 
+        <div class="col-sm-7 bg-results-image p-0 align-content-center" style="min-height: 1rem;">
+            <div class="bg-gradient-results align-content-center py-2 my-0" style="height:100%;">
+                <div class="row mb-0 mt-5 mx-0">
+                    <h2 class="text-primary text-center text-uppercase mb-0">Seu nível de maturidade digital é:</h2>
+                </div>
+                <div class="row mt-0 mb-0 mx-0">
+                    <h1 class="text-primary text-center mt-0" style="font-size:5em;">@obj.MaturidadeDigital.ToString("N0")%</h1>
                 </div>
 
-                <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-           
-                <script type="text/javascript">
-                    const ctx = document.getElementById('myChart');
+                <div class="m-0 p-0">    
+                    <div class="m-auto p-0" style="max-width: 70%;">
+                        <canvas id="myChart" class="m-auto w-100 h-100" ></canvas>
+                    </div>
 
-                    new Chart(ctx, {
-                        type: 'radar',
-                        data: {
-                            labels: [
-                                'Cultura e Pessoas',
-                                'Experiência do Cliente',
-                                'Mercado e Concorrência',
-                                'Inovação',
-                                'Processos',
-                                'Modelos de Negócio',
-                                'Dados',
-                                'Tecnologias'
-                            ],
-                            datasets: [{
-                                label: 'My First Dataset',
-                                data: [@Model.CulturaFinal, 
-                                       @Model.ExperienciaFinal, 
-                                       @Model.MercadoFinal, 
-                                       @Model.InovacaoFinal, 
-                                       @Model.ProcessosFinal, 
-                                       @Model.ModelosFinal, 
-                                       @Model.DadosFinal, 
-                                       @Model.TecnologiaFinal],
-                                fill: true,
-                                backgroundColor: 'rgba(28, 30, 67, 0.5)',
-                                borderColor: 'rgb(28, 30, 67)',
-                                //pointBackgroundColor: 'rgb(28, 30, 67)',
-                                //pointBorderColor: '#fff',
-                                //pointHoverBackgroundColor: '#fff',
-                                //pointHoverBorderColor: 'rgb(28, 30, 67)'
-                            }]
-                        },
-                        options: {
-                            scale: {
-                                display: false,
-                                r: {
-                                    beginAtZero: true,
-                                    min: 0,
-                                    max: 100,
-                                    angleLines: {
-                                        color: 'black',
-                                    },
-                                    grid: {
-                                        color: 'black',
-                                    },
-                                    pointLabels: {
-                                        fontSize: 16, // Ajuste o tamanho da fonte conforme necessário
-                                        fontColor: 'black', // Cor das labels
-                                    },
-                                    ticks: {
-                                        fontColor: 'rgba(28, 30, 67, 0.5)', // Cor dos ticks
-                                    }
-                                }
+                    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+           
+                    <script type="text/javascript">
+                        const ctx = document.getElementById('myChart');
+
+                        new Chart(ctx, {
+                            type: 'radar',
+                            data: {
+                                labels: [
+                                    'Cultura e Pessoas',
+                                    'Experiência do Cliente',
+                                    'Mercado e Concorrência',
+                                    'Inovação',
+                                    'Processos',
+                                    'Modelos de Negócio',
+                                    'Dados',
+                                    'Tecnologias'
+                                ],
+                                datasets: [{
+                                    label: 'My First Dataset',
+                                    data: [@Model.CulturaFinal, 
+                                           @Model.ExperienciaFinal, 
+                                           @Model.MercadoFinal, 
+                                           @Model.InovacaoFinal, 
+                                           @Model.ProcessosFinal, 
+                                           @Model.ModelosFinal, 
+                                           @Model.DadosFinal, 
+                                           @Model.TecnologiaFinal],
+                                    fill: true,
+                                    backgroundColor: 'rgba(28, 30, 67, 0.5)',
+                                    borderColor: 'rgb(28, 30, 67)',
+                                    //pointBackgroundColor: 'rgb(28, 30, 67)',
+                                    //pointBorderColor: '#fff',
+                                    //pointHoverBackgroundColor: '#fff',
+                                    //pointHoverBorderColor: 'rgb(28, 30, 67)'
+                                }]
                             },
-                            elements: {
-                                line: {
-                                    borderWidth: 1,
-                                    borderColor: 'rgb(0, 0, 0)', // Cor da linha do gráfico
-                                }
-                            },
-                            plugins: {
-                                legend: {
+                            options: {
+                                scale: {
                                     display: false,
-                                    labels: {
-                                        font: {
-                                            size: 14,
+                                    r: {
+                                        beginAtZero: true,
+                                        min: 0,
+                                        max: 100,
+                                        angleLines: {
+                                            color: 'black',
+                                        },
+                                        grid: {
+                                            color: 'black',
+                                        },
+                                        pointLabels: {
+                                            fontSize: 16, // Ajuste o tamanho da fonte conforme necessário
+                                            fontColor: 'black', // Cor das labels
+                                        },
+                                        ticks: {
+                                            fontColor: 'rgba(28, 30, 67, 0.5)', // Cor dos ticks
+                                        }
+                                    }
+                                },
+                                elements: {
+                                    line: {
+                                        borderWidth: 1,
+                                        borderColor: 'rgb(0, 0, 0)', // Cor da linha do gráfico
+                                    }
+                                },
+                                plugins: {
+                                    legend: {
+                                        display: false,
+                                        labels: {
+                                            font: {
+                                                size: 14,
+                                            }
                                         }
                                     }
                                 }
                             }
-                        }
-                    });
-                </script>
+                        });
+                    </script>
+
+                </div>
 
             </div>
-
         </div>
-    </div>
 
     <!-- CARD RESULTADOS -->
-    <div class="col-sm-5 px-0 justify-content-center bg-grey">
-        <div class="row m-4 text-center text-dark">
-            <h4 class="text-primary fw-bold">A transformação já está em ascenção, porém ainda há muito a alcançar.</h4>
+        <div class="col-sm-5 px-0 justify-content-center bg-grey">
+            <div class="row m-4 text-center text-dark">
+                <h4 class="text-primary fw-bold">A transformação já está em ascenção, porém ainda há muito a alcançar.</h4>
+            </div>
+
+            <div class="row my-3 mx-0 px-5 justify-content-start gap-2">
+                <h2 class="text-primary text-center col-auto mb-0">@obj.CulturaFinal.ToString("N0")%</h2>
+                <p class="col-auto align-content-center px-0 mb-0">CULTURA E PESSOAS</p>
+            </div>
+            <div class="row my-3 mx-0 px-5 justify-content-start">
+                <h2 class="text-primary text-center col-auto mb-0">@obj.ExperienciaFinal.ToString("N0")%</h2>
+                <p class="col-auto align-content-center px-0 mb-0">EXPERIÊNCIA DO CLIENTE</p>
+            </div>
+            <div class="row my-3 mx-0 px-5 justify-content-start">
+                <h2 class="text-primary text-center col-auto mb-0">@obj.MercadoFinal.ToString("N0")%</h2>
+                <p class="col-auto align-content-center px-0 mb-0">MERCADO E CONCORRÊNCIA</p>
+            </div>
+            <div class="row my-3 mx-0 px-5 justify-content-start">
+                <h2 class="text-primary text-center col-auto mb-0">@obj.InovacaoFinal.ToString("N0")%</h2>
+                <p class="col-auto align-content-center px-0 mb-0"1>INOVAÇÃO</p>
+            </div>
+            <div class="row my-3 mx-0 px-5 justify-content-start">
+                <h2 class="text-primary text-center col-auto mb-0">@obj.ProcessosFinal.ToString("N0")%</h2>
+                <p class="col-auto align-content-center px-0 mb-0"1>PROCESSOS</p>
+            </div>
+            <div class="row my-3 mx-0 px-5 justify-content-start">
+                <h2 class="text-primary text-center col-auto mb-0">@obj.ModelosFinal.ToString("N0")%</h2>
+                <p class="col-auto align-content-center px-0 mb-0"1>MODELOS DE NEGÓCIO</p>
+            </div>
+            <div class="row my-3 mx-0 px-5 justify-content-start">
+                <h2 class="text-primary text-center col-auto mb-0">@obj.DadosFinal.ToString("N0")%</h2>
+                <p class="col-auto align-content-center px-0 mb-0"1>DADOS</p>
+            </div>
+            <div class="row mt-3 mb-5 mx-0 px-5 justify-content-start">
+                <h2 class="text-primary text-center col-auto mb-0">@obj.TecnologiaFinal.ToString("N0")%</h2>
+                <p class="col-auto align-content-center px-0 mb-0"1>TECNOLOGIAS</p>
+            </div>
+            <div class="row mt-3 mb-5 mx-0 px-5 justify-content-center m-auto text-center">
+                <button id="printPDF" type="button" class="btn btn-primary text-white text-decoration-none fs-4 border-0 px-3 py-3 rounded-4 fw-medium text-white"
+                        href="AdminResultsPDF" style="min-width:50%; min-height:20%;">
+                        Gerar PDF
+                        @* @Html.ActionLink("FAZER O DOWNLOAD DO SEU RELATÓRIO", "GerarPdf", "AssessmentForm", @obj) *@
+                </button>
+            </div>
         </div>
 
-        <div class="row my-3 mx-0 px-5 justify-content-start gap-2">
-            <h2 class="text-primary text-center col-auto mb-0">@obj.CulturaFinal.ToString("N0")%</h2>
-            <p class="col-auto align-content-center px-0 mb-0">CULTURA E PESSOAS</p>
-        </div>
-        <div class="row my-3 mx-0 px-5 justify-content-start">
-            <h2 class="text-primary text-center col-auto mb-0">@obj.ExperienciaFinal.ToString("N0")%</h2>
-            <p class="col-auto align-content-center px-0 mb-0">EXPERIÊNCIA DO CLIENTE</p>
-        </div>
-        <div class="row my-3 mx-0 px-5 justify-content-start">
-            <h2 class="text-primary text-center col-auto mb-0">@obj.MercadoFinal.ToString("N0")%</h2>
-            <p class="col-auto align-content-center px-0 mb-0">MERCADO E CONCORRÊNCIA</p>
-        </div>
-        <div class="row my-3 mx-0 px-5 justify-content-start">
-            <h2 class="text-primary text-center col-auto mb-0">@obj.InovacaoFinal.ToString("N0")%</h2>
-            <p class="col-auto align-content-center px-0 mb-0"1>INOVAÇÃO</p>
-        </div>
-        <div class="row my-3 mx-0 px-5 justify-content-start">
-            <h2 class="text-primary text-center col-auto mb-0">@obj.ProcessosFinal.ToString("N0")%</h2>
-            <p class="col-auto align-content-center px-0 mb-0"1>PROCESSOS</p>
-        </div>
-        <div class="row my-3 mx-0 px-5 justify-content-start">
-            <h2 class="text-primary text-center col-auto mb-0">@obj.ModelosFinal.ToString("N0")%</h2>
-            <p class="col-auto align-content-center px-0 mb-0"1>MODELOS DE NEGÓCIO</p>
-        </div>
-        <div class="row my-3 mx-0 px-5 justify-content-start">
-            <h2 class="text-primary text-center col-auto mb-0">@obj.DadosFinal.ToString("N0")%</h2>
-            <p class="col-auto align-content-center px-0 mb-0"1>DADOS</p>
-        </div>
-        <div class="row mt-3 mb-5 mx-0 px-5 justify-content-start">
-            <h2 class="text-primary text-center col-auto mb-0">@obj.TecnologiaFinal.ToString("N0")%</h2>
-            <p class="col-auto align-content-center px-0 mb-0"1>TECNOLOGIAS</p>
-        </div>
-        <div class="row mt-3 mb-5 mx-0 px-5 justify-content-center m-auto text-center">
-            <button type="button" class="btn btn-primary text-white text-decoration-none fs-4 border-0 px-3 py-3 rounded-4 fw-medium text-white"
-                    href="AdminResultsPDF" style="min-width:50%; min-height:20%;">
-                    @Html.ActionLink("FAZER O DOWNLOAD DO SEU RELATÓRIO", "GerarPdf", "AssessmentForm", @obj)
-            </button>
-        </div>
-        <div class="row mt-3 mb-5 mx-0 px-5 justify-content-center m-auto text-center d-none">
-            <button type="button" class="btn btn-outline-primary fs-4 border-0 px-3 py-3 rounded-4 fw-medium text-white"
-                    href="AdminResultsPDF" style="min-width:50%; min-height:20%;">
-                @Html.ActionLink("Gerar PDF 2", "ExportarPDF", "AssessmentForm", @obj)
-            </button>
-        </div>
+
     </div>
 
 
-</div>
-
-
-<!-- DIV RESULTADOS CONFORME PORCENTAGENS -->
-<div class="col-sm-5 px-0 justify-content-center w-100" style="">
+    <!-- DIV RESULTADOS CONFORME PORCENTAGENS -->
+    <div class="col-sm-5 px-0 justify-content-center w-100" style="">
     
-    <h2 class="bg-transparent text-uppercase text-primary fw-bolder my-5 text-center m-auto" style="max-width: 80%">
-        COM BASE EM SUA RESPOSTAS, AQUI ESTÃO OS RESULTADOS:
-    </h2>
-    <p class="m-auto fs-5 mb-4" style="max-width: 80%; text-align: justify;">
-        Sua instituição alcançou <b>@obj.MaturidadeDigital.ToString("N0")%</b> de maturidade digital. Baseado nessa porcentagem, aqui estão
-        algumas recomendações para o seu negócio
-    </p>
+        <h2 class="bg-transparent text-uppercase text-primary fw-bolder my-5 text-center m-auto" style="max-width: 80%">
+            COM BASE EM SUA RESPOSTAS, AQUI ESTÃO OS RESULTADOS:
+        </h2>
+        <p class="m-auto fs-5 mb-4" style="max-width: 80%; text-align: justify;">
+            Sua instituição alcançou <b>@obj.MaturidadeDigital.ToString("N0")%</b> de maturidade digital. Baseado nessa porcentagem, aqui estão
+            algumas recomendações para o seu negócio
+        </p>
 
-    <div class="px-5 border-1 border rounded-4 bg-grey text-center m-auto mb-5" style="max-width: 90%;"> 
-        <!-- RESULTADO MATURIDADE PRINCIPAL -->
-        <h3 class="bg-transparent text-uppercase text-primary fw-bolder my-4 text-center m-auto" style="max-width: 80%">
-            Com base na sua Maturidade Digital:
-        </h3>
-        <p class="m-auto text-wrap" style="text-align: justify;">@textMaturidade1</p>
-        <br />
-        <p class="m-auto text-wrap" style="text-align: justify;">@textMaturidade2</p>
-        <p class="m-auto text-wrap" style="text-align: justify;">@textMaturidade3</p>
-        <p class="m-auto text-wrap" style="text-align: justify;">@textMaturidade4</p>
-        <p class="m-auto text-wrap" style="text-align: justify;">@textMaturidade5</p>
-        <p class="m-auto text-wrap" style="text-align: justify;">@textMaturidade6</p>
-        <br />
-        <p class="m-auto text-wrap" style="text-align: justify;">@textMaturidade7</p>
+        <div class="px-5 border-1 border rounded-4 bg-grey text-center m-auto mb-5" style="max-width: 90%;"> 
+            <!-- RESULTADO MATURIDADE PRINCIPAL -->
+            <h3 class="bg-transparent text-uppercase text-primary fw-bolder my-4 text-center m-auto" style="max-width: 80%">
+                Com base na sua Maturidade Digital:
+            </h3>
+            <p class="m-auto text-wrap" style="text-align: justify;">@textMaturidade1</p>
+            <br />
+            <p class="m-auto text-wrap" style="text-align: justify;">@textMaturidade2</p>
+            <p class="m-auto text-wrap" style="text-align: justify;">@textMaturidade3</p>
+            <p class="m-auto text-wrap" style="text-align: justify;">@textMaturidade4</p>
+            <p class="m-auto text-wrap" style="text-align: justify;">@textMaturidade5</p>
+            <p class="m-auto text-wrap" style="text-align: justify;">@textMaturidade6</p>
+            <br />
+            <p class="m-auto text-wrap" style="text-align: justify;">@textMaturidade7</p>
         
 
 
-        <!-- RESULTADO CULTURA E PESSOAS --> 
-        <div class="row justify-content-start mt-3 mb-0 mx-0 gap-4" style="max-width: 100%;">
+            <!-- RESULTADO CULTURA E PESSOAS --> 
+            <div class="row justify-content-start mt-3 mb-0 mx-0 gap-4" style="max-width: 100%;">
 
-            <div class="col-3 progress m-auto rounded-3 mx-0 px-0 position-relative" style="min-height: 30px; max-width: 100%; background-color: darkgray" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="50">
-                <p class="m-0 fs-5 text-white position-absolute top-50 start-50 translate-middle">@obj.CulturaFinal.ToString("N0")%</p>
-                <div class="progress-bar bg-primary justify-content-center " style="width: @obj.CulturaFinal%">
+                <div class="col-3 progress m-auto rounded-3 mx-0 px-0 position-relative" style="min-height: 30px; max-width: 100%; background-color: darkgray" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="50">
+                    <p class="m-0 fs-5 text-white position-absolute top-50 start-50 translate-middle">@obj.CulturaFinal.ToString("N0")%</p>
+                    <div class="progress-bar bg-primary justify-content-center " style="width: @obj.CulturaFinal%">
                     
+                    </div>
                 </div>
+                <h3 class="col-auto bg-transparent text-uppercase text-primary fw-bold fs-6 my-3 mx-0 px-0 text-center m-auto" style="max-width: 80%">
+                    Cultura e Pessoas
+                </h3>
             </div>
-            <h3 class="col-auto bg-transparent text-uppercase text-primary fw-bold fs-6 my-3 mx-0 px-0 text-center m-auto" style="max-width: 80%">
-                Cultura e Pessoas
-            </h3>
-        </div>
-        <p class="m-auto" style="text-align: justify;">@textCultura</p>
+            <p class="m-auto" style="text-align: justify;">@textCultura</p>
 
 
-        <!-- RESULTADO EXPERIÊNCIA DO CLIENTE -->
-        <div class="row justify-content-start mt-3 mb-0 mx-0 gap-4 " style="max-width: 100%;">
+            <!-- RESULTADO EXPERIÊNCIA DO CLIENTE -->
+            <div class="row justify-content-start mt-3 mb-0 mx-0 gap-4 " style="max-width: 100%;">
 
-            <div class="col-3 progress m-auto rounded-3 mx-0 px-0 position-relative " style="min-height: 30px; max-width: 100%;  background-color: darkgray" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="50">
-                <p class="m-0 fs-5 text-white position-absolute top-50 start-50 translate-middle">@obj.ExperienciaFinal.ToString("N0")%</p>
-                <div class="progress-bar bg-primary justify-content-center " style="width: @obj.ExperienciaFinal%">
+                <div class="col-3 progress m-auto rounded-3 mx-0 px-0 position-relative " style="min-height: 30px; max-width: 100%;  background-color: darkgray" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="50">
+                    <p class="m-0 fs-5 text-white position-absolute top-50 start-50 translate-middle">@obj.ExperienciaFinal.ToString("N0")%</p>
+                    <div class="progress-bar bg-primary justify-content-center " style="width: @obj.ExperienciaFinal%">
+                    </div>
                 </div>
+                <h3 class="col-auto bg-transparent text-uppercase text-primary fw-bold fs-6 my-3 mx-0 px-0 text-center m-auto" style="max-width: 80%;">
+                    Experiência do Cliente
+                </h3>
             </div>
-            <h3 class="col-auto bg-transparent text-uppercase text-primary fw-bold fs-6 my-3 mx-0 px-0 text-center m-auto" style="max-width: 80%;">
-                Experiência do Cliente
-            </h3>
-        </div>
-        <p class="m-auto" style="text-align: justify;">@textExperiencia</p>
+            <p class="m-auto" style="text-align: justify;">@textExperiencia</p>
 
 
-        <!-- RESULTADO MERCADO E CONCORRÊNCIA -->
-        <div class="row justify-content-start mt-3 mb-0 mx-0 gap-4 " style="max-width: 100%;">
-            <div class="col-3 progress m-auto rounded-3 mx-0 px-0 position-relative" style="min-height: 30px; max-width: 100%; background-color: darkgray" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="50">
-                <p class="m-0 fs-5 text-white position-absolute top-50 start-50 translate-middle">@obj.MercadoFinal.ToString("N0")%</p>
-                <div class="progress-bar bg-primary justify-content-center " style="width: @obj.MercadoFinal%">
+            <!-- RESULTADO MERCADO E CONCORRÊNCIA -->
+            <div class="row justify-content-start mt-3 mb-0 mx-0 gap-4 " style="max-width: 100%;">
+                <div class="col-3 progress m-auto rounded-3 mx-0 px-0 position-relative" style="min-height: 30px; max-width: 100%; background-color: darkgray" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="50">
+                    <p class="m-0 fs-5 text-white position-absolute top-50 start-50 translate-middle">@obj.MercadoFinal.ToString("N0")%</p>
+                    <div class="progress-bar bg-primary justify-content-center " style="width: @obj.MercadoFinal%">
+                    </div>
                 </div>
+                <h3 class="col-auto bg-transparent text-uppercase text-primary fw-bold fs-6 my-3 mx-0 px-0 text-center m-auto" style="max-width: 80%">
+                    Mercado e Concorrência
+                </h3>
             </div>
-            <h3 class="col-auto bg-transparent text-uppercase text-primary fw-bold fs-6 my-3 mx-0 px-0 text-center m-auto" style="max-width: 80%">
-                Mercado e Concorrência
-            </h3>
-        </div>
-        <p class="m-auto" style="text-align: justify;">@textMercado</p>
+            <p class="m-auto" style="text-align: justify;">@textMercado</p>
 
-        <!-- RESULTADO INOVAÇÃO -->
-        <div class="row justify-content-start mt-3 mb-0 mx-0 gap-4 " style="max-width: 100%;">
-            <div class="col-3 progress m-auto rounded-3 mx-0 px-0 position-relative" style="min-height: 30px; max-width: 100%; background-color: darkgray" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="50">
-                <p class="m-0 fs-5 text-white position-absolute top-50 start-50 translate-middle">@obj.InovacaoFinal.ToString("N0")%</p>
-                <div class="progress-bar bg-primary justify-content-center " style="width: @obj.InovacaoFinal%">
+            <!-- RESULTADO INOVAÇÃO -->
+            <div class="row justify-content-start mt-3 mb-0 mx-0 gap-4 " style="max-width: 100%;">
+                <div class="col-3 progress m-auto rounded-3 mx-0 px-0 position-relative" style="min-height: 30px; max-width: 100%; background-color: darkgray" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="50">
+                    <p class="m-0 fs-5 text-white position-absolute top-50 start-50 translate-middle">@obj.InovacaoFinal.ToString("N0")%</p>
+                    <div class="progress-bar bg-primary justify-content-center " style="width: @obj.InovacaoFinal%">
+                    </div>
                 </div>
+                <h3 class="col-auto bg-transparent text-uppercase text-primary fw-bold fs-6 my-3 mx-0 px-0 text-center m-auto" style="max-width: 80%">
+                    Inovação
+                </h3>
             </div>
-            <h3 class="col-auto bg-transparent text-uppercase text-primary fw-bold fs-6 my-3 mx-0 px-0 text-center m-auto" style="max-width: 80%">
-                Inovação
-            </h3>
-        </div>
-        <p class="m-auto" style="text-align: justify;">@textInovacao</p>
+            <p class="m-auto" style="text-align: justify;">@textInovacao</p>
 
-        <!-- RESULTADO PROCESSOS -->
-        <div class="row justify-content-start mt-3 mb-0 mx-0 gap-4 " style="max-width: 100%;">
-            <div class="col-3 progress m-auto rounded-3 mx-0 px-0 position-relative" style="min-height: 30px; max-width: 100%; background-color: darkgray" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="50">
-                <p class="m-0 fs-5 text-white position-absolute top-50 start-50 translate-middle">@obj.ProcessosFinal.ToString("N0")%</p>
-                <div class="progress-bar bg-primary justify-content-center " style="width: @obj.ProcessosFinal%">
+            <!-- RESULTADO PROCESSOS -->
+            <div class="row justify-content-start mt-3 mb-0 mx-0 gap-4 " style="max-width: 100%;">
+                <div class="col-3 progress m-auto rounded-3 mx-0 px-0 position-relative" style="min-height: 30px; max-width: 100%; background-color: darkgray" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="50">
+                    <p class="m-0 fs-5 text-white position-absolute top-50 start-50 translate-middle">@obj.ProcessosFinal.ToString("N0")%</p>
+                    <div class="progress-bar bg-primary justify-content-center " style="width: @obj.ProcessosFinal%">
+                    </div>
                 </div>
+                <h3 class="col-auto bg-transparent text-uppercase text-primary fw-bold fs-6 my-3 mx-0 px-0 text-center m-auto" style="max-width: 80%">
+                    Processos
+                </h3>
             </div>
-            <h3 class="col-auto bg-transparent text-uppercase text-primary fw-bold fs-6 my-3 mx-0 px-0 text-center m-auto" style="max-width: 80%">
-                Processos
-            </h3>
-        </div>
-        <p class="m-auto" style="text-align: justify;">@textProcessos</p>
+            <p class="m-auto" style="text-align: justify;">@textProcessos</p>
 
-        <!-- RESULTADO MODELOS DE NEGÓCIO -->
-        <div class="row justify-content-start mt-3 mb-0 mx-0 gap-4 " style="max-width: 100%;">
-            <div class="col-3 progress m-auto rounded-3 mx-0 px-0 position-relative" style="min-height: 30px; max-width: 100%; background-color: darkgray" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="50">
-                <p class="m-0 fs-5 text-white position-absolute top-50 start-50 translate-middle">@obj.ModelosFinal.ToString("N0")%</p>
-                <div class="progress-bar bg-primary justify-content-center " style="width: @obj.ModelosFinal%">
+            <!-- RESULTADO MODELOS DE NEGÓCIO -->
+            <div class="row justify-content-start mt-3 mb-0 mx-0 gap-4 " style="max-width: 100%;">
+                <div class="col-3 progress m-auto rounded-3 mx-0 px-0 position-relative" style="min-height: 30px; max-width: 100%; background-color: darkgray" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="50">
+                    <p class="m-0 fs-5 text-white position-absolute top-50 start-50 translate-middle">@obj.ModelosFinal.ToString("N0")%</p>
+                    <div class="progress-bar bg-primary justify-content-center " style="width: @obj.ModelosFinal%">
+                    </div>
                 </div>
+                <h3 class="col-auto bg-transparent text-uppercase text-primary fw-bold fs-6 my-3 mx-0 px-0 text-center m-auto" style="max-width: 80%">
+                    Modelos de Negócio
+                </h3>
             </div>
-            <h3 class="col-auto bg-transparent text-uppercase text-primary fw-bold fs-6 my-3 mx-0 px-0 text-center m-auto" style="max-width: 80%">
-                Modelos de Negócio
-            </h3>
-        </div>
-        <p class="m-auto" style="text-align: justify;">@textModelos</p>
+            <p class="m-auto" style="text-align: justify;">@textModelos</p>
 
 
-        <!-- RESULTADO DADOS -->
-        <div class="row justify-content-start mt-3 mb-0 mx-0 gap-4 " style="max-width: 100%;">
-            <div class="col-3 progress m-auto rounded-3 mx-0 px-0 position-relative" style="min-height: 30px; max-width: 100%; background-color: darkgray" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="50">
-                <p class="m-0 fs-5 text-white position-absolute top-50 start-50 translate-middle">@obj.DadosFinal.ToString("N0")%</p>
-                <div class="progress-bar bg-primary justify-content-center" style="width: @obj.DadosFinal%">
+            <!-- RESULTADO DADOS -->
+            <div class="row justify-content-start mt-3 mb-0 mx-0 gap-4 " style="max-width: 100%;">
+                <div class="col-3 progress m-auto rounded-3 mx-0 px-0 position-relative" style="min-height: 30px; max-width: 100%; background-color: darkgray" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="50">
+                    <p class="m-0 fs-5 text-white position-absolute top-50 start-50 translate-middle">@obj.DadosFinal.ToString("N0")%</p>
+                    <div class="progress-bar bg-primary justify-content-center" style="width: @obj.DadosFinal%">
+                    </div>
                 </div>
+                <h3 class="col-auto bg-transparent text-uppercase text-primary fw-bold fs-6 my-3 mx-0 px-0 text-center m-auto" style="max-width: 80%">
+                    Dados
+                </h3>
             </div>
-            <h3 class="col-auto bg-transparent text-uppercase text-primary fw-bold fs-6 my-3 mx-0 px-0 text-center m-auto" style="max-width: 80%">
-                Dados
-            </h3>
-        </div>
-        <p class="m-auto" style="text-align: justify;">@textDados</p>
+            <p class="m-auto" style="text-align: justify;">@textDados</p>
 
-        <!-- RESULTADO TECNOLOGIAS -->
-        <div class="row justify-content-start mt-3 mb-0 mx-0 gap-4 " style="max-width: 100%;">
-            <div class="col-3 progress m-auto rounded-3 mx-0 px-0 position-relative" style="min-height: 30px; max-width: 100%; background-color: darkgray" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="50">
-                <p class="m-0 fs-5 text-white position-absolute top-50 start-50 translate-middle">@obj.TecnologiaFinal.ToString("N0")%</p>
-                <div class="progress-bar bg-primary justify-content-center tec-progress" style="width: @obj.TecnologiaFinal%">
+            <!-- RESULTADO TECNOLOGIAS -->
+            <div class="row justify-content-start mt-3 mb-0 mx-0 gap-4 " style="max-width: 100%;">
+                <div class="col-3 progress m-auto rounded-3 mx-0 px-0 position-relative" style="min-height: 30px; max-width: 100%; background-color: darkgray" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="50">
+                    <p class="m-0 fs-5 text-white position-absolute top-50 start-50 translate-middle">@obj.TecnologiaFinal.ToString("N0")%</p>
+                    <div class="progress-bar bg-primary justify-content-center tec-progress" style="width: @obj.TecnologiaFinal%">
+                    </div>
                 </div>
+                <h3 class="col-auto bg-transparent text-uppercase text-primary fw-bold fs-6 my-3 mx-0 px-0 text-center m-auto" style="max-width: 80%">
+                    Tecnologias
+                </h3>
             </div>
-            <h3 class="col-auto bg-transparent text-uppercase text-primary fw-bold fs-6 my-3 mx-0 px-0 text-center m-auto" style="max-width: 80%">
-                Tecnologias
+            <p class="m-auto" style="text-align: justify;">@textTecnologias</p>
+
+
+
+            <!-- RESULTADO COM BASE NO SETOR -->
+            <h3 class="bg-transparent text-uppercase text-primary fw-bolder my-4 text-center m-auto" style="max-width: 80%">
+                Algumas recomendações com base em seu setor de negócio: <i class="text-center text-decoration-underline">@obj.CompanySector</i>
             </h3>
+            <p class="m-auto text-wrap" style="text-align: justify;">@textSetor1</p>
+         @*    <p class="m-auto" style="text-align: justify;">@textSetor2</p>
+            <p class="m-auto" style="text-align: justify;">@textSetor3</p>
+            <p class="m-auto" style="text-align: justify;">@textSetor4</p> *@
+
+
+            <br />
+            <br />
+            <br />
+            <br />
         </div>
-        <p class="m-auto" style="text-align: justify;">@textTecnologias</p>
 
 
-
-        <!-- RESULTADO COM BASE NO SETOR -->
-        <h3 class="bg-transparent text-uppercase text-primary fw-bolder my-4 text-center m-auto" style="max-width: 80%">
-            Algumas recomendações com base em seu setor de negócio: <i class="text-center text-decoration-underline">@obj.CompanySector</i>
-        </h3>
-        <p class="m-auto text-wrap" style="text-align: justify;">@textSetor1</p>
-     @*    <p class="m-auto" style="text-align: justify;">@textSetor2</p>
-        <p class="m-auto" style="text-align: justify;">@textSetor3</p>
-        <p class="m-auto" style="text-align: justify;">@textSetor4</p> *@
-
-
-        <br />
-        <br />
-        <br />
-        <br />
     </div>
-
-
 </div>
+@section scripts {
+    <script>
+        $("#printPDF").click(function () {
+            var element = document.getElementById('parentDiv');
 
 
-<script>
+            html2pdf().from(element).set({
+                filename: 'Resultado Maturidade Digital - @Model.Name .pdf',
+                margin: [0, 0, 0, 0],
+                pagebreak: { avoid: 'tr' },
+                jsPDF:  {
+                    orientation: 'portrait',
+                    unit: 'pt',
+                    format: 'a4',
+                    compressPDF: true
+                    // or "smart", default is 16
+                    // orientation: 'portrait', unit: 'pt', format: 'a4', compressPDF: true
+                    }
+            }).save()
 
-    
-</script>
+        });
+
+    </script>
+}

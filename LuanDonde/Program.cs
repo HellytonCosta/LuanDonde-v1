@@ -21,6 +21,7 @@ builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<IDbInitializer, DbInitializer>();
 Settings.License = LicenseType.Community;
 
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
