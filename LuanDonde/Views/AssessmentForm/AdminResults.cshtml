@@ -183,7 +183,7 @@
     string textSetor4 = "";
     string textSetor5 = "";
 
-    if (obj.CompanySector.ToLower() == "educação")
+    if (obj.CompanySector.ToLower() == "construção civil")
     {
         textSetor1 = "Implementar ferramentas de software de gerenciamento de projetos acessíveis e adaptadas para MPEs.  Utilizar aplicativos móveis para monitoramento de obras e comunicação entre equipes.  Adotar tecnologias de realidade aumentada para visualização de projetos.";
         // textSetor1 = "1. Plataformas de Aprendizagem Online: Desenvolva ou adote plataformas de e-learning para fornecer educação acessível e flexível.";
@@ -620,15 +620,6 @@
             <br />
             <br />
             
-            @for(int i = 0; i < Model.MainGoalSelected.Count; i++)
-            {
-                <p>@Model.MainGoalSelected[i].ToString()</p>
-            }
-
-            @foreach(var palavra in Model.MainGoalSelected)
-            {
-                
-            }
         </div>
 
 
