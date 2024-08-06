@@ -19,11 +19,7 @@ namespace LuanDonde.Controllers
 {
     public class AssessmentFormController : Controller
     {
-
-
         private readonly IUnitOfWork _unitOfWork;
-
-
 
         public int _id;
 
@@ -37,7 +33,7 @@ namespace LuanDonde.Controllers
             return View(); 
         }
 
-
+        
 
         [HttpPost]
         public IActionResult Index(AssessmentForm _formulario) 
@@ -46,6 +42,9 @@ namespace LuanDonde.Controllers
             _unitOfWork.Formulario.Add(_formulario);
             _unitOfWork.Save();
             _id = _formulario.Id;
+
+            
+
             return RedirectToAction("Index2", _formulario);
         }
 
@@ -306,144 +305,54 @@ namespace LuanDonde.Controllers
             _formVM.auxIndex4();
 
             //  Cultura e pessoas
-
-            //_formVM.CulturaMedia = (_formVM.Cultura1 + _formVM.Cultura2 + _formVM.Cultura3 + _formVM.Cultura4 + _formVM.Cultura5 + _formVM.Cultura6) / 6;
-
-
-            // Inserindo em uma lista 
-            //List<double> CultList = new List<double>();
-            //CultList.Add(_formVM.Cultura1);
-            //CultList.Add(_formVM.Cultura2);
-            //CultList.Add(_formVM.Cultura3);
-            //CultList.Add(_formVM.Cultura4);
-            //CultList.Add(_formVM.Cultura5);
-            //CultList.Add(_formVM.Cultura6);
-            //// Organizando de maneira crescente
-            //CultList.Sort();
-
-            //  _formVM.CulturaMedia = _formVM.CalculoMediana(CultList);
             _formVM.CulturaMedia = (_formVM.Cultura1 / 20) + (_formVM.Cultura2 / 20) + (_formVM.Cultura3 / 20) + (_formVM.Cultura4 / 20 ) + (_formVM.Cultura5 / 20) + (_formVM.Cultura6 / 20);
             _formVM.CulturaMedia = _formVM.CulturaMedia / 30;
             _formVM.CulturaFinal = (_formVM.CulturaMedia * 100);
 
 
             //  Experiência do Cliente
-            // _formVM.ExperienciaMedia = (_formVM.Experiencia1 + _formVM.Experiencia2 + _formVM.Experiencia3 + _formVM.Experiencia4 + _formVM.Experiencia5 + _formVM.Experiencia6) / 6;          
-
-            //List<double> ExperienceList = new List<double>();
-            //ExperienceList.Add(_formVM.Experiencia1);
-            //ExperienceList.Add(_formVM.Experiencia2);
-            //ExperienceList.Add(_formVM.Experiencia3);
-            //ExperienceList.Add(_formVM.Experiencia4);
-            //ExperienceList.Add(_formVM.Experiencia5);
-            //ExperienceList.Add(_formVM.Experiencia6);
-            //ExperienceList.Sort();
-            //_formVM.ExperienciaMedia = _formVM.CalculoMediana(ExperienceList);
-
             _formVM.ExperienciaMedia = (_formVM.Experiencia1 / 20) + (_formVM.Experiencia2 / 20) + (_formVM.Experiencia3 / 20) + (_formVM.Experiencia4 / 20) + (_formVM.Experiencia5 / 20) + (_formVM.Experiencia6 / 20);
             _formVM.ExperienciaMedia = _formVM.ExperienciaMedia / 30;
             _formVM.ExperienciaFinal = (_formVM.ExperienciaMedia * 100);
 
 
             //  Mercado e Concorrência
-            // _formVM.MercadoMedia = (_formVM.Mercado1 + _formVM.Mercado2 + _formVM.Mercado3 + _formVM.Mercado4) / 4;
-            //List<double> MercadoList = new List<double>();
-            //MercadoList.Add(_formVM.Mercado1);
-            //MercadoList.Add(_formVM.Mercado2);
-            //MercadoList.Add(_formVM.Mercado3);
-            //MercadoList.Add(_formVM.Mercado4);
-            //MercadoList.Sort();
-            //_formVM.MercadoMedia = _formVM.CalculoMediana(MercadoList);
             _formVM.MercadoMedia = (_formVM.Mercado1 / 20) + (_formVM.Mercado2 / 20) + (_formVM.Mercado3 / 20) + (_formVM.Mercado1 / 20) ;
             _formVM.MercadoMedia = _formVM.MercadoMedia / 20 ;
             _formVM.MercadoFinal = (_formVM.MercadoMedia * 100);
 
 
             //  Inovação
-            // _formVM.InovacaoMedia = (_formVM.Inovacao1 + _formVM.Inovacao2 + _formVM.Inovacao3 + _formVM.Inovacao4) / 4;
-            //List<double> InovacaoList = new List<double>();
-            //InovacaoList.Add(_formVM.Inovacao1);
-            //InovacaoList.Add(_formVM.Inovacao2);
-            //InovacaoList.Add(_formVM.Inovacao3);
-            //InovacaoList.Add(_formVM.Inovacao4);
-            //InovacaoList.Sort();
-            //_formVM.InovacaoMedia = _formVM.CalculoMediana(InovacaoList);
             _formVM.InovacaoMedia = ((_formVM.Inovacao1 / 20) + (_formVM.Inovacao2 / 20) + (_formVM.Inovacao3 / 20) + (_formVM.Inovacao4 / 20));
             _formVM.InovacaoMedia = (_formVM.InovacaoMedia / 20);
             _formVM.InovacaoFinal = (_formVM.InovacaoMedia * 100);
 
 
             //  Processos
-            // _formVM.ProcessosMedia = (_formVM.Processos1 + _formVM.Processos2 + _formVM.Processos3 + _formVM.Processos4 + _formVM.Processos5 ) / 5;
-            //List<double> ProcessosList = new List<double>();
-            //ProcessosList.Add(_formVM.Processos1);
-            //ProcessosList.Add(_formVM.Processos2);
-            //ProcessosList.Add(_formVM.Processos3);
-            //ProcessosList.Add(_formVM.Processos4);
-            //ProcessosList.Add(_formVM.Processos5);
-            //ProcessosList.Sort();
-            //_formVM.ProcessosMedia = _formVM.CalculoMediana(ProcessosList);
             _formVM.ProcessosMedia = ((_formVM.Processos1 / 20) + (_formVM.Processos2 / 20) + (_formVM.Processos3 / 20) + (_formVM.Processos4 / 20) + (_formVM.Processos5 / 20) );
             _formVM.ProcessosMedia = _formVM.ProcessosMedia / 25;
             _formVM.ProcessosFinal = (_formVM.ProcessosMedia * 100);
 
 
             //  Modelos de Negócio
-            // _formVM.ModelosMedia = (_formVM.Modelos1 + _formVM.Modelos2 + _formVM.Modelos3 + _formVM.Modelos4) / 4;
-            //List<double> ModelosList = new List<double>();
-            //ModelosList.Add(_formVM.Modelos1);
-            //ModelosList.Add(_formVM.Modelos2);
-            //ModelosList.Add(_formVM.Modelos3);
-            //ModelosList.Add(_formVM.Modelos4);
-            //ModelosList.Sort();
-            //_formVM.ModelosMedia = _formVM.CalculoMediana(ModelosList);
             _formVM.ModelosMedia = ((_formVM.Modelos1 / 20) + (_formVM.Modelos2 / 20) + (_formVM.Modelos3 / 20) + (_formVM.Modelos4 / 20));
             _formVM.ModelosMedia = (_formVM.ModelosMedia / 20);
             _formVM.ModelosFinal = (_formVM.ModelosMedia * 100);
 
 
             //  Dados
-            // _formVM.DadosMedia = (_formVM.Dados1 + _formVM.Dados2 + _formVM.Dados3 + _formVM.Dados4 + _formVM.Dados5) / 5;
-            //List<double> DadosList = new List<double>();
-            //DadosList.Add(_formVM.Dados1);
-            //DadosList.Add(_formVM.Dados2);
-            //DadosList.Add(_formVM.Dados3);
-            //DadosList.Add(_formVM.Dados4);
-            //DadosList.Add(_formVM.Dados5);
-            //DadosList.Sort();
-            //_formVM.DadosMedia = _formVM.CalculoMediana(DadosList);
             _formVM.DadosMedia = ((_formVM.Dados1 / 20) + (_formVM.Dados2 / 20) + (_formVM.Dados3 / 20) + (_formVM.Dados4 / 20) + (_formVM.Dados5 / 20) );
             _formVM.DadosMedia = _formVM.DadosMedia / 25;
             _formVM.DadosFinal = (_formVM.DadosMedia * 100);
 
 
             //  Tecnologia  
-            // _formVM.TecnologiaMedia = (_formVM.Tecnologia1 + _formVM.Tecnologia2 + _formVM.Tecnologia3 + _formVM.Tecnologia4 + _formVM.Tecnologia5) / 5;
-            ////List<double> TecList = new List<double>();
-            ////TecList.Add(_formVM.Tecnologia1);
-            ////TecList.Add(_formVM.Tecnologia2);
-            ////TecList.Add(_formVM.Tecnologia3);
-            ////TecList.Add(_formVM.Tecnologia4);
-            ////TecList.Add(_formVM.Tecnologia5);
-            ////TecList.Sort();
-            ////_formVM.TecnologiaMedia = _formVM.CalculoMediana(TecList);
             _formVM.TecnologiaMedia = (_formVM.Tecnologia1 / 20) + (_formVM.Tecnologia2 / 20) + (_formVM.Tecnologia3 / 20) + (_formVM.Tecnologia4 / 20) + (_formVM.Tecnologia5 / 20);
             _formVM.TecnologiaMedia = _formVM.TecnologiaMedia / 25;
             _formVM.TecnologiaFinal = (_formVM.TecnologiaMedia * 100);
 
 
             // MATURIDADE DIGITAL FINAL
-            //List<double> MaturidadeList = new List<double>();
-            //MaturidadeList.Add(_formVM.CulturaFinal);
-            //MaturidadeList.Add(_formVM.ExperienciaFinal);
-            //MaturidadeList.Add(_formVM.MercadoFinal);
-            //MaturidadeList.Add(_formVM.InovacaoFinal);
-            //MaturidadeList.Add(_formVM.ProcessosFinal);
-            //MaturidadeList.Add(_formVM.ModelosFinal);
-            //MaturidadeList.Add(_formVM.DadosFinal);
-            //MaturidadeList.Add(_formVM.TecnologiaFinal);
-            //MaturidadeList.Sort();
-            //_formVM.MaturidadeDigital = _formVM.CalculoMediana(MaturidadeList);
             _formVM.MaturidadeDigital = (_formVM.CulturaFinal +
                                         _formVM.ExperienciaFinal +
                                         _formVM.MercadoFinal +
@@ -453,6 +362,7 @@ namespace LuanDonde.Controllers
                                         _formVM.DadosFinal +
                                         _formVM.TecnologiaFinal) / 8;
 
+            _formVM.DataCriacao = DateTime.Now;
 
             
             if (_formVM.MaturidadeDigital > 100.0)
@@ -683,19 +593,6 @@ namespace LuanDonde.Controllers
                 textMaturidade = "Empresas líderes são exemplares em maturidade digital. Demonstram excelência na colaboração interdepartamental com uma utilização avançada de ferramentas de gerenciamento ágil. A liderança tem visão de futuro e está totalmente alinhada com as tendências digitais, conduzindo a empresa com inovações disruptivas. A experiência do cliente digital é excepcional, com uma utilização avançada de dados para personalizar e otimizar a jornada do cliente. A empresa é altamente adaptável, rápida em responder às mudanças do mercado e sempre à frente em inovação e aplicação de novas tecnologias.";
 
 
-
-
-            //            ";
-
-            //            // Pode ser uma URL ou o conteúdo HTML diretamente
-            //            SelectPdf.PdfDocument doc = converter.ConvertUrl("https://transformeseu.azurewebsites.net/");
-            //            SelectPdf.PdfDocument doc2 = converter.ConvertHtmlString(htmlContent);
-
-            //            // Salvar PDF em um stream de memória
-            //            MemoryStream ms = new MemoryStream();
-            //            doc2.Save(ms);
-            //            doc2.Close();
-            //            return File(ms.ToArray(), "application/pdf", "ResultadoTransformacao.pdf");
 
             AssessmentForm assessmentForm = new AssessmentForm();
             assessmentForm = obj;

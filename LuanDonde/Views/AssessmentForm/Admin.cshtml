@@ -6,7 +6,7 @@
 
 }
 
-
+<section class="vh-100 min-vh-100">
     <div class="row m-0 my-2">
         <div class="col-12 text-center mt-3">
             <h4 class="text-primary fw-bolder text-uppercase py-1">Lista de Formulários preenchidos</h4>
@@ -28,7 +28,7 @@
                         <th class=" bg-primary text-light">
                             Resultado Maturidade
                         </th>
-                        <th class=" bg-primary text-light d-none">
+                        <th class=" bg-primary text-light">
                             Horário de Criação
                         </th>
                         <th class=" bg-primary text-light">
@@ -42,7 +42,7 @@
                         <tr>
                             <td class="align-content-center bg-transparent">@obj.Name</td>
                             <td class="align-content-center bg-transparent">@obj.MaturidadeDigital.ToString("N0")</td>
-                            <td class="align-content-center bg-transparent d-none">@obj.MaturidadeDigital.ToString("N0")</td>
+                            <td class="align-content-center bg-transparent">@obj.DataCriacao.ToString("dd-MM-yyyy HH:mm K")</td>
                             <td class="bg-transparent align-content-center text-center">
                                 <div class="w-75 btn-group m-auto" role="group">
                                     <a asp-controller="AssessmentForm" asp-action="AdminResults" asp-route-id="@obj.Id" class="btn btn-primary mx-2">
@@ -59,4 +59,4 @@
             </table>
         </div>
 
-
+</section>

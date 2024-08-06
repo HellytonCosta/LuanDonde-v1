@@ -2,9 +2,6 @@
 
 @{
     ViewData["Title"] = "Formulário";
-
-    var obj = Model;
-
 }
 
 
@@ -30,7 +27,7 @@
         </div>
         <p class="col-auto mb-0 px-1 d-none d-lg-block">Formulário</p>
     </div>
-    <div class="col-auto row bg-primary rounded-top-4 text-light align-items-center mx-1 px-2" >
+    <div class="col-auto row bg-primary rounded-top-4 text-light align-items-center mx-1 px-2">
         <div class="col-auto px-1">
             <img src="~/lib/images/icons/icons8-innovation-80.png" style="max-width: 2em;" />
         </div>
@@ -46,7 +43,7 @@
     </div>
 
 
-    <form method="post" class="row">
+    <form id="assessmentForm" method="post" class="row">
         <div asp-validation-summary="ModelOnly"></div>
         <h1>
         </h1>
@@ -54,81 +51,83 @@
         <!--RATIO FORM - OBJETIVOS -->
         <div class="row">
             <p class="text-primary fw-bolder fs-4 my-1">
-                Quais os objetivos a serem alcançados pela Estratégia de Transformação Digital da sua organização?
+                Quais os objetivos a serem alcançados pela Estratégia de Transformação Digital da sua empresa?
             </p>
             <div class="row">
                 <p class="col-auto align-content-center px-0 mx-2 d-none">Selecione até 3 opções.</p>
-                <span class="col-auto fst-italic align-content-center px-0 mx-2">(OBRIGATÓRIO)</span>
+                <span class="col-auto fst-italic align-content-center px-0 mx-2">(OBRIGATÓRIO) - selecione até 3 opções.</span>
             </div>
         </div>
         <div class="row m-sm-auto py-2">
-            <div class="form-check col-12">
-                <input class="form-check-input border-primary" type="radio" asp-for="MainGoal" value="Nossa empresa ainda não tem uma estratégia digital">
-                <label class="form-check-label" for="flexRadioDefault1">
-                    Nossa empresa ainda não tem uma estratégia digital
-                </label>
-            </div>
-            <div class="form-check col-12">
-                <input class="form-check-input border-primary" type="radio" asp-for="MainGoal" value="Transformar fundamentalmente nossos processos">
-                <label class="form-check-label" for="flexRadioDefault2">
-                    Transformar fundamentalmente nossos processos
-                </label>
-            </div>
-            <div class="form-check col-12">
-                <input class="form-check-input border-primary" type="radio" asp-for="MainGoal" value="Nos transformar em uma organização orientada a pessoas">
-                <label class="form-check-label" for="flexRadioDefault1">
-                    Nos transformar em uma organização orientada a pessoas
-                </label>
-            </div>
-            <div class="form-check col-12">
-                <input class="form-check-input border-primary" type="radio" asp-for="MainGoal" value="Identificar oportunidades para criar mais valor e novos modelos de negócio">
-                <label class="form-check-label" for="flexRadioDefault2">
-                    Identificar oportunidades para criar mais valor e novos modelos de negócio
-                </label>
-            </div>
-            <div class="form-check col-12">
-                <input class="form-check-input border-primary" type="radio" asp-for="MainGoal" value="Reduzir custos de vendas utilizando canais digitais">
-                <label class="form-check-label" for="flexRadioDefault1">
-                    Reduzir custos de vendas utilizando canais digitais
-                </label>
-            </div>
-            <div class="form-check col-12">
-                <input class="form-check-input border-primary" type="radio" asp-for="MainGoal" value="Inovar na velocidade das startups">
-                <label class="form-check-label" for="flexRadioDefault1">
-                    Inovar na velocidade das startups
-                </label>
-            </div>
-            <div class="form-check col-12">
-                <input class="form-check-input border-primary" type="radio" asp-for="MainGoal" value="Melhorar nossa tomada de decisão">
-                <label class="form-check-label" for="flexRadioDefault1">
-                    Melhorar nossa tomada de decisão
-                </label>
-            </div>
-            <div class="form-check col-12">
-                <input class="form-check-input border-primary" type="radio" asp-for="MainGoal" value="Nos transformar em uma organização orientada a Dados">
-                <label class="form-check-label" for="flexRadioDefault2">
-                    Nos transformar em uma organização orientada a Dados
-                </label>
-            </div>
-            <div class="form-check col-12">
-                <input class="form-check-input border-primary" type="radio" asp-for="MainGoal" value="Aumentar nossa eficiência e produtividade">
-                <label class="form-check-label" for="flexRadioDefault1">
-                    Aumentar nossa eficiência e produtividade
-                </label>
-            </div>
-            <div class="form-check col-12">
-                <input class="form-check-input border-primary" type="radio" asp-for="MainGoal" value="Criar novas ofertas habilitadas por tecnologias digitais">
-                <label class="form-check-label" for="flexRadioDefault1">
-                    Criar novas ofertas habilitadas por tecnologias digitais
-                </label>
-            </div>
-            <div class="form-check col-12">
-                <input class="form-check-input border-primary" type="radio" asp-for="MainGoal" value="Desconheço">
-                <label class="form-check-label" for="flexRadioDefault1">
-                    Desconheço
-                </label>
-            </div>
-            <span asp-validation-for="MainGoal" class="text-danger"></span>
+
+
+            @for (int i = 0; i < Model.MainGoalOptions.Count; i++)
+            {
+                <div>
+                    <!-- Checkbox é gerado com o nome 'SelectedOptions' e valor da opção -->
+                    <input type="checkbox"
+                           name="MainGoalSelected"
+                           value="@Model.MainGoalOptions[i].Text"
+                           class="form-check-input border-primary" />
+                    <label class="form-check-label mx-3">@Model.MainGoalOptions[i].Text.ToString()</label>
+                    <span asp-validation-for="MainGoalOptions[i]" class="text-danger"></span>
+                </div>
+            }
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    function limitCheckboxSelection(maxSelections, minSelections) {
+                        var checkboxes = document.querySelectorAll('input[name="MainGoalSelected"]');
+
+                        // Função para atualizar o estado dos checkboxes
+                        function updateCheckboxes() {
+                            var checkedCheckboxes = document.querySelectorAll('input[name="MainGoalSelected"]:checked');
+                            var checkedCount = checkedCheckboxes.length;
+
+                            // Se o número de checkboxes selecionados exceder o máximo permitido
+                            if (checkedCount > maxSelections) {
+                                // Desmarca o checkbox que foi clicado
+                                this.checked = false;
+                                // Exibe uma mensagem para o usuário (opcional)
+                                alert('Você pode selecionar no máximo ' + maxSelections + ' opções.');
+                            }
+                            // Se o número de checkboxes selecionados for menor que o mínimo permitido
+                            else if (checkedCount < minSelections ) {
+                                // Exibe uma mensagem para o usuário (opcional)
+                                alert('Você deve selecionar pelo menos ' + minSelections + ' opção(s).');
+                                // Desmarca o checkbox que foi clicado (mas só se isso reduzir a seleção para menos do mínimo)
+                                // if (!this.checked) {
+                                //     this.checked = true;
+                                // }
+                            }
+
+                            // Verifica se o último checkbox está sendo selecionado
+                            var lastCheckbox = checkboxes[checkboxes.length - 1];
+                            if (lastCheckbox.checked) {
+                                // Desmarca todos os outros checkboxes
+                                checkboxes.forEach(function (checkbox) {
+                                    if (checkbox !== lastCheckbox) {
+                                        checkbox.checked = false;
+                                    }
+                                });
+                            }
+                        }
+
+                        // Adiciona um evento de mudança para cada checkbox
+                        checkboxes.forEach(function (checkbox) {
+                            checkbox.addEventListener('change', function () {
+                                updateCheckboxes.call(this);
+                            });
+                        });
+                    }
+
+                    // Chama a função com o máximo e o mínimo de seleções permitidas (neste caso, máximo 3 e mínimo 1)
+                    limitCheckboxSelection(3, 1);
+                });
+            </script>
+
+            
+
+
         </div>
 
 
@@ -138,97 +137,98 @@
         <!-- PÁGINA 1 -->
         <input asp-for="Name" class="form-control border-2 shadow py-0 px-4 d-none" style="border-radius: 25px" />
         <input asp-for="Email" class="form-control border-2 shadow p-4 d-none" style="border-radius: 25px" />
-        <input asp-for="GrauInstrucao" class="form-check-input border-primary d-none"/>
-        <input asp-for="TermosDeUso" class="form-check-input d-none"/>
+        <input asp-for="GrauInstrucao" class="form-check-input border-primary d-none" />
+        <input asp-for="TermosDeUso" class="form-check-input d-none" />
         <!-- PÁGINA 2 -->
         <input asp-for="CompanySocialName" class="form-control border-2 shadow py-0 px-4 d-none" style="border-radius: 25px" />
         <input asp-for="CompanyCNPJ" class="form-control border-2 shadow py-0 px-4 d-none" style="border-radius: 25px" />
-        <input asp-for="CompanySector" class="form-check-input border-primary d-none"/>
+        <input asp-for="CompanySector" class="form-check-input border-primary d-none" />
         <!-- PÁGINA 3 -->
-        <input asp-for="CompanySize" class="form-check-input border-primary d-none"/>
-        <input asp-for="RolePosition" class="form-check-input border-primary d-none"/>
+        <input asp-for="CompanySize" class="form-check-input border-primary d-none" />
+        <input asp-for="RolePosition" class="form-check-input border-primary d-none" />
         <!-- PÁGINA 4 -->
-        <input asp-for="Department" class="form-check-input border-primary d-none"/>
-        <input asp-for="TimeInRole" class="form-check-input border-primary d-none"/>
-        <input asp-for="PhoneNumber" class="form-check-input border-primary d-none"/>
+        <input asp-for="Department" class="form-check-input border-primary d-none" />
+        <input asp-for="TimeInRole" class="form-check-input border-primary d-none" />
+        <input asp-for="PhoneNumber" class="form-check-input border-primary d-none" />
 
         <!--CULTURA E PESSOAS-->
-        <input asp-for="Cultura1" class="form-check-input border-primary d-none"/>
-        <input asp-for="Cultura2" class="form-check-input border-primary d-none"/>
-        <input asp-for="Cultura3" class="form-check-input border-primary d-none"/>
-        <input asp-for="Cultura4" class="form-check-input border-primary d-none"/>
-        <input asp-for="Cultura5" class="form-check-input border-primary d-none"/>
-        <input asp-for="CulturaFinal" class="form-check-input border-primary d-none"/>
-        <input asp-for="CulturaMedia" class="form-check-input border-primary d-none"/>
-        <input asp-for="CulturaTotal" class="form-check-input border-primary d-none"/>
-         
+        <input asp-for="Cultura1" class="form-check-input border-primary d-none" />
+        <input asp-for="Cultura2" class="form-check-input border-primary d-none" />
+        <input asp-for="Cultura3" class="form-check-input border-primary d-none" />
+        <input asp-for="Cultura4" class="form-check-input border-primary d-none" />
+        <input asp-for="Cultura5" class="form-check-input border-primary d-none" />
+        <input asp-for="CulturaFinal" class="form-check-input border-primary d-none" />
+        <input asp-for="CulturaMedia" class="form-check-input border-primary d-none" />
+        <input asp-for="CulturaTotal" class="form-check-input border-primary d-none" />
+
         <!--EXPERIÊNCIA DO CLIENTE-->
-        <input asp-for="Experiencia1" class="form-check-input border-primary d-none"/>
-        <input asp-for="Experiencia2" class="form-check-input border-primary d-none"/>
-        <input asp-for="Experiencia3" class="form-check-input border-primary d-none"/>
-        <input asp-for="Experiencia4" class="form-check-input border-primary d-none"/>
-        <input asp-for="Experiencia5" class="form-check-input border-primary d-none"/>
-        <input asp-for="ExperienciaFinal" class="form-check-input border-primary d-none"/>
-        <input asp-for="ExperienciaMedia" class="form-check-input border-primary d-none"/>
-        <input asp-for="ExperienciaTotal" class="form-check-input border-primary d-none"/>
+        <input asp-for="Experiencia1" class="form-check-input border-primary d-none" />
+        <input asp-for="Experiencia2" class="form-check-input border-primary d-none" />
+        <input asp-for="Experiencia3" class="form-check-input border-primary d-none" />
+        <input asp-for="Experiencia4" class="form-check-input border-primary d-none" />
+        <input asp-for="Experiencia5" class="form-check-input border-primary d-none" />
+        <input asp-for="ExperienciaFinal" class="form-check-input border-primary d-none" />
+        <input asp-for="ExperienciaMedia" class="form-check-input border-primary d-none" />
+        <input asp-for="ExperienciaTotal" class="form-check-input border-primary d-none" />
 
         <!--MERCADO E CONCORRÊNCIA-->
-        <input asp-for="Mercado1" class="form-check-input border-primary d-none"/>
-        <input asp-for="Mercado2" class="form-check-input border-primary d-none"/>
-        <input asp-for="Mercado3" class="form-check-input border-primary d-none"/>
-        <input asp-for="Mercado4" class="form-check-input border-primary d-none"/>
-        <input asp-for="MercadoFinal" class="form-check-input border-primary d-none"/>
-        <input asp-for="MercadoMedia" class="form-check-input border-primary d-none"/>
-        <input asp-for="MercadoTotal" class="form-check-input border-primary d-none"/>
-        
+        <input asp-for="Mercado1" class="form-check-input border-primary d-none" />
+        <input asp-for="Mercado2" class="form-check-input border-primary d-none" />
+        <input asp-for="Mercado3" class="form-check-input border-primary d-none" />
+        <input asp-for="Mercado4" class="form-check-input border-primary d-none" />
+        <input asp-for="MercadoFinal" class="form-check-input border-primary d-none" />
+        <input asp-for="MercadoMedia" class="form-check-input border-primary d-none" />
+        <input asp-for="MercadoTotal" class="form-check-input border-primary d-none" />
+
         <!--INOVAÇÃO-->
-        <input asp-for="Inovacao1" class="form-check-input border-primary d-none"/>
-        <input asp-for="Inovacao2" class="form-check-input border-primary d-none"/>
-        <input asp-for="Inovacao3" class="form-check-input border-primary d-none"/>
-        <input asp-for="Inovacao4" class="form-check-input border-primary d-none"/>
-        <input asp-for="InovacaoFinal" class="form-check-input border-primary d-none"/>
-        <input asp-for="InovacaoMedia" class="form-check-input border-primary d-none"/>
-        <input asp-for="InovacaoTotal" class="form-check-input border-primary d-none"/>
+        <input asp-for="Inovacao1" class="form-check-input border-primary d-none" />
+        <input asp-for="Inovacao2" class="form-check-input border-primary d-none" />
+        <input asp-for="Inovacao3" class="form-check-input border-primary d-none" />
+        <input asp-for="Inovacao4" class="form-check-input border-primary d-none" />
+        <input asp-for="InovacaoFinal" class="form-check-input border-primary d-none" />
+        <input asp-for="InovacaoMedia" class="form-check-input border-primary d-none" />
+        <input asp-for="InovacaoTotal" class="form-check-input border-primary d-none" />
 
 
         <!---PROCESSOS-->
-        <input asp-for="Processos1" class="form-check-input border-primary d-none"/>
-        <input asp-for="Processos2" class="form-check-input border-primary d-none"/>
-        <input asp-for="Processos3" class="form-check-input border-primary d-none"/>
-        <input asp-for="Processos4" class="form-check-input border-primary d-none"/>
-        <input asp-for="Processos5" class="form-check-input border-primary d-none"/>
+        <input asp-for="Processos1" class="form-check-input border-primary d-none" />
+        <input asp-for="Processos2" class="form-check-input border-primary d-none" />
+        <input asp-for="Processos3" class="form-check-input border-primary d-none" />
+        <input asp-for="Processos4" class="form-check-input border-primary d-none" />
+        <input asp-for="Processos5" class="form-check-input border-primary d-none" />
         <input asp-for="ProcessosFinal" class="form-check-input border-primary d-none" />
         <input asp-for="ProcessosMedia" class="form-check-input border-primary d-none" />
         <input asp-for="ProcessosTotal" class="form-check-input border-primary d-none" />
-        
+
         <!---MODELOS DE NEGÓCIOS-->
-        <input asp-for="Modelos1" class="form-check-input border-primary d-none"/>
-        <input asp-for="Modelos2" class="form-check-input border-primary d-none"/>
-        <input asp-for="Modelos3" class="form-check-input border-primary d-none"/>
-        <input asp-for="Modelos4" class="form-check-input border-primary d-none"/>
+        <input asp-for="Modelos1" class="form-check-input border-primary d-none" />
+        <input asp-for="Modelos2" class="form-check-input border-primary d-none" />
+        <input asp-for="Modelos3" class="form-check-input border-primary d-none" />
+        <input asp-for="Modelos4" class="form-check-input border-primary d-none" />
         <input asp-for="ModelosFinal" class="form-check-input border-primary d-none" />
         <input asp-for="ModelosMedia" class="form-check-input border-primary d-none" />
         <input asp-for="ModelosTotal" class="form-check-input border-primary d-none" />
-        
+
         <!---DADOS-->
-        <input asp-for="Dados1" class="form-check-input border-primary d-none"/>
-        <input asp-for="Dados2" class="form-check-input border-primary d-none"/>
-        <input asp-for="Dados3" class="form-check-input border-primary d-none"/>
-        <input asp-for="Dados4" class="form-check-input border-primary d-none"/>
-        <input asp-for="Dados5" class="form-check-input border-primary d-none"/>
+        <input asp-for="Dados1" class="form-check-input border-primary d-none" />
+        <input asp-for="Dados2" class="form-check-input border-primary d-none" />
+        <input asp-for="Dados3" class="form-check-input border-primary d-none" />
+        <input asp-for="Dados4" class="form-check-input border-primary d-none" />
+        <input asp-for="Dados5" class="form-check-input border-primary d-none" />
         <input asp-for="DadosFinal" class="form-check-input border-primary d-none" />
         <input asp-for="DadosMedia" class="form-check-input border-primary d-none" />
         <input asp-for="DadosTotal" class="form-check-input border-primary d-none" />
 
         <!---TECNOLOGIAS-->
-        <input asp-for="Tecnologia1" class="form-check-input border-primary d-none"/>
-        <input asp-for="Tecnologia2" class="form-check-input border-primary d-none"/>
-        <input asp-for="Tecnologia3" class="form-check-input border-primary d-none"/>
-        <input asp-for="Tecnologia4" class="form-check-input border-primary d-none"/>
-        <input asp-for="Tecnologia5" class="form-check-input border-primary d-none"/>
+        <input asp-for="Tecnologia1" class="form-check-input border-primary d-none" />
+        <input asp-for="Tecnologia2" class="form-check-input border-primary d-none" />
+        <input asp-for="Tecnologia3" class="form-check-input border-primary d-none" />
+        <input asp-for="Tecnologia4" class="form-check-input border-primary d-none" />
+        <input asp-for="Tecnologia5" class="form-check-input border-primary d-none" />
         <input asp-for="TecnologiaFinal" class="form-check-input border-primary d-none" />
         <input asp-for="TecnologiaMedia" class="form-check-input border-primary d-none" />
         <input asp-for="TecnologiaTotal" class="form-check-input border-primary d-none" />
+        <input asp-for="DataCriacao" class="form-check-input border-primary d-none" />
 
         <!--MATURIDADE DIGITAL-->
         <input asp-for="MaturidadeDigital" class="form-check-input border-primary d-none" />
@@ -253,7 +253,25 @@
                 </button>
             </div>
         </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                var form = document.getElementById('assessmentForm');
+                var checkboxes = document.querySelectorAll('input[name="MainGoalSelected"]');
 
+                form.addEventListener('submit', function (event) {
+                    // Conta o número de checkboxes selecionados
+                    var checkedCount = document.querySelectorAll('input[name="MainGoalSelected"]:checked').length;
+
+                    // Se nenhum checkbox estiver selecionado
+                    if (checkedCount === 0) {
+                        // Previne o envio do formulário
+                        event.preventDefault();
+                        // Exibe uma mensagem para o usuário
+                        alert('Por favor, selecione pelo menos uma opção antes de avançar.');
+                    }
+                });
+            });
+        </script>
     </form>
 
 

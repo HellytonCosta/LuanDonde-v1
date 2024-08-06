@@ -53,35 +53,35 @@
             <p class="text-primary fw-bolder fs-4 my-1">
                 Imagine uma empresa ideal transformada pelas tecnologias digitais que melhoram processos,
                 engajam as pessoas e geram valor para modelos de negócio novos e atuais.
-                O quão próxima sua organização está desta empresa ideal?
+                O quão próximo o seu negócio está desta empresa ideal?
             </p>
             <span class="col-auto fst-italic align-content-center px-0 mx-2">(OBRIGATÓRIO)</span>
         </div>
-        
+
         <div class="row m-sm-auto py-2">
 
             <div class="form-check col-12">
                 <input class="form-check-input border-primary" type="radio" asp-for="ProximityOfGoal" value="Muito longe">
                 <label class="form-check-label" for="flexRadioDefault1">
-                    Muito longe
+                    Não começamos a transformação digital
                 </label>
             </div>
             <div class="form-check col-12">
                 <input class="form-check-input border-primary" type="radio" asp-for="ProximityOfGoal" value="Longe">
                 <label class="form-check-label" for="flexRadioDefault2">
-                    Longe
+                    Iniciamos a transformação digital, mas estamos apenas no começo
                 </label>
             </div>
             <div class="form-check col-12">
                 <input class="form-check-input border-primary" type="radio" asp-for="ProximityOfGoal" value="Perto">
                 <label class="form-check-label" for="flexRadioDefault1">
-                    Perto
+                    Implementamos algumas iniciativas de transformação digital
                 </label>
             </div>
             <div class="form-check col-12">
                 <input class="form-check-input border-primary" type="radio" asp-for="ProximityOfGoal" value="Muito perto">
                 <label class="form-check-label" for="flexRadioDefault2">
-                    Muito perto
+                    A maioria dos nossos processos já é digital e estamos obtendo resultados significativos
                 </label>
             </div>
             <div class="form-check col-12">
@@ -193,9 +193,9 @@
 
         <!--MATURIDADE DIGITAL-->
         <input asp-for="MaturidadeDigital" class="form-check-input border-primary d-none" />
-
+        <input asp-for="DataCriacao" class="form-check-input border-primary d-none" />
         <!-- QUESTIONS -->
-        <input asp-for="MainGoal" class="form-check-input border-primary d-none">
+        <input asp-for="MainGoalSelected" class="form-check-input border-primary d-none">
 
         <!-- SUBMIT FORM -->
         <div class="row py-2 my-3 m-auto align-content-center justify-content-between">

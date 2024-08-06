@@ -1,9 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using Microsoft.Extensions.Options;
 using Microsoft.VisualStudio.Web.CodeGeneration.CommandLine;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics.CodeAnalysis;
+using TransformaSeu.Models;
 
 namespace LuanDonde.Models
 {
@@ -11,9 +13,12 @@ namespace LuanDonde.Models
     {
         [Key]
         public int Id { get; set; }
-        [Required(ErrorMessage="O campo Termos de Uso é obrigatório")]
+        [Required(ErrorMessage = "O campo Termos de Uso é obrigatório")]
         [DisplayName("Termos de Uso")]
         public bool TermosDeUso { get; set; }
+        [DisplayName("Hora de Criação")]
+        public DateTime DataCriacao { get; set; } = new DateTime();
+
         [MaxLength(60)]
         [DisplayName("Nome")]
         public string? Name { get; set; }
@@ -23,17 +28,17 @@ namespace LuanDonde.Models
         [Required(ErrorMessage = "O campo Grau de Instrução é obrigatório")]
         [MaxLength(100)]
         [DisplayName("Grau de Instrução")]
-        public string GrauInstrucao{ get; set; }
+        public string GrauInstrucao { get; set; }
         [Required(ErrorMessage = "O campo Número para Contato é obrigatório")]
         [MaxLength(20)]
         [DisplayName("Número para Contato")]
         public string? PhoneNumber { get; set; }
-     
+
         [AllowNull]
         [MaxLength(30)]
         [DisplayName("Nome Social da Empresa")]
         public string? CompanySocialName { get; set; }
-       
+
         [AllowNull]
         [MaxLength(30)]
         [DisplayName("CNPJ da Empresa")]
@@ -65,9 +70,22 @@ namespace LuanDonde.Models
         public string TimeInRole { get; set; }
         [Required(ErrorMessage = "A alternativa para Objetivo é obrigatória")]
         [AllowNull]
-        [MaxLength(80)]
         [DisplayName("Objetivo Principal")]
-        public string MainGoal { get; set; }
+        public List<string> MainGoalSelected { get; set; } = new List<string>();
+
+        public List<CheckBoxOption> MainGoalOptions { get; set; } = new List<CheckBoxOption>{
+            new CheckBoxOption { Value = "Option1", Text = "Nossa empresa ainda não tem uma estratégia digital" },
+            new CheckBoxOption { Value = "Option2", Text = "Transformar fundamentalmente nossos processos" },
+            new CheckBoxOption { Value = "Option3", Text = "Nos transformar em uma organização orientada a pessoas" },
+            new CheckBoxOption { Value = "Option4", Text = "Identificar oportunidades para criar mais valor e novos modelos de negócio" },
+            new CheckBoxOption { Value = "Option5", Text = "Reduzir custos de vendas utilizando canais digitals" },
+            new CheckBoxOption { Value = "Option6", Text = "Inovar na velocidade das startups" },
+            new CheckBoxOption { Value = "Option7", Text = "Melhorar nossa tomada de decisão" },
+            new CheckBoxOption { Value = "Option8", Text = "Nos transformar em uma organização orientada a Dados" },
+            new CheckBoxOption { Value = "Option9", Text = "Aumentar nossa eficiência e produtividade" },
+            new CheckBoxOption { Value = "Option10", Text = "Criar novas ofertas habilitadas por tecnologias digitais" },
+            new CheckBoxOption { Value = "Option11", Text = "Desconheço" }
+        };
 
         [Required(ErrorMessage = "A alternativa para Objetivo é obrigatória")]
         [AllowNull]
@@ -81,7 +99,7 @@ namespace LuanDonde.Models
         public string Priority { get; set; }
 
         // RESULTADO FINAL
-        [Range(1,100)]
+        [Range(1, 100)]
         public double MaturidadeDigital { get; set; }
 
         //   FORMULÁRIO CULTURA   
@@ -309,7 +327,7 @@ namespace LuanDonde.Models
             RolePosition = "";
             ProximityOfGoal = "";
             Priority = "";
-            MainGoal = "";
+            MainGoalSelected = new List<string>();
         }
         public void auxIndex2()
         {
@@ -320,7 +338,7 @@ namespace LuanDonde.Models
             RolePosition = "";
             ProximityOfGoal = "";
             Priority = "";
-            MainGoal = "";
+            // MainGoal.Add("");
         }
         public void auxIndex3()
         {
@@ -329,7 +347,7 @@ namespace LuanDonde.Models
             Department = "";
             ProximityOfGoal = "";
             Priority = "";
-            MainGoal = "";
+            // MainGoal.Add("");
             RolePosition = "";
 
         }
@@ -341,7 +359,7 @@ namespace LuanDonde.Models
             PhoneNumber = "";
             ProximityOfGoal = "";
             Priority = "";
-            MainGoal = "";
+            // MainGoal = "";
         }
         public void auxQuestion1()
         {
@@ -351,7 +369,7 @@ namespace LuanDonde.Models
             PhoneNumber = "";
             ProximityOfGoal = "";
             Priority = "";
-            
+
         }
         public void auxQuestion2()
         {
@@ -367,7 +385,7 @@ namespace LuanDonde.Models
             RolePosition = "";
             Department = "";
             PhoneNumber = "";
-         
+
         }
 
         // CALCULO DE MEDIANA

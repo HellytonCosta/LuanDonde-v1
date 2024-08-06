@@ -61,31 +61,31 @@
             <div class="form-check col-12">
                 <input class="form-check-input border-primary" type="radio" asp-for="Priority" value="Não acreditamos que seremos impactados">
                 <label class="form-check-label" for="flexRadioDefault1">
-                    Não acreditamos que seremos impactados.
+                    Não acreditamos que seremos impactados
                 </label>
             </div>
             <div class="form-check col-12">
                 <input class="form-check-input border-primary" type="radio" asp-for="Priority" value="Não é prioridade, mas entendemos a importância">
                 <label class="form-check-label" for="flexRadioDefault2">
-                    Não é prioridade, mas entendemos a importância.
+                    Não é prioridade, mas entendemos a importância
                 </label>
             </div>
             <div class="form-check col-12">
                 <input class="form-check-input border-primary" type="radio" asp-for="Priority" value="Entendemos a importância e estamos nos preparando">
                 <label class="form-check-label" for="flexRadioDefault1">
-                    Entendemos a importância e estamos nos preparando.
+                    Entendemos a importância e estamos nos preparando
                 </label>
             </div>
             <div class="form-check col-12">
                 <input class="form-check-input border-primary" type="radio" asp-for="Priority" value="Já está sendo considerada em nosso planejamento">
                 <label class="form-check-label" for="flexRadioDefault2">
-                    Já está sendo considerada em nosso planejamento.
+                    Já está sendo considerada em nosso planejamento
                 </label>
             </div>
             <div class="form-check col-12">
                 <input class="form-check-input border-primary" type="radio" asp-for="Priority" value="Já é prioridade máxima em nosso planejamento estratégico">
                 <label class="form-check-label" for="flexRadioDefault1">
-                    Já é prioridade máxima em nosso planejamento estratégico.
+                    Já é prioridade máxima em nosso planejamento estratégico
                 </label>
             </div>
             <span asp-validation-for="Priority" class="text-danger"></span>
@@ -192,9 +192,10 @@
 
         <!--MATURIDADE DIGITAL-->
         <input asp-for="MaturidadeDigital" class="form-check-input border-primary d-none" />
+        <input asp-for="DataCriacao" class="form-check-input border-primary d-none" />
 
         <!-- QUESTIONS -->
-        <input asp-for="MainGoal" class="form-check-input border-primary d-none">
+        <input asp-for="MainGoalSelected" class="form-check-input border-primary d-none">
         <input asp-for="ProximityOfGoal" class="form-check-input border-primary d-none">
 
 

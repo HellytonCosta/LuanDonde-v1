@@ -23,6 +23,7 @@ namespace LuanDonde.Repository
         {
             IQueryable<T> query = dbSet;
             query = query.Where(filter);
+         
             return query.FirstOrDefault();
         }
 
