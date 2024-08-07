@@ -73,19 +73,7 @@ namespace LuanDonde.Models
         [DisplayName("Objetivo Principal")]
         public List<string> MainGoalSelected { get; set; } = new List<string>();
 
-        public List<CheckBoxOption> MainGoalOptions { get; set; } = new List<CheckBoxOption>{
-            new CheckBoxOption { Value = "Option1", Text = "Nossa empresa ainda não tem uma estratégia digital" },
-            new CheckBoxOption { Value = "Option2", Text = "Transformar fundamentalmente nossos processos" },
-            new CheckBoxOption { Value = "Option3", Text = "Nos transformar em uma organização orientada a pessoas" },
-            new CheckBoxOption { Value = "Option4", Text = "Identificar oportunidades para criar mais valor e novos modelos de negócio" },
-            new CheckBoxOption { Value = "Option5", Text = "Reduzir custos de vendas utilizando canais digitals" },
-            new CheckBoxOption { Value = "Option6", Text = "Inovar na velocidade das startups" },
-            new CheckBoxOption { Value = "Option7", Text = "Melhorar nossa tomada de decisão" },
-            new CheckBoxOption { Value = "Option8", Text = "Nos transformar em uma organização orientada a Dados" },
-            new CheckBoxOption { Value = "Option9", Text = "Aumentar nossa eficiência e produtividade" },
-            new CheckBoxOption { Value = "Option10", Text = "Criar novas ofertas habilitadas por tecnologias digitais" },
-            new CheckBoxOption { Value = "Option11", Text = "Desconheço" }
-        };
+        public List<CheckBoxOption> MainGoalOptions { get; set; } = new List<CheckBoxOption>();
 
         [Required(ErrorMessage = "A alternativa para Objetivo é obrigatória")]
         [AllowNull]

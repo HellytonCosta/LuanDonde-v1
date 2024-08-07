@@ -13,6 +13,8 @@ using Microsoft.AspNetCore.Mvc.ViewEngines;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Rotativa.AspNetCore;
+using Xamarin.Forms;
+using TransformaSeu.Models;
 
 
 namespace LuanDonde.Controllers
@@ -28,22 +30,22 @@ namespace LuanDonde.Controllers
             _unitOfWork = unitOfWork;
         }
 
-        public IActionResult Index() 
+        public IActionResult Index()
         {
-            return View(); 
+            return View();
         }
 
-        
+
 
         [HttpPost]
-        public IActionResult Index(AssessmentForm _formulario) 
+        public IActionResult Index(AssessmentForm _formulario)
         {
             _formulario.auxIndex();
             _unitOfWork.Formulario.Add(_formulario);
             _unitOfWork.Save();
             _id = _formulario.Id;
 
-            
+
 
             return RedirectToAction("Index2", _formulario);
         }
@@ -305,7 +307,7 @@ namespace LuanDonde.Controllers
             _formVM.auxIndex4();
 
             //  Cultura e pessoas
-            _formVM.CulturaMedia = (_formVM.Cultura1 / 20) + (_formVM.Cultura2 / 20) + (_formVM.Cultura3 / 20) + (_formVM.Cultura4 / 20 ) + (_formVM.Cultura5 / 20) + (_formVM.Cultura6 / 20);
+            _formVM.CulturaMedia = (_formVM.Cultura1 / 20) + (_formVM.Cultura2 / 20) + (_formVM.Cultura3 / 20) + (_formVM.Cultura4 / 20) + (_formVM.Cultura5 / 20) + (_formVM.Cultura6 / 20);
             _formVM.CulturaMedia = _formVM.CulturaMedia / 30;
             _formVM.CulturaFinal = (_formVM.CulturaMedia * 100);
 
@@ -317,8 +319,8 @@ namespace LuanDonde.Controllers
 
 
             //  Mercado e Concorrência
-            _formVM.MercadoMedia = (_formVM.Mercado1 / 20) + (_formVM.Mercado2 / 20) + (_formVM.Mercado3 / 20) + (_formVM.Mercado1 / 20) ;
-            _formVM.MercadoMedia = _formVM.MercadoMedia / 20 ;
+            _formVM.MercadoMedia = (_formVM.Mercado1 / 20) + (_formVM.Mercado2 / 20) + (_formVM.Mercado3 / 20) + (_formVM.Mercado1 / 20);
+            _formVM.MercadoMedia = _formVM.MercadoMedia / 20;
             _formVM.MercadoFinal = (_formVM.MercadoMedia * 100);
 
 
@@ -329,7 +331,7 @@ namespace LuanDonde.Controllers
 
 
             //  Processos
-            _formVM.ProcessosMedia = ((_formVM.Processos1 / 20) + (_formVM.Processos2 / 20) + (_formVM.Processos3 / 20) + (_formVM.Processos4 / 20) + (_formVM.Processos5 / 20) );
+            _formVM.ProcessosMedia = ((_formVM.Processos1 / 20) + (_formVM.Processos2 / 20) + (_formVM.Processos3 / 20) + (_formVM.Processos4 / 20) + (_formVM.Processos5 / 20));
             _formVM.ProcessosMedia = _formVM.ProcessosMedia / 25;
             _formVM.ProcessosFinal = (_formVM.ProcessosMedia * 100);
 
@@ -341,7 +343,7 @@ namespace LuanDonde.Controllers
 
 
             //  Dados
-            _formVM.DadosMedia = ((_formVM.Dados1 / 20) + (_formVM.Dados2 / 20) + (_formVM.Dados3 / 20) + (_formVM.Dados4 / 20) + (_formVM.Dados5 / 20) );
+            _formVM.DadosMedia = ((_formVM.Dados1 / 20) + (_formVM.Dados2 / 20) + (_formVM.Dados3 / 20) + (_formVM.Dados4 / 20) + (_formVM.Dados5 / 20));
             _formVM.DadosMedia = _formVM.DadosMedia / 25;
             _formVM.DadosFinal = (_formVM.DadosMedia * 100);
 
@@ -364,49 +366,49 @@ namespace LuanDonde.Controllers
 
             _formVM.DataCriacao = DateTime.Now;
 
-            
+
             if (_formVM.MaturidadeDigital > 100.0)
             {
                 _formVM.MaturidadeDigital = 100.0;
             }
 
 
-           
-            if(_formVM.CulturaFinal > 100.0)
+
+            if (_formVM.CulturaFinal > 100.0)
             {
                 _formVM.CulturaFinal = 100.0;
             }
-           
+
             if (_formVM.ExperienciaFinal > 100.0)
             {
                 _formVM.ExperienciaFinal = 100.0;
             }
-            
+
             if (_formVM.MercadoFinal > 100.0)
             {
                 _formVM.MercadoFinal = 100.0;
             }
-            
+
             if (_formVM.InovacaoFinal > 100.0)
             {
                 _formVM.InovacaoFinal = 100.0;
             }
-            
+
             if (_formVM.ProcessosFinal > 100.0)
             {
                 _formVM.ProcessosFinal = 100.0;
             }
-           
+
             if (_formVM.ModelosFinal > 100.0)
             {
                 _formVM.ModelosFinal = 100.0;
             }
-            
+
             if (_formVM.DadosFinal > 100.0)
             {
                 _formVM.DadosFinal = 100.0;
             }
-           
+
             if (_formVM.TecnologiaFinal > 100.0)
             {
                 _formVM.TecnologiaFinal = 100.0;
@@ -429,13 +431,32 @@ namespace LuanDonde.Controllers
             {
                 return NotFound();
             }
+
+            // _formAux.MainGoalOptions.Add(new CheckBox ( "Option1", "Nossa empresa ainda não tem uma estratégia digital" ));
+
+            List<CheckBoxOption> checkBoxesList = new List<CheckBoxOption>();
+
+            checkBoxesList.Add(new CheckBoxOption { Value = "Option1", Text = "Nossa empresa ainda não tem uma estratégia digital" });
+            checkBoxesList.Add(new CheckBoxOption { Value = "Option2", Text = "Transformar fundamentalmente nossos processos" });
+            checkBoxesList.Add(new CheckBoxOption { Value = "Option3", Text = "Nos transformar em uma organização orientada a pessoas" });
+            checkBoxesList.Add(new CheckBoxOption { Value = "Option4", Text = "Identificar oportunidades para criar mais valor e novos modelos de negócio" });
+            checkBoxesList.Add(new CheckBoxOption { Value = "Option5", Text = "Reduzir custos de vendas utilizando canais digitals" });
+            checkBoxesList.Add(new CheckBoxOption { Value = "Option6", Text = "Inovar na velocidade das startups" });
+            checkBoxesList.Add(new CheckBoxOption { Value = "Option7", Text = "Melhorar nossa tomada de decisão" });
+            checkBoxesList.Add(new CheckBoxOption { Value = "Option8", Text = "Nos transformar em uma organização orientada a Dados" });
+            checkBoxesList.Add(new CheckBoxOption { Value = "Option9", Text = "Aumentar nossa eficiência e produtividade" });
+            checkBoxesList.Add(new CheckBoxOption { Value = "Option10", Text = "Criar novas ofertas habilitadas por tecnologias digitais" });
+            checkBoxesList.Add(new CheckBoxOption { Value = "Option11", Text = "Desconheço" });
+
+            _formAux.MainGoalOptions = checkBoxesList;
+
             return View(_formAux);
         }
         [HttpPost]
         public IActionResult Question1(AssessmentForm _formulario)
         {
             _formulario.auxQuestion1();
-           _unitOfWork.Formulario.Update(_formulario);
+            _unitOfWork.Formulario.Update(_formulario);
             _unitOfWork.Save();
             _id = _formulario.Id;
             return RedirectToAction("Question2", _formulario);
@@ -482,7 +503,7 @@ namespace LuanDonde.Controllers
             _unitOfWork.Formulario.Update(_formulario);
             _unitOfWork.Save();
             _id = _formulario.Id;
-            return RedirectToAction("AdminResults", _formulario); 
+            return RedirectToAction("AdminResults", _formulario);
         }
 
         public IActionResult Results(AssessmentForm _form)
@@ -601,15 +622,15 @@ namespace LuanDonde.Controllers
             {
                 FileName = "Exemplo.pdf",
                 // Ajuste o caminho conforme necessário
-               // RotativaPath = @"Caminho\Para\wkhtmltopdf.exe"
+                // RotativaPath = @"Caminho\Para\wkhtmltopdf.exe"
             };
 
             return pdf;
 
         }
 
-    
+
     }
 
-    
+
 }
