@@ -67,7 +67,7 @@
                     <!-- Checkbox é gerado com o nome 'SelectedOptions' e valor da opção -->
                     <input type="checkbox"
                            name="MainGoalSelected"
-                           value="@Model.MainGoalOptions[i].Text.ToString()"
+                           value="@Model.MainGoalOptions[i].Text"
                            class="form-check-input border-primary" />
                     <label class="form-check-label mx-3">@Model.MainGoalOptions[i].Text.ToString()</label>
                     <span asp-validation-for="MainGoalOptions[i]" class="text-danger"></span>

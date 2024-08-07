@@ -48,6 +48,12 @@ namespace LuanDonde.Models
         [MaxLength(30)]
         [DisplayName("Setor de Atuação da Empresa")]
         public string? CompanySector { get; set; }
+
+        [AllowNull]
+        [MaxLength(30)]
+        [DisplayName("Setor de Atuação da Empresa")]
+        public string? CompanySectorOther { get; set; }
+
         [Required(ErrorMessage = "O campo Tamanho da Empresa é obrigatório")]
         [AllowNull]
         [MaxLength(30)]
@@ -74,6 +80,19 @@ namespace LuanDonde.Models
         public List<string> MainGoalSelected { get; set; } = new List<string>();
 
         public List<CheckBoxOption> MainGoalOptions { get; set; } = new List<CheckBoxOption>();
+        
+        [AllowNull]
+        [MaxLength(100)]
+        [DisplayName("Objetivo Principal 1")]
+        public string MainGoal1 { get; set; }
+        [AllowNull]
+        [MaxLength(100)]
+        [DisplayName("Objetivo Principal 2")]
+        public string MainGoal2 { get; set; }
+        [AllowNull]
+        [MaxLength(100)]
+        [DisplayName("Objetivo Principal 3")]
+        public string MainGoal3 { get; set; }
 
         [Required(ErrorMessage = "A alternativa para Objetivo é obrigatória")]
         [AllowNull]
@@ -316,9 +335,29 @@ namespace LuanDonde.Models
             ProximityOfGoal = "";
             Priority = "";
             MainGoalSelected = new List<string>();
+            MainGoal1 = "";
+            MainGoal2 = "";
+            MainGoal3 = "";
+            CompanySectorOther = "";
         }
         public void auxIndex2()
         {
+            if (CompanySocialName == null)
+            {
+                CompanySocialName = "";
+            }
+            if (Email == null)
+            {
+                Email = "";
+            }
+            if (Name == null)
+            {
+                Name = "";
+            }
+            if (CompanyCNPJ == null)
+            {
+                CompanyCNPJ = "";
+            }
             PhoneNumber = "";
             CompanySize = "";
             TimeInRole = "";
@@ -326,6 +365,10 @@ namespace LuanDonde.Models
             RolePosition = "";
             ProximityOfGoal = "";
             Priority = "";
+            MainGoal1 = "";
+            MainGoal2 = "";
+            MainGoal3 = "";
+
             // MainGoal.Add("");
         }
         public void auxIndex3()
@@ -335,6 +378,9 @@ namespace LuanDonde.Models
             Department = "";
             ProximityOfGoal = "";
             Priority = "";
+            MainGoal1 = "";
+            MainGoal2 = "";
+            MainGoal3 = "";
             // MainGoal.Add("");
             RolePosition = "";
 
@@ -347,6 +393,9 @@ namespace LuanDonde.Models
             PhoneNumber = "";
             ProximityOfGoal = "";
             Priority = "";
+            MainGoal1 = "";
+            MainGoal2 = "";
+            MainGoal3 = "";
             // MainGoal = "";
         }
         public void auxQuestion1()

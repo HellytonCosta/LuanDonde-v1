@@ -157,9 +157,30 @@
                             Turismo
                         </label>
                     </div>
+                    <div class="form-check col-12">
+                        <input class="form-check-input border-primary" type="radio" asp-for="CompanySector" value="Outro" id="radioOutro">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Outro
+                        </label>
+                        <input class="form-control border-2 py-1" placeholder="Digite o setor" type="text" id="campoCondicional" asp-for="CompanySectorOther" />
+                    </div>
+
                 </div>
                 <span asp-validation-for="CompanySector" class="text-danger"></span>
             </div>
+            <script>
+                $(document).ready(function () {
+                    // Adiciona um ouvinte de eventos para todos os radio buttons com o nome "CompanySector"
+                    $('input[name="CompanySector"]').change(function () {
+                        if ($('#radioOutro').is(':checked')) {
+                            $('#campoCondicional').show();
+                        } else {
+                            $('#campoCondicional').hide();
+                        }
+                    });
+                });
+            </script>
+
 
             <!-- ATRIBUTOS DAS OUTRAS PÁGINAS (OCULTOS) -->
             <!-- PÁGINA 1 -->

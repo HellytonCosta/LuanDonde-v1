@@ -456,6 +456,9 @@ namespace LuanDonde.Controllers
         public IActionResult Question1(AssessmentForm _formulario)
         {
             _formulario.auxQuestion1();
+            _formulario.MainGoal1 = _formulario.MainGoalSelected[0].ToString();
+            _formulario.MainGoal2 = _formulario.MainGoalSelected[1].ToString();
+            _formulario.MainGoal3 = _formulario.MainGoalSelected[2].ToString();
             _unitOfWork.Formulario.Update(_formulario);
             _unitOfWork.Save();
             _id = _formulario.Id;
