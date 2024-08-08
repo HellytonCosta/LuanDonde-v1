@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics.CodeAnalysis;
+using System.Web.WebPages;
 using TransformaSeu.Models;
 
 namespace LuanDonde.Models
@@ -365,9 +366,9 @@ namespace LuanDonde.Models
             RolePosition = "";
             ProximityOfGoal = "";
             Priority = "";
-            MainGoal1 = "";
-            MainGoal2 = "";
-            MainGoal3 = "";
+            MainGoal1 = MainGoal1.IsEmpty() ? String.Empty : MainGoal1;
+            MainGoal2 = MainGoal2.IsEmpty() ? String.Empty : MainGoal2;
+            MainGoal3 = MainGoal3.IsEmpty() ? String.Empty : MainGoal3;
 
             // MainGoal.Add("");
         }
@@ -378,9 +379,9 @@ namespace LuanDonde.Models
             Department = "";
             ProximityOfGoal = "";
             Priority = "";
-            MainGoal1 = "";
-            MainGoal2 = "";
-            MainGoal3 = "";
+            MainGoal1 = MainGoal1.IsEmpty() ? String.Empty : MainGoal1;
+            MainGoal2 = MainGoal2.IsEmpty() ? String.Empty : MainGoal2;
+            MainGoal3 = MainGoal3.IsEmpty() ? String.Empty : MainGoal3;
             // MainGoal.Add("");
             RolePosition = "";
 
@@ -415,6 +416,10 @@ namespace LuanDonde.Models
             Department = "";
             PhoneNumber = "";
             Priority = "";
+            MainGoal1 = MainGoal1.IsEmpty() ? String.Empty : MainGoal1;
+            MainGoal2 = MainGoal2.IsEmpty() ? String.Empty : MainGoal2;
+            MainGoal3 = MainGoal3.IsEmpty() ? String.Empty : MainGoal3;
+
         }
         public void auxQuestion3()
         {
@@ -422,6 +427,9 @@ namespace LuanDonde.Models
             RolePosition = "";
             Department = "";
             PhoneNumber = "";
+            MainGoal1 = MainGoal1.IsEmpty() ? String.Empty : MainGoal1;
+            MainGoal2 = MainGoal2.IsEmpty() ? String.Empty : MainGoal2;
+            MainGoal3 = MainGoal3.IsEmpty() ? String.Empty : MainGoal3;
 
         }
 
